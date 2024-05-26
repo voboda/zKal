@@ -1,4 +1,4 @@
-```markdown
+
 # ZKal - Decentralised Calendar Solution
 
 ZKal addresses the issue of our reliance on centralised systems, particularly Google Calendar, even among those who advocate for decentralisation. Breaking free from Google Calendar is challenging due to its ingrained network effects and the varying technical abilities within groups.
