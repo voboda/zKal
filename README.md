@@ -44,7 +44,7 @@ ZKal provides a self-hosted calendar feed with a web-based widget that integrate
 ### Calendar View
 ![Calendar View](screenshots/calendar-screenshot.png)
 
-### RSVP or Add Event
+### RSVP or Anon Add To Cal
 ![RSVP or Add Event](screenshots/rsvp-or-add-screenshot.png)
 
 ## Getting Started
