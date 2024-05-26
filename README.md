@@ -28,10 +28,11 @@ ZKal provides a self-hosted calendar feed with a web-based widget that integrate
 
 ### Development Highlights
 
-- **Technology Stack**: 
+- **Technology Stack**:
+  - Ethereum Foundation's Semaphore libraries
   - Svelte for its simplicity and small components.
-  - Node adapter for easy deployment on Docker containers or rooted wifi fridges.
-  - EF's Semaphore 
+  - Node adapter for easy deployment on Docker containers, rooted wifi fridges or any device that's better than a Google datacenter.
+
   
 - **Development Challenges**: Adapting to new development patterns, resolving issues with ESM versus CJS using Vite with Svelte, and deep dives into libraries like Zupass and Semaphore.
 
@@ -52,7 +53,3 @@ ZKal provides a self-hosted calendar feed with a web-based widget that integrate
 2. Configure your environment using the provided `.env.example` file.
 3. Deploy using Docker containers with the included node adapter.
 
-
-
-For detailed setup instructions and contributions, please refer to the [GitHub repository](https://github.com/voboda/zKal).
-```
