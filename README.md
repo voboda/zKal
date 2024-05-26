@@ -14,6 +14,7 @@ ZKal addresses the issue of our reliance on centralised systems, particularly Go
 4. **Political Centralisation**: SaaS tools' political centralisation creates opacity between teammates, defaulting teams to opacity and causing missed meetings and coordination issues.
 
 ## ZKal Solution
+ZKal is designed to support a decentralised approach, making it easier for tech community organisers to degoogle and regain control over their calendar data.
 
 ZKal provides a self-hosted calendar feed with a web-based widget that integrates multiple .ICS feeds, allowing for a gradual transition away from Google Calendar.
 
@@ -29,8 +30,8 @@ ZKal provides a self-hosted calendar feed with a web-based widget that integrate
 
 - **Technology Stack**: 
   - Svelte for its simplicity and small components.
-  - Node adapter for easy deployment on Docker containers.
-  - EF's Semaphore libraries, configured through .env files.
+  - Node adapter for easy deployment on Docker containers or rooted wifi fridges.
+  - EF's Semaphore 
   
 - **Development Challenges**: Adapting to new development patterns, resolving issues with ESM versus CJS using Vite with Svelte, and deep dives into libraries like Zupass and Semaphore.
 
@@ -51,7 +52,7 @@ ZKal provides a self-hosted calendar feed with a web-based widget that integrate
 2. Configure your environment using the provided `.env.example` file.
 3. Deploy using Docker containers with the included node adapter.
 
-ZKal is designed to support a decentralised approach, making it easier for tech community organisers to degoogle and regain control over their calendar data.
+
 
 For detailed setup instructions and contributions, please refer to the [GitHub repository](https://github.com/voboda/zKal).
 ```
