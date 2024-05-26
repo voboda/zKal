@@ -17,20 +17,15 @@
         $id = devalue.stringify({})
     }
     function create() {
-        console.log('create')
         const {commitment, nullifier, secret, trapdoor} = new Identity()
-        console.log({commitment, nullifier, secret, trapdoor} )
         $id = devalue.stringify({commitment, nullifier, secret, trapdoor} )
     }
     function createGroup() {
-        //console.log(groupname, $id, devalue.parse($id))
         const group = new Group([devalue.parse($id).commitment])
         $groups.push(group)
         $groups = $groups
-        //console.log($groups)
     }
     function login() {
-        //localStorage.get('id')
         console.log(devalue.parse($id))
     }
 </script>
@@ -41,8 +36,6 @@
             <header>
                 <h2>Login</h2>
             </header>
-            {hasID}
-            {$id.length}
             {#if hasID}
                 <p>Hello {devalue.parse($id).nullifier} 
 
