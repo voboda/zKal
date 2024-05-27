@@ -17,9 +17,9 @@ ZKal addresses our reliance on centralised calendar systems, particularly Google
 4. **Political Centralisation**: SaaS tools' political/administrational centralisation assumptions creates silos between teammates, by defaulting teams to opacity between each other, causing coordination issues and missed opportunities.
 
 ## ZKal Solution
-ZKal is designed to support a decentralised approach, making it easier for tech community organisers to degoogle and regain control over their calendar data.
+ZKal is designed to create gravity towards community-sovereignty and non-custodiality, making it easier for tech communiies to degoogle and regain control over their calendar data.
 
-ZKal provides a self-hosted calendar feed with a web-based widget that integrates multiple .ICS feeds, allowing for a gradual transition away from Google Calendar.
+It provides a self-hosted (proxied) calendar feed with a web-based widget that integrates multiple .ICS feeds, allowing for a gradual transition away from Google Calendar.
 
 ## Screenshots
 
@@ -40,7 +40,7 @@ ZKal provides a self-hosted calendar feed with a web-based widget that integrate
 
 - **Proxied Calendar Access**: Users access all event data through a self-hosted proxy, preventing back-ends from seeing subscribers, attendees, IPs, etc. 
   
-- **RSVP and Event Creation**: Users can RSVP publicly or anonymously within the Semaphore group.
+- **RSVP and Event Creation**: Users can add to their calendar anonymously, or RSVP publicly within the Semaphore group.
   
 ### Trust Model
 
@@ -53,21 +53,9 @@ zKal's starting point is to allow for:
 
 Future versions will include zuPass to make semaphore management more convienient to admins, and I'm looking for ZK patterns to even keep RSVP info off the zKal server.
 
-### Development Highlights
-
-- **Technology Stack**:
+### Stack
   - Ethereum Foundation's Semaphore libraries
   - Svelte for its simplicity and small components.
   - Node adapter for easy deployment on Docker containers, rooted wifi fridges or any device that's better than a Google datacenter.
 
   
-- **Development Challenges**: Adapting to new development patterns, resolving issues with ESM versus CJS using Vite with Svelte, and deep dives into libraries like Zupass and Semaphore.
-
-
-
-## Getting Started
-
-1. Clone the repository from [GitHub](https://github.com/voboda/zKal).
-2. Configure your environment using the provided `.env.example` file.
-3. Deploy using Docker containers with the included node adapter.
-
