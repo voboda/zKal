@@ -1,3 +1,6 @@
+** ⚠️ STATUS: NOT READY FOR PRODUCTION USE ⚠️**
+
+This is my submission to ethBerlin04.  it's currently a proof-of-concept / demo.  The main structure is scaffolded into place, but I still need to connect the parts together to make it practically functional. I plan to do this in the next few weeks.  I'll share here when it's ready: https://tally.so/r/wvr558
 
 # ZKal - Decentralised Calendar Solution
 
@@ -18,24 +21,6 @@ ZKal is designed to support a decentralised approach, making it easier for tech 
 
 ZKal provides a self-hosted calendar feed with a web-based widget that integrates multiple .ICS feeds, allowing for a gradual transition away from Google Calendar.
 
-### Features
-
-- **Semaphore Integration**: Users access ZKal through Semaphore, maintaining anonymity while proving group membership.
-  
-- **RSVP and Event Creation**: Users can RSVP publicly within the Semaphore group and add events anonymously while providing their email addresses for follow-up.
-  
-- **Decentralised Calendar Administration**: Supports multiple ICS feeds, allowing different rooms or groups to operate on various systems without an all-or-nothing switch from Google Calendar.
-
-### Development Highlights
-
-- **Technology Stack**:
-  - Ethereum Foundation's Semaphore libraries
-  - Svelte for its simplicity and small components.
-  - Node adapter for easy deployment on Docker containers, rooted wifi fridges or any device that's better than a Google datacenter.
-
-  
-- **Development Challenges**: Adapting to new development patterns, resolving issues with ESM versus CJS using Vite with Svelte, and deep dives into libraries like Zupass and Semaphore.
-
 ## Screenshots
 
 ### Access with Semaphore
@@ -46,6 +31,35 @@ ZKal provides a self-hosted calendar feed with a web-based widget that integrate
 
 ### RSVP or Anon Add To Cal
 ![RSVP or Add Event](screenshots/rsvp-or-add-screenshot.png)
+### Features
+
+- **Semaphore Integration**: Users access ZKal through Semaphore, maintaining anonymity while proving group membership.
+- 
+- **Distributed Calendar Administration**: Supports multiple ICS feeds, allowing different rooms or groups to operate on various systems without an all-or-nothing switch from Google Calendar.
+
+- **Proxied Calendar Access**: Users access all event data through a self-hosted proxy, preventing back-ends from seeing subscribers, attendees, IPs, etc. 
+  
+- **RSVP and Event Creation**: Users can RSVP publicly or anonymously within the Semaphore group.
+  
+### Trust Model
+
+zKal's starting point is to allow for:
+- Users interact with a self-hosted zKal server, hosted by their own community. RSVP and subscriber information is stored there, and under their stewarship.
+- User access is granted by proving group membership using [a semaphor](https://semaphore.pse.dev/).
+- No event information is sent to back-end calendar providers.  
+- Users can optionally RSVP, disclosing their email address to the zKal server and others witn
+- Users can interact anonymously, even with their zKal server, because 
+### Development Highlights
+
+- **Technology Stack**:
+  - Ethereum Foundation's Semaphore libraries
+  - Svelte for its simplicity and small components.
+  - Node adapter for easy deployment on Docker containers, rooted wifi fridges or any device that's better than a Google datacenter.
+
+  
+- **Development Challenges**: Adapting to new development patterns, resolving issues with ESM versus CJS using Vite with Svelte, and deep dives into libraries like Zupass and Semaphore.
+
+
 
 ## Getting Started
 
