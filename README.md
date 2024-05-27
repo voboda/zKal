@@ -1,4 +1,4 @@
-** ⚠️ STATUS: NOT READY FOR PRODUCTION USE ⚠️**
+**⚠️ STATUS: NOT READY FOR PRODUCTION USE ⚠️**
 
 This is my submission to ethBerlin04.  it's currently a proof-of-concept / demo.  The main structure is scaffolded into place, but I still need to connect the parts together to make it practically functional. I plan to do this in the next few weeks.  I'll share here when it's ready: https://tally.so/r/wvr558
 
