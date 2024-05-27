@@ -2,7 +2,7 @@
 
 It's a proof-of-concept/demo for ethBerlin04. The main structure is in place, but I need to connect some parts to make it functional. I plan to do this in the first half of June, and will announce it here when it's ready:  https://tally.so/r/wvr558
 
-# ZKal - anon-first group calendar server
+# ZKal - freedom-respecting group calendar server
 
 ZKal addresses our reliance on centralised calendar systems, particularly Google Calendar, even among those who advocate for decentralisation. Breaking free is challenging due to its ingrained network effects and the varying technical abilities within groups.
 
