@@ -6,6 +6,8 @@ It's a proof-of-concept/demo for ethBerlin04. The main structure is in place, bu
 
 ZKal addresses our reliance on centralised calendar systems, particularly Google Calendar, even among those who advocate for decentralisation. Breaking free is challenging due to its ingrained network effects and the varying technical abilities within groups.
 
+zKal tips the balance.  It's a self-hosted calendar server proxy that uses semaphores, a type of zero-knowledge proof that proves group membership without revealing any other user data.
+
 ## Key Problems Addressed
 
 1. **Meeting Confusion**: Users often face problems like confusion over meeting links, with some using Jitsi while others use Google Meet links that were automatically added.
