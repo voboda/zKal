@@ -1,6 +1,6 @@
 ⚠️ STATUS: NOT READY FOR PRODUCTION USE ⚠️
 
-It's a proof-of-concept/demo for ethBerlin04. The main structure is in place, but I need to connect the parts to make it functional. I plan to do this in the next few weeks, and will announce it here when it's ready:  https://tally.so/r/wvr558
+It's a proof-of-concept/demo for ethBerlin04. The main structure is in place, but I need to connect some parts to make it functional. I plan to do this in the next few weeks, and will announce it here when it's ready:  https://tally.so/r/wvr558
 
 # ZKal - Decentralised Calendar Solution
 
