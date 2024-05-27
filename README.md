@@ -4,7 +4,7 @@ It's a proof-of-concept/demo for ethBerlin04. The main structure is in place, bu
 
 # ZKal - Decentralised Calendar Solution
 
-ZKal addresses the issue of our reliance on centralised systems, particularly Google Calendar, even among those who advocate for decentralisation. Breaking free from Google Calendar is challenging due to its ingrained network effects and the varying technical abilities within groups.
+ZKal addresses our reliance on centralised calendar systems, particularly Google Calendar, even among those who advocate for decentralisation. Breaking free is challenging due to its ingrained network effects and the varying technical abilities within groups.
 
 ## Key Problems Addressed
 
