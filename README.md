@@ -14,7 +14,7 @@ ZKal addresses our reliance on centralised calendar systems, particularly Google
    
 3. **Data Sharing**: Sharing data with Google allows them to create detailed shadow profiles, including information about who you spend time with.
    
-4. **Political Centralisation**: SaaS tools' political/administrational centralisation assumptions creates opacity between teammates, by defaulting teams to opacity between each other, causing coordination issues and missed opportunities.
+4. **Political Centralisation**: SaaS tools' political/administrational centralisation assumptions creates silos between teammates, by defaulting teams to opacity between each other, causing coordination issues and missed opportunities.
 
 ## ZKal Solution
 ZKal is designed to support a decentralised approach, making it easier for tech community organisers to degoogle and regain control over their calendar data.
