@@ -15,9 +15,9 @@
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/adapter-node": "^5.0.1",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@sveltejs/adapter-node": "^5.4.0",
+		"@sveltejs/kit": "^2.48.3",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@types/eslint": "^8.56.0",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
@@ -25,8 +25,8 @@
 		"eyes": "^0.1.8",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
-		"svelte": "^4.2.7",
-		"vite": "^5.0.3",
+		"svelte": "^5.43.1",
+		"vite": "^7.1.12",
 		"vitest": "^1.2.0"
 	},
 	"type": "module",
