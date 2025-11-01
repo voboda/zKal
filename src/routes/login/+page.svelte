@@ -1,68 +1,69 @@
 <script>
-    import * as devalue from 'devalue';
-    import { Identity } from "@semaphore-protocol/identity"
-    import { Group } from "@semaphore-protocol/group"
-    import { id, groups } from "$lib/stores"
+  import { onMount } from 'svelte';
+  import { PUBLIC_ZUPASS_PASSPORT_URL, PUBLIC_ZUPASS_EVENT_SLUG } from '$env/static/public';
 
-    let hasID
-    $: hasID = $id.length > 4 
+  let pcd = '';
+  let verifying = false;
+  let errorMsg = '';
 
-    let hasGroups
-    $: hasGroups = $groups.length > 0
+  async function verify(pcdStr) {
+    verifying = true;
+    errorMsg = '';
+    try {
+      const res = await fetch('/auth/verify', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ pcd: pcdStr })
+      });
+      if (!res.ok) {
+        const t = await res.text();
+        throw new Error(t || 'verification failed');
+      }
+      // success
+      window.location.href = '/';
+    } catch (e) {
+      errorMsg = e?.message || String(e);
+    } finally {
+      verifying = false;
+    }
+  }
 
-    let groupname
+  function loginWithZupass() {
+    // Fallback: open Zupass; user can generate a proof for the event and paste it below.
+    const url = PUBLIC_ZUPASS_PASSPORT_URL || 'https://zupass.org';
+    window.open(url, '_blank', 'noopener');
+  }
 
-    function clear() {
-        //$id = devalue.stringify({})
-        $id = devalue.stringify({})
+  onMount(() => {
+    const params = new URLSearchParams(window.location.search);
+    const fromParam = params.get('pcd');
+    if (fromParam) {
+      // If Zupass redirected back with a serialized PCD
+      verify(fromParam);
     }
-    function create() {
-        const {commitment, nullifier, secret, trapdoor} = new Identity()
-        $id = devalue.stringify({commitment, nullifier, secret, trapdoor} )
-    }
-    function createGroup() {
-        const group = new Group([devalue.parse($id).commitment])
-        $groups.push(group)
-        $groups = $groups
-    }
-    function login() {
-        console.log(devalue.parse($id))
-    }
+  });
 </script>
 
 <div class="container">
-    <dialog open class="modal">
-        <article>
-            <header>
-                <h2>Login</h2>
-            </header>
-            {#if hasID}
-                <p>Hello {devalue.parse($id).nullifier} 
+  <dialog open class="modal">
+    <article>
+      <header>
+        <h2>Login with Zupass</h2>
+        <p>Required event: <code>{PUBLIC_ZUPASS_EVENT_SLUG}</code></p>
+      </header>
 
-                <div class="clear" on:click={() => clear()}>clear</div>
-                <h4>Your groups</h4>
-                {#if hasGroups}
-                    {#each groups as gr }
-                      {gr}
-                    {/each}
-                {/if}
-                <input name="groupname" bind:value={groupname} placeholder="The Spice Girls"  type="">
-                <button on:click={() => createGroup()}>New Group</button>
+      <button on:click={loginWithZupass} disabled={verifying}>Open Zupass</button>
+      <p>
+        After generating a proof for the required event in Zupass, paste the serialized proof here and verify.
+      </p>
 
-            {:else}
-                <button on:click={() => create()}>Create your key</button>
-            {/if}
+      <label for="pcd">Serialized PCD</label>
+      <textarea id="pcd" rows="6" bind:value={pcd} placeholder="Paste your Zupass proof (PCD) here"></textarea>
+      <button on:click={() => verify(pcd)} disabled={verifying || !pcd}>Verify proof</button>
 
-            
-
-            <form method="POST">
-                <input name="ID" bind:value={$id} type="hidden">
-                <button on:click={() => login()}>Login</button>
-            </form>
-        </article>
-    </dialog>
+      {#if errorMsg}
+        <p style="color: crimson;">{errorMsg}</p>
+      {/if}
+    </article>
+  </dialog>
 </div>
-
-<style>
-.clear {font-size: 80%; text-decoration: underline; color: red;}
-</style>
