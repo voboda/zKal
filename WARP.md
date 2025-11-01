@@ -4,7 +4,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-**zKal** is a freedom-respecting group calendar server that uses zero-knowledge proofs (Semaphore) to prove group membership without revealing user data. It's a self-hosted calendar proxy that aggregates multiple .ICS feeds (supporting gradual migration away from Google Calendar) and provides both a web UI and programmatic access to calendar events.
+**zKal** is a freedom-respecting group calendar server that aggregates multiple .ICS feeds and provides a web UI and programmatic access to events. Authentication uses Zupass proofs to verify membership in a configured event (e.g., ETHBERLIN04) without revealing user data.
 
 **Status**: Proof-of-concept for ethBerlin04 (not production-ready)
 
@@ -31,7 +31,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 - **Framework**: SvelteKit 2.x (Node adapter for containerized deployment)
 - **Frontend**: Svelte 4.x with `@event-calendar` for UI
 - **Backend**: Node.js with SvelteKit server-side functions
-- **Authentication**: Semaphore (zero-knowledge proofs) + zuAuth + zuPass
+- **Authentication**: Zupass Ticket PCD + server-side verification (legacy Semaphore code may remain in stores/UI)
 - **Calendar Parsing**: ical.js (parses .ICS feeds)
 - **Styling**: Pico CSS (minimal framework)
 
@@ -52,21 +52,30 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
    - Displays month/week/day/list views with event details in modal
    - Includes AddToCalendar component for exporting individual events
 
-### State Management
-- **Persistent Stores** (`src/lib/stores.js`):
-  - `id` – User's Semaphore identity (privateKey, publicKey, commitment, nullifier)
-  - `groups` – Array of Semaphore groups user belongs to
-  - Uses `svelte-persisted-store` for browser LocalStorage persistence
+4. **Auth Flow**:
+   - User visits `/login` and obtains a Zupass proof for the required event
+   - Client sends serialized PCD to `/auth/verify` (server)
+   - Server verifies proof and sets `zupass_session` httpOnly cookie
+   - `+layout.server.js` redirects unauthenticated users to `/login`
+   - `hooks.server.js` parses the session into `event.locals.user`
 
-### Authentication (Work-in-Progress)
-- **Login Flow** (`src/routes/login/+page.svelte`):
-  - Create Semaphore Identity (commitment, nullifier, secret, trapdoor)
-  - Create/join Groups and prove membership without revealing identity
-  - Submit ID via form to `src/routes/login/+page.server.js` (currently validates nullifier > 0)
-- **zuAuth Integration** (`src/lib/zuauth/`):
-  - Configurable proof verification (ethBerlin config exists)
-  - Server-side `authenticate()` function for validating zk proofs
-  - Note: Currently mostly commented out / in development
+### State Management
+- **Session**: httpOnly cookie `zupass_session` set by server after verification; parsed into `event.locals.user` in `src/hooks.server.js`.
+- **Persistent Stores** (`src/lib/stores.js`): legacy stores (`id`, `groups`) persisted via `svelte-persisted-store`; may be superseded by Zupass session.
+
+### Authentication (Zupass)
+- **Login UI** (`src/routes/login/+page.svelte`):
+  - Opens Zupass (configurable URL) and provides a textarea to paste a serialized proof (PCD)
+  - Auto-verifies if a `pcd` query param is present (for future redirect/deeplink flows)
+  - Sends `{ pcd: string }` via POST to `/auth/verify`
+- **Server Verification** (`src/routes/auth/verify/+server.js`):
+  - Verifies an EdDSA Ticket PCD using `@pcd/eddsa-ticket-pcd` (dynamic import)
+  - Ensures the proof’s event matches `PUBLIC_ZUPASS_EVENT_SLUG`
+  - On success, sets `zupass_session` and returns `{ ok: true }`
+  - Includes a development-only fallback parser if the dependency is not installed
+- **Route Protection**:
+  - `src/routes/+layout.server.js`: redirects to `/login` when `zupass_session` is missing (except on `/login`)
+  - `src/hooks.server.js`: populates `event.locals.user` from the session
 
 ### Configuration
 All configuration via environment variables (see `.env.sample`):
@@ -75,33 +84,56 @@ All configuration via environment variables (see `.env.sample`):
 - `PUBLIC_CACHE_TIME` – Cache TTL in milliseconds (default 600000 = 10min)
 - `PUBLIC_CALENDAR_URLS` – JSON array of calendars with `{url, color, name}` (must be valid .ICS URLs)
 - `PUBLIC_SIGNUP_LINK_PATTERNS` – JSON array of URL patterns to search for in event descriptions
+- `PUBLIC_ZUPASS_PASSPORT_URL` – Base URL to open Zupass (default `https://zupass.org`)
+- `PUBLIC_ZUPASS_EVENT_SLUG` – Required event/ticket group identifier (e.g., `ETHBERLIN04`), used by server verification
+
+Quickstart:
+- Copy `.env.sample` to `.env`, set `PUBLIC_ZUPASS_EVENT_SLUG`, and optionally `PUBLIC_ZUPASS_PASSPORT_URL`
+- Install dependencies: `npm install` (ensure `@pcd/eddsa-ticket-pcd` is installed)
+- Start dev: `npm run dev`
 
 ### Directory Structure (Excluding node_modules)
 ```
 src/
-├── routes/                    # SvelteKit file-based routing
-│   ├── +page.svelte          # Home/calendar view (main UI)
-│   ├── +page.js              # Data loading (transforms .ICS to calendar events)
-│   ├── +layout.server.js     # Unused layout hooks
+├── routes/
+│   ├── +page.svelte           # Home/calendar view (main UI)
+│   ├── +page.js               # Data loading for calendar UI
+│   ├── +layout.server.js      # Auth guard (redirects unauthenticated users to /login)
 │   ├── login/
-│   │   ├── +page.svelte      # Semaphore identity/group setup UI
-│   │   └── +page.server.js   # Login form handler
-│   ├── auth/+server.js       # zuAuth verification endpoint (commented out)
+│   │   ├── +page.svelte       # Zupass login UI (open Zupass / paste PCD / auto-verify)
+│   │   ├── +page.server.js    # Legacy server action (may be unused)
+│   │   └── +page.js           # Present in repo; not central to auth
+│   ├── auth/
+│   │   └── verify/+server.js  # POST /auth/verify – Zupass proof verification and session cookie
 │   └── feed/
-│       ├── ical/+server.js   # GET /feed/ical – Returns .ICS format
-│       └── json/+server.js   # GET /feed/json – Returns JSON format
+│       ├── ical/+server.js    # GET /feed/ical – Returns .ICS format
+│       └── json/+server.js    # GET /feed/json – Returns JSON format
 ├── lib/
-│   ├── fetchCalendar.js      # Core: fetches, parses, caches .ICS feeds
-│   ├── stores.js             # Persistent auth state (Semaphore ID, groups)
-│   ├── CalendarLegend.svelte # Legend UI component
-│   ├── AddToCalendar.svelte  # Export event to user's calendar
-│   └── zuauth/               # Zero-knowledge proof integration
-│       ├── index.js
-│       ├── server.js
-│       ├── zuauth.js
-│       └── configs/ethberlin.js
-├── hooks.server.js           # Server hooks (currently unused)
-└── app.html                  # HTML template
+│   ├── fetchCalendar.js       # Fetches, parses, caches .ICS feeds
+│   ├── stores.js              # Legacy persisted stores (id, groups)
+│   ├── CalendarLegend.svelte  # Legend UI component
+│   └── AddToCalendar.svelte   # Export event to user's calendar
+├── hooks.server.js            # Parses zupass_session into event.locals.user
+└── app.html                   # HTML template
+```
+
+## Zupass Server Verification Endpoint
+- Route: `POST /auth/verify`
+- Request body: `{ "pcd": "<serialized-EdDSA-Ticket-PCD>" }`
+- Responses:
+  - `200 { ok: true }`
+  - `400` – missing/invalid request body
+  - `401` – invalid proof or mismatched event
+  - `500` – server misconfiguration (e.g., `PUBLIC_ZUPASS_EVENT_SLUG` not set)
+- Notes:
+  - Uses `@pcd/eddsa-ticket-pcd` if installed (dynamic import). A dev-only fallback parser exists but should not be used in production.
+  - Sets `zupass_session` (httpOnly, sameSite=lax, secure in production).
+
+Example (replace <PCD>):
+```
+curl -sS -X POST http://localhost:5173/auth/verify \
+  -H 'content-type: application/json' \
+  -d '{"pcd":"<PCD>"}'
 ```
 
 ## Common Development Tasks
@@ -117,19 +149,20 @@ src/
 - The `eyes` package provides detailed logging in `fetchCalendar.js` for troubleshooting
 
 ### Modifying Authentication
-- Edit `src/routes/login/+page.svelte` for UI changes
-- Edit `src/routes/login/+page.server.js` for validation logic
-- Uncomment and fix `src/routes/auth/+server.js` to enable zuAuth verification
+- Update `src/routes/login/+page.svelte` for login UX
+- Server verification lives in `src/routes/auth/verify/+server.js`
+- Route protection is in `src/routes/+layout.server.js`; session parsing in `src/hooks.server.js`
 
 ### Testing the Full Flow
 - Run `npm run dev`
-- Navigate to `/login` to create identity and group
-- Return to `/` to see aggregated calendar
-- Check network tab to see requests to `/feed/json` and response structure
+- Navigate to `/login`, open Zupass, generate a proof for `PUBLIC_ZUPASS_EVENT_SLUG`, and paste it (or use future redirect flow)
+- On success, you’ll be redirected to `/` with a `zupass_session` cookie set
 
 ## Known Limitations & TODO Items
-- Authentication is incomplete (see commented zuAuth code)
-- No persistent RSVP storage beyond client-side state
+- Zupass client deep-link/popup flow is minimal; current UI relies on opening Zupass and pasting a PCD
+- Improve error handling/UX for failed proofs
+- Consider CSRF/rate-limiting for `/auth/verify`
+- Legacy Semaphore stores/UI remain; may be removed or integrated
+- Add tests for auth flow (unit + Playwright)
 - No multi-user/permission system yet
-- Semaphore group management is minimal
 - Calendar event syncing doesn't create/modify user calendars
