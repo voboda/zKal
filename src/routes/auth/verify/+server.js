@@ -1,78 +1,90 @@
-import { json, error } from '@sveltejs/kit';
+import { json } from "@sveltejs/kit";
+import { getConfig } from "$lib/server/zupassConfig.js";
+import {
+  entryMatchesPCD,
+  extractAttendee,
+  extractEventId,
+} from "$lib/server/policy/evaluator.js";
+import {
+  cookieName,
+  cookieOptions,
+  serializeSession,
+} from "$lib/server/session.js";
 
-// If available, use Zupass PCD packages to verify proofs server-side.
-// These imports are optional until you install the dependencies.
 let EdDSATicketPCDPackage;
 try {
-  // Dynamically import so build doesn't fail before deps are installed
-  ({ EdDSATicketPCDPackage } = await import('@pcd/eddsa-ticket-pcd'));
+  ({ EdDSATicketPCDPackage } = await import("@pcd/eddsa-ticket-pcd"));
 } catch (e) {
-  // noop; we'll fall back to a very weak structural check below
+  // noop; dev-only fallback below
 }
 
-export const POST = async ({ request, cookies, url }) => {
-  const body = await request.json().catch(() => ({}));
-  const { pcd } = body; // expected to be a serialized PCD string
-  if (!pcd || typeof pcd !== 'string') {
-    throw error(400, 'Missing pcd');
-  }
-
-  const requiredEvent = process.env.PUBLIC_ZUPASS_EVENT_SLUG;
-  if (!requiredEvent) {
-    throw error(500, 'Server misconfigured: PUBLIC_ZUPASS_EVENT_SLUG not set');
-  }
-
-  let ok = false;
-  let user = undefined;
-
-  if (EdDSATicketPCDPackage) {
-    try {
-      const deserialized = await EdDSATicketPCDPackage.deserialize(pcd);
-      ok = await EdDSATicketPCDPackage.verify(deserialized);
-      if (ok) {
-        // Extract event/ticket info from the proof claim
-        const claim = deserialized?.claim ?? deserialized?.proof?.claim;
-        const ticket = claim?.ticket ?? claim;
-        const eventId = ticket?.eventId || ticket?.eventID || ticket?.eventSlug;
-        if (!eventId || String(eventId) !== String(requiredEvent)) {
-          ok = false;
-        } else {
-          // Derive a minimal session object (avoid storing full PCD)
-          user = {
-            eventId: String(eventId),
-            attendee: ticket?.attendeeEmail || ticket?.holder || 'zupass-user'
-          };
-        }
-      }
-    } catch (e) {
-      ok = false;
+async function deserializeAndVerify(serialized) {
+  try {
+    if (!EdDSATicketPCDPackage)
+      throw new Error("EdDSATicketPCDPackage unavailable");
+    const pcd = await EdDSATicketPCDPackage.deserialize(serialized);
+    const ok = await EdDSATicketPCDPackage.verify(pcd);
+    if (!ok) throw new Error("verify=false");
+    return pcd;
+  } catch (err) {
+    if (process.env.NODE_ENV !== "production") {
+      try {
+        return JSON.parse(Buffer.from(serialized, "base64").toString("utf8"));
+      } catch {}
     }
-  } else {
-    // Fallback: very weak check to unblock local development without deps
-    // DO NOT use in production.
-    try {
-      const parsed = JSON.parse(Buffer.from(pcd, 'base64').toString('utf8'));
-      const eventId = parsed?.claim?.ticket?.eventId || parsed?.ticket?.eventId;
-      ok = String(eventId) === String(requiredEvent);
-      if (ok) {
-        user = { eventId: String(eventId), attendee: parsed?.claim?.ticket?.attendeeEmail || 'dev-user' };
-      }
-    } catch {}
+    throw err;
+  }
+}
+
+export const POST = async ({ request, cookies }) => {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return new Response("Invalid JSON body", { status: 400 });
+  }
+  const serialized = body?.pcd;
+  if (!serialized || typeof serialized !== "string") {
+    return new Response("Missing pcd", { status: 400 });
   }
 
-  if (!ok) {
-    throw error(401, 'Invalid or mismatched proof');
+  let cfg;
+  try {
+    cfg = await getConfig();
+  } catch (e) {
+    console.error("[auth] config error", e);
+    return new Response("Server config error", { status: 500 });
   }
 
-  // Issue a session cookie; value is a compact JSON string.
-  const session = Buffer.from(JSON.stringify(user)).toString('base64url');
-  cookies.set('zupass_session', session, {
-    path: '/',
-    httpOnly: true,
-    sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 60 * 60 * 24 // 1 day
-  });
+  let pcd;
+  try {
+    pcd = await deserializeAndVerify(serialized);
+  } catch (e) {
+    console.error("[auth] PCD verification failed:", e);
+    return new Response("Invalid or mismatched proof", { status: 401 });
+  }
+
+  let matched = null;
+  for (const entry of cfg) {
+    // eslint-disable-next-line no-await-in-loop
+    const ok = await entryMatchesPCD(entry, pcd);
+    if (ok) {
+      matched = entry;
+      break;
+    }
+  }
+  if (!matched)
+    return new Response("Invalid or mismatched proof", { status: 401 });
+
+  const attendee = extractAttendee(pcd);
+  const eventId = extractEventId(pcd) ?? null;
+  const session = {
+    user: { attendee },
+    matched: { id: matched.id, type: matched.type, event: eventId },
+  };
+
+  const secret = process.env.ZUPASS_SESSION_SECRET;
+  cookies.set(cookieName, serializeSession(session, secret), cookieOptions());
 
   return json({ ok: true });
 };

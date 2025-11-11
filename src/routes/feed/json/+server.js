@@ -1,4 +1,4 @@
-import { fetchCalendar } from '$lib/fetchCalendar';
+import { fetchCalendar } from "$lib/fetchCalendar";
 
 export async function GET(req) {
   const events = await fetchCalendar();
@@ -6,8 +6,7 @@ export async function GET(req) {
   return new Response(JSON.stringify(events), {
     status: 200,
     headers: {
-      'Content-Type': 'application/json'
-    }
+      "Content-Type": "application/json",
+    },
   });
 }
-

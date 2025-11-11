@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zupass Ticket Authority</title>
+    <script src="https://cdn.jsdelivr.net/npm/tweetnacl@1.0.3/nacl-fast.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .tab.active {
+            background: white;
+            color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: #10b981;
+        }
+
+        .btn-danger {
+            background: #ef4444;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 968px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .key-display {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            word-break: break-all;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .success {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .event-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .event-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .event-card p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .ticket-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .signature-valid {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #10b981;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Zupass Ticket Authority</h1>
+            <p>Complete ticket issuance system with EdDSA signing (TweetNaCl)</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('authority')">🔑 Authority Setup</button>
+            <button class="tab" onclick="switchTab('events')">📅 Events</button>
+            <button class="tab" onclick="switchTab('tickets')">🎫 Issue Tickets</button>
+            <button class="tab" onclick="switchTab('issued')">📋 Issued Tickets</button>
+        </div>
+
+        <!-- AUTHORITY SETUP TAB -->
+        <div id="authority" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="statKeys">0</div>
+                    <div class="stat-label">Keypairs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="statEvents">0</div>
+                    <div class="stat-label">Events</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="statTickets">0</div>
+                    <div class="stat-label">Tickets Issued</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Generate Authority Keypair</h2>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Generate an EdDSA keypair using TweetNaCl to sign tickets. Store the private key securely offline.
+                </p>
+                
+                <div class="form-group">
+                    <label for="authorityName">Authority Name</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="authorityName" placeholder="e.g., My Event Organization" style="flex: 1;">
+                        <button type="button" class="btn btn-secondary btn-small" onclick="fillAuthorityName()" style="white-space: nowrap;">
+                            🎲 Random
+                        </button>
+                    </div>
+                </div>
+
+                <button class="btn" onclick="generateKeypair()">Generate New Keypair</button>
+
+                <div id="keypairDisplay"></div>
+            </div>
+
+            <div class="card" id="existingKeysCard" style="display: none;">
+                <h2>Existing Keypairs</h2>
+                <div id="existingKeys"></div>
+            </div>
+        </div>
+
+        <!-- EVENTS TAB -->
+        <div id="events" class="tab-content">
+            <div class="card">
+                <h2>Create Event</h2>
+                <form id="eventForm">
+                    <div class="form-group">
+                        <label for="eventKeypair">Select Authority Keypair *</label>
+                        <select id="eventKeypair" required>
+                            <option value="">-- Select a keypair --</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <button type="button" class="btn btn-secondary btn-small" onclick="fillEventForm()">
+                            🎲 Generate Random Data
+                        </button>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label for="eventNameInput">Event Name *</label>
+                            <input type="text" id="eventNameInput" required placeholder="e.g., Zuzalu 2025">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventDate">Event Date *</label>
+                            <input type="date" id="eventDate" required>
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label for="eventVenue">Venue *</label>
+                            <input type="text" id="eventVenue" required placeholder="e.g., Montenegro">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="eventCapacity">Capacity</label>
+                            <input type="number" id="eventCapacity" placeholder="e.g., 500">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDescription">Description</label>
+                        <textarea id="eventDescription" placeholder="Event description..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Create Event</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Your Events</h2>
+                <div id="eventsList"></div>
+            </div>
+        </div>
+
+        <!-- ISSUE TICKETS TAB -->
+        <div id="tickets" class="tab-content">
+            <div class="card">
+                <h2>Issue Ticket</h2>
+                <form id="ticketForm">
+                    <div class="form-group">
+                        <label for="ticketEvent">Select Event *</label>
+                        <select id="ticketEvent" required>
+                            <option value="">-- Select an event --</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <button type="button" class="btn btn-secondary btn-small" onclick="fillTicketForm()">
+                            🎲 Generate Random Data
+                        </button>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label for="ticketType">Ticket Type *</label>
+                            <input type="text" id="ticketType" required placeholder="e.g., General Admission">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ticketPrice">Price (optional)</label>
+                            <input type="text" id="ticketPrice" placeholder="e.g., Free or $50">
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label for="attendeeName">Attendee Name *</label>
+                            <input type="text" id="attendeeName" required placeholder="e.g., John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attendeeEmail">Attendee Email *</label>
+                            <input type="email" id="attendeeEmail" required placeholder="e.g., john@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ticketNotes">Notes (optional)</label>
+                        <textarea id="ticketNotes" placeholder="Additional ticket information..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Issue Ticket (Sign with EdDSA)</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ISSUED TICKETS TAB -->
+        <div id="issued" class="tab-content">
+            <div class="card">
+                <h2>All Issued Tickets</h2>
+                <div id="issuedTicketsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let state = {
+            keypairs: JSON.parse(localStorage.getItem('zupass_keypairs') || '[]'),
+            events: JSON.parse(localStorage.getItem('zupass_events') || '[]'),
+            tickets: JSON.parse(localStorage.getItem('zupass_tickets') || '[]')
+        };
+
+        // Utility: Generate UUID
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+                const r = Math.random() * 16 | 0;
+                return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+        }
+
+        // Random data generators
+        const adjectives = ['Stellar', 'Cosmic', 'Quantum', 'Digital', 'Neon', 'Crystal', 'Mystic', 'Electric', 'Radiant', 'Luminous', 'Tranquil', 'Fierce', 'Ancient', 'Modern', 'Swift', 'Silent', 'Golden', 'Silver', 'Azure', 'Crimson', 'Emerald', 'Sapphire', 'Wandering', 'Dancing', 'Singing', 'Laughing', 'Soaring', 'Diving', 'Racing', 'Gliding', 'Blazing', 'Frozen', 'Molten', 'Twisted', 'Spiraling', 'Whirling', 'Drifting', 'Prowling', 'Leaping', 'Floating'];
+        const nouns = ['Meerkat', 'Penguin', 'Octopus', 'Phoenix', 'Dragon', 'Unicorn', 'Griffin', 'Raven', 'Wolf', 'Fox', 'Bear', 'Eagle', 'Hawk', 'Owl', 'Dolphin', 'Whale', 'Shark', 'Tiger', 'Lion', 'Panther', 'Serpent', 'Spider', 'Butterfly', 'Dragonfly', 'Mantis', 'Beetle', 'Florists', 'Architects', 'Artists', 'Poets', 'Hackers', 'Builders', 'Dreamers', 'Makers', 'Thinkers', 'Seekers', 'Explorers', 'Pioneers', 'Rebels', 'Mystics'];
+        const eventTypes = ['Conference', 'Camp', 'Con', 'Day', 'Days', 'Gathering', 'Retreat', 'Meetup', 'Summit', 'Forum', 'Festival'];
+        
+        const venues = ['Montenegro', 'Prague', 'Denver', 'Istanbul', 'Singapore', 'Lisbon', 'Berlin', 'Amsterdam', 'Tokyo', 'San Francisco'];
+        const descriptions = [
+            'Join us for an amazing gathering of builders and visionaries',
+            'A week-long event exploring the future of decentralization',
+            'Connect with the community and explore new ideas',
+            'Innovative talks and workshops on emerging technologies',
+            'Building the future together'
+        ];
+        const ticketTypes = ['General Admission', 'VIP Pass', 'Early Bird', 'Student Ticket', 'Organizer Pass', 'Speaker Pass', 'Sponsor Pass'];
+        const firstNames = ['Alice', 'Bob', 'Charlie', 'David', 'Emma', 'Frank', 'Grace', 'Henry', 'Iris', 'Jack', 'Kate', 'Leo', 'Maria', 'Nathan', 'Olivia'];
+        const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez', 'Chen', 'Wang', 'Kumar', 'Patel'];
+        const domains = ['gmail.com', 'proton.me', 'outlook.com', 'hey.com', 'fastmail.com'];
+        const authorities = ['Crypto Events Inc', 'BlockChain Organizers', 'Web3 Foundation', 'DeFi Events', 'NFT Conference Group', 'DAO Events Co', 'Zuzalu Organizers', 'ETH Events', 'Decentraland Events', 'Metaverse Gatherings'];
+
+        function randomChoice(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function generateRandomEventName() {
+            const adj = randomChoice(adjectives);
+            const noun = randomChoice(nouns);
+            const type = randomChoice(eventTypes);
+            return `${adj} ${noun} ${type}`;
+        }
+
+        function randomDate() {
+            const start = new Date();
+            const end = new Date();
+            end.setMonth(end.getMonth() + 6);
+            const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+            return date.toISOString().split('T')[0];
+        }
+
+        function fillAuthorityName() {
+            document.getElementById('authorityName').value = randomChoice(authorities);
+        }
+
+        function fillEventForm() {
+            document.getElementById('eventNameInput').value = generateRandomEventName();
+            document.getElementById('eventDate').value = randomDate();
+            document.getElementById('eventVenue').value = randomChoice(venues);
+            document.getElementById('eventCapacity').value = Math.floor(Math.random() * 8) + 3; // 3-10
+            document.getElementById('eventDescription').value = randomChoice(descriptions);
+        }
+
+        function fillTicketForm() {
+            document.getElementById('ticketType').value = randomChoice(ticketTypes);
+            const prices = ['Free', '$50', '$100', '$250', '$500', '0.1 ETH'];
+            document.getElementById('ticketPrice').value = randomChoice(prices);
+            
+            const firstName = randomChoice(firstNames);
+            const lastName = randomChoice(lastNames);
+            document.getElementById('attendeeName').value = `${firstName} ${lastName}`;
+            document.getElementById('attendeeEmail').value = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@${randomChoice(domains)}`;
+            
+            const notes = ['VIP access', 'Early supporter', 'Speaker discount applied', 'Student rate', ''];
+            document.getElementById('ticketNotes').value = randomChoice(notes);
+        }
+
+        // Utility: Convert bytes to hex
+        function bytesToHex(bytes) {
+            return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Utility: Convert hex to bytes
+        function hexToBytes(hex) {
+            const bytes = new Uint8Array(hex.length / 2);
+            for (let i = 0; i < hex.length; i += 2) {
+                bytes[i / 2] = parseInt(hex.substr(i, 2), 16);
+            }
+            return bytes;
+        }
+
+        // Split public key for ZuAuth format (two 32-byte parts as hex strings)
+        function splitPublicKeyForZuAuth(publicKeyHex) {
+            // Ed25519 public keys are 32 bytes, but TweetNaCl might return different format
+            // For ZuAuth, we need to split into two parts
+            const half = Math.floor(publicKeyHex.length / 2);
+            return [
+                publicKeyHex.substring(0, half),
+                publicKeyHex.substring(half)
+            ];
+        }
+
+        // Generate EdDSA Keypair
+        function generateKeypair() {
+            const authorityName = document.getElementById('authorityName').value || 'Unnamed Authority';
+            
+            // Generate EdDSA keypair using TweetNaCl
+            const keyPair = nacl.sign.keyPair();
+
+            const keypair = {
+                id: generateUUID(),
+                name: authorityName,
+                privateKey: bytesToHex(keyPair.secretKey),
+                publicKey: bytesToHex(keyPair.publicKey),
+                created: new Date().toISOString()
+            };
+
+            state.keypairs.push(keypair);
+            saveState();
+            
+            displayNewKeypair(keypair);
+            updateStats();
+            refreshSelects();
+        }
+
+        // Display newly generated keypair
+        function displayNewKeypair(keypair) {
+            const publicKeyParts = splitPublicKeyForZuAuth(keypair.publicKey);
+            
+            document.getElementById('keypairDisplay').innerHTML = `
+                <div class="success">
+                    <h3>✅ Keypair Generated Successfully</h3>
+                    <p><strong>Authority:</strong> ${keypair.name}</p>
+                    <p><strong>Created:</strong> ${new Date(keypair.created).toLocaleString()}</p>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ Important:</strong> Save your private key securely offline. Anyone with this key can issue tickets.
+                </div>
+
+                <div class="form-group">
+                    <label>Public Key (full)</label>
+                    <div class="key-display">${keypair.publicKey}</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Public Key (ZuAuth format - split)</label>
+                    <div class="key-display">
+                        Part 1: ${publicKeyParts[0]}<br>
+                        Part 2: ${publicKeyParts[1]}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Private Key (keep secret!)</label>
+                    <div class="key-display" style="background: #fee; color: #c00;">${keypair.privateKey}</div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary btn-small" onclick="downloadKeypair('${keypair.id}')">
+                        Download Keypair
+                    </button>
+                    <button class="btn btn-small" onclick="copyPublicKey('${keypair.publicKey}')">
+                        Copy Public Key
+                    </button>
+                    <button class="btn btn-small" onclick="copyZuAuthPublicKey('${keypair.publicKey}')">
+                        Copy ZuAuth Format
+                    </button>
+                </div>
+            `;
+
+            renderExistingKeys();
+        }
+
+        // Render existing keypairs
+        function renderExistingKeys() {
+            if (state.keypairs.length === 0) {
+                document.getElementById('existingKeysCard').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('existingKeysCard').style.display = 'block';
+            document.getElementById('existingKeys').innerHTML = state.keypairs.map(kp => `
+                <div class="event-card">
+                    <div class="flex-between">
+                        <div>
+                            <h3>${kp.name}</h3>
+                            <p><small>Created: ${new Date(kp.created).toLocaleString()}</small></p>
+                        </div>
+                        <button class="btn btn-danger btn-small" onclick="deleteKeypair('${kp.id}')">Delete</button>
+                    </div>
+                    <p style="margin-top: 10px;"><strong>Public Key:</strong></p>
+                    <code style="display: block; word-break: break-all; margin-top: 5px;">${kp.publicKey}</code>
+                </div>
+            `).join('');
+        }
+
+        // Create Event
+        document.getElementById('eventForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const event = {
+                id: generateUUID(),
+                keypairId: document.getElementById('eventKeypair').value,
+                name: document.getElementById('eventNameInput').value,
+                date: document.getElementById('eventDate').value,
+                venue: document.getElementById('eventVenue').value,
+                capacity: document.getElementById('eventCapacity').value || null,
+                description: document.getElementById('eventDescription').value,
+                created: new Date().toISOString(),
+                ticketsIssued: 0
+            };
+
+            state.events.push(event);
+            saveState();
+            
+            this.reset();
+            switchTab('events');
+            renderEvents();
+            updateStats();
+            refreshSelects();
+
+            alert('✅ Event created successfully!');
+        });
+
+        // Render events
+        function renderEvents() {
+            const container = document.getElementById('eventsList');
+            
+            if (state.events.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>No events created yet. Create your first event above.</p></div>';
+                return;
+            }
+
+            container.innerHTML = state.events.map(event => {
+                const keypair = state.keypairs.find(kp => kp.id === event.keypairId);
+                return `
+                    <div class="event-card">
+                        <div class="flex-between">
+                            <div>
+                                <h3>${event.name}</h3>
+                                <p><strong>Date:</strong> ${new Date(event.date).toLocaleDateString()}</p>
+                                <p><strong>Venue:</strong> ${event.venue}</p>
+                                ${event.capacity ? `<p><strong>Capacity:</strong> ${event.capacity}</p>` : ''}
+                                <p><strong>Authority:</strong> ${keypair?.name || 'Unknown'}</p>
+                                <p><strong>Tickets Issued:</strong> ${event.ticketsIssued}</p>
+                            </div>
+                            <div>
+                                <button class="btn btn-danger btn-small" onclick="deleteEvent('${event.id}')">Delete</button>
+                            </div>
+                        </div>
+                        ${event.description ? `<p style="margin-top: 10px;">${event.description}</p>` : ''}
+                        <div style="margin-top: 10px;">
+                            <code>Event ID: ${event.id}</code>
+                        </div>
+                        <div class="button-group" style="margin-top: 15px;">
+                            <button class="btn btn-secondary btn-small" onclick="downloadZuAuthConfig('${event.id}')">
+                                📋 Export ZuAuth Config
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Issue Ticket with EdDSA Signature
+        document.getElementById('ticketForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const eventId = document.getElementById('ticketEvent').value;
+            const event = state.events.find(e => e.id === eventId);
+            const keypair = state.keypairs.find(kp => kp.id === event.keypairId);
+
+            if (!event || !keypair) {
+                alert('❌ Event or keypair not found');
+                return;
+            }
+
+            // Create ticket data
+            const ticketId = generateUUID();
+            const productId = generateUUID();
+            const timestamp = Date.now();
+
+            const ticketData = {
+                ticketId,
+                eventId: event.id,
+                productId,
+                eventName: event.name,
+                productName: document.getElementById('ticketType').value,
+                attendeeName: document.getElementById('attendeeName').value,
+                attendeeEmail: document.getElementById('attendeeEmail').value,
+                price: document.getElementById('ticketPrice').value || 'Free',
+                notes: document.getElementById('ticketNotes').value,
+                timestamp,
+                issuedAt: new Date().toISOString()
+            };
+
+            // Create message to sign (JSON of ticket data)
+            const message = JSON.stringify({
+                ticketId: ticketData.ticketId,
+                eventId: ticketData.eventId,
+                productId: ticketData.productId,
+                attendeeEmail: ticketData.attendeeEmail,
+                timestamp: ticketData.timestamp
+            });
+
+            // Sign with EdDSA using TweetNaCl
+            const messageBytes = new TextEncoder().encode(message);
+            const secretKeyBytes = hexToBytes(keypair.privateKey);
+            const signature = nacl.sign.detached(messageBytes, secretKeyBytes);
+
+            // Create PCD structure
+            const pcd = {
+                type: 'eddsa-ticket-pcd',
+                claim: ticketData,
+                proof: {
+                    signature: bytesToHex(signature),
+                    publicKey: keypair.publicKey
+                }
+            };
+
+            // Store ticket
+            const ticket = {
+                ...ticketData,
+                pcd,
+                authorityName: keypair.name,
+                signedMessage: message
+            };
+
+            state.tickets.push(ticket);
+            
+            // Update event ticket count
+            event.ticketsIssued++;
+            
+            saveState();
+            
+            this.reset();
+            switchTab('issued');
+            renderIssuedTickets();
+            updateStats();
+
+            alert('✅ Ticket issued and signed successfully!');
+        });
+
+        // Render issued tickets
+        function renderIssuedTickets() {
+            const container = document.getElementById('issuedTicketsList');
+            
+            if (state.tickets.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>No tickets issued yet.</p></div>';
+                return;
+            }
+
+            container.innerHTML = state.tickets.map(ticket => `
+                <div class="ticket-card">
+                    <div class="flex-between">
+                        <div>
+                            <h3>${ticket.eventName}</h3>
+                            <span class="badge">${ticket.productName}</span>
+                        </div>
+                        <span class="signature-valid">✓ Signed</span>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <p><strong>Attendee:</strong> ${ticket.attendeeName}</p>
+                        <p><strong>Email:</strong> ${ticket.attendeeEmail}</p>
+                        <p><strong>Price:</strong> ${ticket.price}</p>
+                        <p><strong>Issued:</strong> ${new Date(ticket.issuedAt).toLocaleString()}</p>
+                        <p><strong>Authority:</strong> ${ticket.authorityName}</p>
+                    </div>
+
+                    ${ticket.notes ? `<p><em>${ticket.notes}</em></p>` : ''}
+
+                    <details style="margin-top: 15px;">
+                        <summary style="cursor: pointer; font-weight: 600;">View PCD Details</summary>
+                        <div class="key-display" style="margin-top: 10px;">
+                            <p><strong>Ticket ID:</strong> ${ticket.ticketId}</p>
+                            <p><strong>Event ID:</strong> ${ticket.eventId}</p>
+                            <p><strong>Product ID:</strong> ${ticket.productId}</p>
+                            <p style="margin-top: 10px;"><strong>Public Key:</strong></p>
+                            <p style="word-break: break-all;">${ticket.pcd.proof.publicKey}</p>
+                            <p style="margin-top: 10px;"><strong>Signature:</strong></p>
+                            <p style="word-break: break-all;">${ticket.pcd.proof.signature}</p>
+                        </div>
+                    </details>
+
+                    <div class="button-group">
+                        <button class="btn btn-secondary btn-small" onclick="downloadTicket('${ticket.ticketId}')">
+                            Download PCD
+                        </button>
+                        <button class="btn btn-secondary btn-small" onclick="downloadZuAuthTicket('${ticket.ticketId}')">
+                            📋 ZuAuth Format
+                        </button>
+                        <button class="btn btn-small" onclick="verifyTicket('${ticket.ticketId}')">
+                            Verify Signature
+                        </button>
+                        <button class="btn btn-danger btn-small" onclick="deleteTicket('${ticket.ticketId}')">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Verify ticket signature
+        function verifyTicket(ticketId) {
+            const ticket = state.tickets.find(t => t.ticketId === ticketId);
+            if (!ticket) return;
+
+            try {
+                const messageBytes = new TextEncoder().encode(ticket.signedMessage);
+                const signatureBytes = hexToBytes(ticket.pcd.proof.signature);
+                const publicKeyBytes = hexToBytes(ticket.pcd.proof.publicKey);
+
+                const isValid = nacl.sign.detached.verify(messageBytes, signatureBytes, publicKeyBytes);
+
+                if (isValid) {
+                    alert('✅ Signature is VALID!\n\nThis ticket was legitimately signed by the authority.');
+                } else {
+                    alert('❌ Signature is INVALID!\n\nThis ticket may have been tampered with.');
+                }
+            } catch (error) {
+                alert('❌ Verification failed: ' + error.message);
+            }
+        }
+
+        // Download functions
+        function downloadKeypair(keypairId) {
+            const keypair = state.keypairs.find(kp => kp.id === keypairId);
+            if (!keypair) return;
+
+            const data = {
+                name: keypair.name,
+                publicKey: keypair.publicKey,
+                privateKey: keypair.privateKey,
+                created: keypair.created,
+                warning: 'Keep private key secure! Anyone with it can issue tickets.'
+            };
+
+            downloadJSON(data, `keypair_${keypair.name.replace(/\s+/g, '_')}.json`);
+        }
+
+        function downloadTicket(ticketId) {
+            const ticket = state.tickets.find(t => t.ticketId === ticketId);
+            if (!ticket) return;
+
+            downloadJSON(ticket.pcd, `ticket_${ticket.ticketId.substring(0, 8)}.json`);
+        }
+
+        function downloadZuAuthConfig(eventId) {
+            const event = state.events.find(e => e.id === eventId);
+            if (!event) return;
+
+            const keypair = state.keypairs.find(kp => kp.id === event.keypairId);
+            if (!keypair) return;
+
+            const publicKeyParts = splitPublicKeyForZuAuth(keypair.publicKey);
+
+            const config = {
+                pcdType: "eddsa-ticket-pcd",
+                publicKey: publicKeyParts,
+                eventId: event.id,
+                eventName: event.name
+            };
+
+            downloadJSON([config], `zuauth_config_${event.name.replace(/\s+/g, '_')}.json`);
+        }
+
+        function downloadZuAuthTicket(ticketId) {
+            const ticket = state.tickets.find(t => t.ticketId === ticketId);
+            if (!ticket) return;
+
+            const event = state.events.find(e => e.id === ticket.eventId);
+            const keypair = state.keypairs.find(kp => kp.id === event?.keypairId);
+            if (!keypair) return;
+
+            const publicKeyParts = splitPublicKeyForZuAuth(keypair.publicKey);
+
+            // Format as ZuAuth-compatible eddsa-ticket-pcd
+            const zuauthTicket = {
+                type: "eddsa-ticket-pcd",
+                pcd: {
+                    type: "eddsa-ticket-pcd",
+                    id: ticket.ticketId,
+                    claim: {
+                        ticket: {
+                            ticketId: ticket.ticketId,
+                            eventId: ticket.eventId,
+                            productId: ticket.productId,
+                            timestampConsumed: 0,
+                            timestampSigned: ticket.timestamp,
+                            attendeeSemaphoreId: "0", // Would be real semaphore ID in production
+                            isConsumed: false,
+                            isRevoked: false,
+                            ticketCategory: 0,
+                            attendeeEmail: ticket.attendeeEmail,
+                            attendeeName: ticket.attendeeName,
+                            eventName: ticket.eventName,
+                            ticketName: ticket.productName,
+                            checkerEmail: null
+                        },
+                        signer: publicKeyParts
+                    },
+                    proof: {
+                        signature: ticket.pcd.proof.signature,
+                        publicKey: publicKeyParts
+                    }
+                }
+            };
+
+            downloadJSON(zuauthTicket, `zuauth_ticket_${ticket.ticketId.substring(0, 8)}.json`);
+        }
+
+        function downloadJSON(data, filename) {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Delete functions
+        function deleteKeypair(keypairId) {
+            if (!confirm('Delete this keypair? Events and tickets using it will remain but you won\'t be able to issue new tickets.')) return;
+            state.keypairs = state.keypairs.filter(kp => kp.id !== keypairId);
+            saveState();
+            renderExistingKeys();
+            updateStats();
+            refreshSelects();
+        }
+
+        function deleteEvent(eventId) {
+            if (!confirm('Delete this event?')) return;
+            state.events = state.events.filter(e => e.id !== eventId);
+            saveState();
+            renderEvents();
+            updateStats();
+            refreshSelects();
+        }
+
+        function deleteTicket(ticketId) {
+            if (!confirm('Delete this ticket?')) return;
+            state.tickets = state.tickets.filter(t => t.ticketId !== ticketId);
+            saveState();
+            renderIssuedTickets();
+            updateStats();
+        }
+
+        // Copy to clipboard
+        function copyPublicKey(publicKey) {
+            navigator.clipboard.writeText(publicKey).then(() => {
+                alert('✅ Public key copied to clipboard!');
+            });
+        }
+
+        function copyZuAuthPublicKey(publicKey) {
+            const parts = splitPublicKeyForZuAuth(publicKey);
+            const zuauthFormat = JSON.stringify(parts, null, 2);
+            navigator.clipboard.writeText(zuauthFormat).then(() => {
+                alert('✅ Public key (ZuAuth format) copied to clipboard!');
+            });
+        }
+
+        // Tab switching
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Find and activate the correct tab button
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach((tab, index) => {
+                const tabNames = ['authority', 'events', 'tickets', 'issued'];
+                if (tabNames[index] === tabName) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            document.getElementById(tabName).classList.add('active');
+
+            // Auto-fill forms with random data
+            if (tabName === 'authority') {
+                fillAuthorityName();
+            } else if (tabName === 'events') {
+                fillEventForm();
+            } else if (tabName === 'tickets') {
+                fillTicketForm();
+            }
+        }
+
+        // Refresh select dropdowns
+        function refreshSelects() {
+            // Event keypair select
+            const eventKeypairSelect = document.getElementById('eventKeypair');
+            eventKeypairSelect.innerHTML = '<option value="">-- Select a keypair --</option>' +
+                state.keypairs.map(kp => `<option value="${kp.id}">${kp.name}</option>`).join('');
+
+            // Ticket event select
+            const ticketEventSelect = document.getElementById('ticketEvent');
+            ticketEventSelect.innerHTML = '<option value="">-- Select an event --</option>' +
+                state.events.map(event => `<option value="${event.id}">${event.name} - ${new Date(event.date).toLocaleDateString()}</option>`).join('');
+        }
+
+        // Update statistics
+        function updateStats() {
+            document.getElementById('statKeys').textContent = state.keypairs.length;
+            document.getElementById('statEvents').textContent = state.events.length;
+            document.getElementById('statTickets').textContent = state.tickets.length;
+        }
+
+        // Save state to localStorage
+        function saveState() {
+            localStorage.setItem('zupass_keypairs', JSON.stringify(state.keypairs));
+            localStorage.setItem('zupass_events', JSON.stringify(state.events));
+            localStorage.setItem('zupass_tickets', JSON.stringify(state.tickets));
+        }
+
+        // Initialize
+        renderExistingKeys();
+        renderEvents();
+        renderIssuedTickets();
+        refreshSelects();
+        updateStats();
+        fillAuthorityName();
+        fillEventForm();
+        fillTicketForm();
+    </script>
+</body>
+</html>
