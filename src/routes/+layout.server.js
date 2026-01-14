@@ -1,10 +1,21 @@
-import { redirect } from "@sveltejs/kit";
+import { redirect } from '@sveltejs/kit';
 
-export const load = async ({ cookies, url }) => {
-  const isLogin = url.pathname === "/login";
-  const session = cookies.get("zupass_session");
+export const load = async ({ cookies, url, locals }) => {
+  const isLogin = url.pathname === '/login';
+  const session = cookies.get('pod_session');
+  
+  // If not on login page and no session, redirect to login
   if (!isLogin && !session) {
-    throw redirect(307, "/login");
+    throw redirect(307, '/login');
   }
-  return {};
+  
+  // If on login page and already have session, redirect to home
+  if (isLogin && session && locals.user) {
+    throw redirect(307, '/');
+  }
+  
+  return {
+    user: locals.user,
+    tickets: locals.tickets || []
+  };
 };

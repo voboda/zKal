@@ -1,7 +1,11 @@
-import { json } from "@sveltejs/kit";
-import { getConfig, getPublicEntries } from "$lib/server/zupassConfig.js";
+import { json } from '@sveltejs/kit';
 
 export async function GET() {
-  const cfg = await getConfig();
-  return json({ entries: getPublicEntries(cfg) });
+  // For now, return a simple config
+  // In the future, we might want to fetch POD-based config
+  return json({
+    entries: [],
+    podEnabled: true,
+    version: '1.0.0'
+  });
 }

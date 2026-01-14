@@ -1,23 +1,23 @@
-import { cookieName, parseSession } from "$lib/server/session.js";
+import { validatePODSession } from '$lib/server/podAuth.js';
+
+const cookieName = 'pod_session';
+const secret = process.env.SESSION_SECRET || process.env.ZUPASS_SESSION_SECRET || 'dev-secret-change-in-production';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
   const raw = event.cookies.get(cookieName);
   event.locals.user = null;
+  event.locals.tickets = [];
 
   if (raw) {
-    const { session, reason } = parseSession(
-      raw,
-      process.env.ZUPASS_SESSION_SECRET,
-    );
-    if (session?.user) {
+    const { valid, session, reason } = await validatePODSession(raw, secret);
+    if (valid && session?.user) {
       event.locals.user = session.user;
-      event.locals.matched = session.matched;
+      event.locals.tickets = session.tickets || [];
     } else {
-      if (reason && reason !== "empty")
-        console.warn("[auth] invalid session cookie:", reason);
-      event.cookies.delete(cookieName, { path: "/" });
+      console.log('Invalid session:', reason);
     }
   }
+
   return resolve(event);
 }

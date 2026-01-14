@@ -1,104 +1,116 @@
 <script>
-	import { onMount } from 'svelte';
-	import { PUBLIC_ZUPASS_PASSPORT_URL } from '$env/static/public';
-	import { connectToZupass } from '$lib/pod.js';
-
-	let pcd = '';
-	let verifying = false;
-	let errorMsg = '';
-	let entries = [];
-	let loading = true;
-
-	async function verify(pcdStr) {
-		verifying = true;
-		errorMsg = '';
-		try {
-			const res = await fetch('/auth/verify', {
-				method: 'POST',
-				headers: { 'content-type': 'application/json' },
-				body: JSON.stringify({ pcd: pcdStr })
-			});
-			if (!res.ok) {
-				const t = await res.text();
-				throw new Error(t || 'verification failed');
-			}
-			window.location.href = '/';
-		} catch (e) {
-			errorMsg = e?.message || String(e);
-		} finally {
-			verifying = false;
-		}
-	}
-
-	function loginWithZupass() {
-		const url = PUBLIC_ZUPASS_PASSPORT_URL || 'https://zupass.org';
-		window.open(url, '_blank', 'noopener');
-	}
-
-	onMount(async () => {
-		try {
-			// Connect to Zupass on the client side
-			await connectToZupass();
-		} catch (err) {
-			console.warn("[pod] failed to connect to Zupass:", err.message);
-		}
-
-		try {
-			const res = await fetch('/auth/config');
-			const data = await res.json();
-			entries = data?.entries ?? [];
-		} catch (e) {
-			console.error('Failed to load allowed entries:', e);
-		} finally {
-			loading = false;
-		}
-
-		const params = new URLSearchParams(window.location.search);
-		const fromParam = params.get('pcd');
-		if (fromParam) {
-			verify(fromParam);
-		}
-	});
+  import { onMount } from 'svelte';
+  import { connectToZupass, queryTickets, getState } from '$lib/pod.js';
+  import { goto } from '$app/navigation';
+  
+  let connecting = false;
+  let error = null;
+  let success = false;
+  let userPublicKey = null;
+  let tickets = [];
+  
+  async function handlePODLogin() {
+    try {
+      connecting = true;
+      error = null;
+      
+      // Connect to Zupass
+      const element = document.getElementById('zupass-connector');
+      userPublicKey = await connectToZupass(element);
+      
+      if (!userPublicKey) {
+        throw new Error('Failed to connect to Zupass');
+      }
+      
+      // Query tickets
+      tickets = await queryTickets([userPublicKey]);
+      
+      if (tickets.length === 0) {
+        throw new Error('No tickets found for this account');
+      }
+      
+      // Create session data
+      const sessionData = {
+        user: {
+          publicKey: userPublicKey,
+          email: 'pod-user@example.com',
+          name: 'POD User'
+        },
+        tickets: tickets.map(ticket => ({
+          id: ticket.entries?.ticket_id?.value || 'unknown',
+          eventId: ticket.entries?.event_id?.value || 'unknown',
+          eventName: ticket.entries?.event_name?.value || 'Unknown Event'
+        })),
+        connectedAt: Date.now()
+      };
+      
+      // Submit to server
+      const formData = new FormData();
+      formData.append('sessionData', JSON.stringify(sessionData));
+      
+      const response = await fetch('/login', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (response.ok) {
+        success = true;
+        goto('/');
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || 'Login failed');
+      }
+    } catch (err) {
+      error = err.message;
+      console.error('POD login error:', err);
+    } finally {
+      connecting = false;
+    }
+  }
 </script>
 
-<div class="container">
-	<dialog open class="modal">
-		<article>
-			<header>
-				<h2>Login with Zupass</h2>
-				{#if loading}
-					<p>Loading allowed entries…</p>
-				{:else if entries.length > 0}
-					<p>You may log in with any of the following:</p>
-					<ul>
-						{#each entries as entry}
-							<li><strong>{entry.label}</strong></li>
-						{/each}
-					</ul>
-				{:else}
-					<p style="color: crimson;">No allowed entries configured.</p>
-				{/if}
-			</header>
-
-			<button on:click={loginWithZupass} disabled={verifying || loading}>Open Zupass</button>
-			<p>
-				After generating a proof in Zupass, paste the serialized PCD here and verify.
-			</p>
-
-			<label for="pcd">Serialized PCD</label>
-			<textarea
-				id="pcd"
-				rows="6"
-				bind:value={pcd}
-				placeholder="Paste your Zupass proof (PCD) here"
-			></textarea>
-			<button on:click={() => verify(pcd)} disabled={verifying || loading || !pcd}
-				>Verify proof</button
-			>
-
-			{#if errorMsg}
-				<p style="color: crimson;">{errorMsg}</p>
-			{/if}
-		</article>
-	</dialog>
-</div>
+<main class="container">
+  <h1>Login with POD Tickets</h1>
+  
+  {#if error}
+    <div class="error">
+      <p><strong>Error:</strong> {error}</p>
+    </div>
+  {/if}
+  
+  {#if success}
+    <div class="success">
+      <p>Login successful! Redirecting...</p>
+    </div>
+  {:else}
+    <div>
+      <p>Connect to Zupass to access your POD tickets:</p>
+      <div id="zupass-connector"></div>
+      <button 
+        on:click={handlePODLogin} 
+        disabled={connecting}
+        class="primary"
+      >
+        {connecting ? 'Connecting...' : 'Connect with Zupass'}
+      </button>
+    </div>
+  {/if}
+  
+  <style>
+    .error {
+      color: red;
+      padding: 1rem;
+      border: 1px solid red;
+      margin-bottom: 1rem;
+    }
+    .success {
+      color: green;
+      padding: 1rem;
+      border: 1px solid green;
+      margin-bottom: 1rem;
+    }
+    button {
+      margin-top: 1rem;
+    }
+  </style>
+</main>
