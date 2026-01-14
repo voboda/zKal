@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { PUBLIC_ZUPASS_PASSPORT_URL } from '$env/static/public';
+	import { connectToZupass } from '$lib/pod.js';
 
 	let pcd = '';
 	let verifying = false;
@@ -35,6 +36,13 @@
 	}
 
 	onMount(async () => {
+		try {
+			// Connect to Zupass on the client side
+			await connectToZupass();
+		} catch (err) {
+			console.warn("[pod] failed to connect to Zupass:", err.message);
+		}
+
 		try {
 			const res = await fetch('/auth/config');
 			const data = await res.json();
