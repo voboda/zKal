@@ -83,7 +83,7 @@
 				rows="6"
 				bind:value={pcd}
 				placeholder="Paste your Zupass proof (PCD) here"
-			/>
+			></textarea>
 			<button on:click={() => verify(pcd)} disabled={verifying || loading || !pcd}
 				>Verify proof</button
 			>
