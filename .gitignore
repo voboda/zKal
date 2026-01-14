@@ -20,3 +20,4 @@ symlink-from
 .idea/
 _tmp_flaky_test_output.txt
 .cache
+.aider*

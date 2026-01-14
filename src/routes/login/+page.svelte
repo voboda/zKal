@@ -1,68 +1,116 @@
 <script>
-    import * as devalue from 'devalue';
-    import { Identity } from "@semaphore-protocol/identity"
-    import { Group } from "@semaphore-protocol/group"
-    import { id, groups } from "$lib/stores"
-
-    let hasID
-    $: hasID = $id.length > 4 
-
-    let hasGroups
-    $: hasGroups = $groups.length > 0
-
-    let groupname
-
-    function clear() {
-        //$id = devalue.stringify({})
-        $id = devalue.stringify({})
+  import { onMount } from 'svelte';
+  import { connectToZupass, queryTickets, getState } from '$lib/pod.js';
+  import { goto } from '$app/navigation';
+  
+  let connecting = false;
+  let error = null;
+  let success = false;
+  let userPublicKey = null;
+  let tickets = [];
+  
+  async function handlePODLogin() {
+    try {
+      connecting = true;
+      error = null;
+      
+      // Connect to Zupass
+      const element = document.getElementById('zupass-connector');
+      userPublicKey = await connectToZupass(element);
+      
+      if (!userPublicKey) {
+        throw new Error('Failed to connect to Zupass');
+      }
+      
+      // Query tickets
+      tickets = await queryTickets([userPublicKey]);
+      
+      if (tickets.length === 0) {
+        throw new Error('No tickets found for this account');
+      }
+      
+      // Create session data
+      const sessionData = {
+        user: {
+          publicKey: userPublicKey,
+          email: 'pod-user@example.com',
+          name: 'POD User'
+        },
+        tickets: tickets.map(ticket => ({
+          id: ticket.entries?.ticket_id?.value || 'unknown',
+          eventId: ticket.entries?.event_id?.value || 'unknown',
+          eventName: ticket.entries?.event_name?.value || 'Unknown Event'
+        })),
+        connectedAt: Date.now()
+      };
+      
+      // Submit to server
+      const formData = new FormData();
+      formData.append('sessionData', JSON.stringify(sessionData));
+      
+      const response = await fetch('/login', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (response.ok) {
+        success = true;
+        goto('/');
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || 'Login failed');
+      }
+    } catch (err) {
+      error = err.message;
+      console.error('POD login error:', err);
+    } finally {
+      connecting = false;
     }
-    function create() {
-        const {commitment, nullifier, secret, trapdoor} = new Identity()
-        $id = devalue.stringify({commitment, nullifier, secret, trapdoor} )
-    }
-    function createGroup() {
-        const group = new Group([devalue.parse($id).commitment])
-        $groups.push(group)
-        $groups = $groups
-    }
-    function login() {
-        console.log(devalue.parse($id))
-    }
+  }
 </script>
 
-<div class="container">
-    <dialog open class="modal">
-        <article>
-            <header>
-                <h2>Login</h2>
-            </header>
-            {#if hasID}
-                <p>Hello {devalue.parse($id).nullifier} 
-
-                <div class="clear" on:click={() => clear()}>clear</div>
-                <h4>Your groups</h4>
-                {#if hasGroups}
-                    {#each groups as gr }
-                      {gr}
-                    {/each}
-                {/if}
-                <input name="groupname" bind:value={groupname} placeholder="The Spice Girls"  type="">
-                <button on:click={() => createGroup()}>New Group</button>
-
-            {:else}
-                <button on:click={() => create()}>Create your key</button>
-            {/if}
-
-            
-
-            <form method="POST">
-                <input name="ID" bind:value={$id} type="hidden">
-                <button on:click={() => login()}>Login</button>
-            </form>
-        </article>
-    </dialog>
-</div>
-
-<style>
-.clear {font-size: 80%; text-decoration: underline; color: red;}
-</style>
+<main class="container">
+  <h1>Login with POD Tickets</h1>
+  
+  {#if error}
+    <div class="error">
+      <p><strong>Error:</strong> {error}</p>
+    </div>
+  {/if}
+  
+  {#if success}
+    <div class="success">
+      <p>Login successful! Redirecting...</p>
+    </div>
+  {:else}
+    <div>
+      <p>Connect to Zupass to access your POD tickets:</p>
+      <div id="zupass-connector"></div>
+      <button 
+        on:click={handlePODLogin} 
+        disabled={connecting}
+        class="primary"
+      >
+        {connecting ? 'Connecting...' : 'Connect with Zupass'}
+      </button>
+    </div>
+  {/if}
+  
+  <style>
+    .error {
+      color: red;
+      padding: 1rem;
+      border: 1px solid red;
+      margin-bottom: 1rem;
+    }
+    .success {
+      color: green;
+      padding: 1rem;
+      border: 1px solid green;
+      margin-bottom: 1rem;
+    }
+    button {
+      margin-top: 1rem;
+    }
+  </style>
+</main>

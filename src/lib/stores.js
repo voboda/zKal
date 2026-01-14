@@ -1,5 +1,5 @@
 // src/stores/content.js
-import { persisted } from 'svelte-persisted-store'
+import { persisted } from "svelte-persisted-store";
 
 /*
 interface ID {
@@ -9,6 +9,5 @@ interface ID {
 }
 */
 
-export const id  = persisted("id", {})
-export const groups  = persisted("groups",[])
-
+export const id = persisted("id", {});
+export const groups = persisted("groups", []);

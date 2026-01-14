@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POD Ticket Issuer & Attendance Tracker</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    h2 { color: #555; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+    .section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    label { display: block; margin-bottom: 5px; font-weight: 500; color: #444; }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    input:focus, textarea:focus { outline: none; border-color: #007bff; }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    button:hover { background: #0056b3; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    button.secondary { background: #6c757d; }
+    button.secondary:hover { background: #545b62; }
+    button.success { background: #28a745; }
+    button.success:hover { background: #1e7e34; }
+    .status {
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .status.connected { background: #d4edda; color: #155724; }
+    .status.disconnected { background: #f8d7da; color: #721c24; }
+    .status.pending { background: #fff3cd; color: #856404; }
+    pre {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-size: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .key-display {
+      font-family: monospace;
+      font-size: 12px;
+      word-break: break-all;
+      background: #e9ecef;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .row { display: flex; gap: 15px; }
+    .row > * { flex: 1; }
+    .small-input { width: 100px; }
+    #app-connector {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
+    .ticket-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fafafa;
+    }
+    .ticket-card h4 { margin: 0 0 10px 0; color: #333; }
+    .ticket-card .meta { font-size: 12px; color: #666; }
+    .attendance-badge {
+      display: inline-block;
+      background: #28a745;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎫 POD Ticket Issuer & Attendance</h1>
+  
+  <div id="app-connector"></div>
+
+  <!-- Connection Status -->
+  <div class="section">
+    <div id="status" class="status disconnected">Not connected to Zupass</div>
+    <button id="btn-connect">Connect to Zupass</button>
+    <button id="btn-disconnect" class="secondary" style="display:none;">Disconnect</button>
+  </div>
+
+  <!-- Issuer Identity -->
+  <div class="section">
+    <h2>🔑 Issuer Identity</h2>
+    <p>Generate or load a keypair to issue tickets. The private key is stored in your browser's localStorage.</p>
+    
+    <label>Email (for issuer identification)</label>
+    <input type="email" id="issuer-email" placeholder="issuer@example.com" />
+    
+    <button id="btn-generate-key">Generate New Keypair</button>
+    <button id="btn-load-key" class="secondary">Load from localStorage</button>
+    
+    <div id="key-info" style="display:none;">
+      <label>Public Key (share this to verify your tickets)</label>
+      <div class="key-display" id="public-key"></div>
+      <label>Private Key (keep secret!)</label>
+      <div class="key-display" id="private-key"></div>
+    </div>
+  </div>
+
+  <!-- Issue Ticket -->
+  <div class="section">
+    <h2>🎟️ Issue Event Ticket</h2>
+    <p>Create a ticket POD and add it to the connected user's Zupass.</p>
+    
+    <div class="row">
+      <div>
+        <label>Event Name</label>
+        <input type="text" id="event-name" value="ETH Denver 2025" />
+      </div>
+      <div>
+        <label>Event ID</label>
+        <input type="text" id="event-id" value="eth-denver-2025" />
+      </div>
+    </div>
+    
+    <div class="row">
+      <div>
+        <label>Ticket Type</label>
+        <input type="text" id="ticket-type" value="General Admission" />
+      </div>
+      <div>
+        <label>Product ID</label>
+        <input type="text" id="product-id" value="ga-ticket" />
+      </div>
+    </div>
+    
+    <div class="row">
+      <div>
+        <label>Attendee Name</label>
+        <input type="text" id="attendee-name" value="Alice Cryptographer" />
+      </div>
+      <div>
+        <label>Attendee Email</label>
+        <input type="email" id="attendee-email" value="zupasstest@voboda.com" />
+      </div>
+    </div>
+    
+    <button id="btn-issue-ticket" class="success" disabled>Issue Ticket to User</button>
+    <pre id="ticket-output"></pre>
+  </div>
+
+  <!-- Attendance Attestation -->
+  <div class="section">
+    <h2>✅ Record Attendance</h2>
+    <p>Create an attendance attestation linked to a ticket. User proves they hold the ticket's identity.</p>
+    
+    <label>Select Ticket</label>
+    <select id="attendance-ticket-sig">
+        <option value="">-- Select a ticket --</option>
+    </select>
+    
+    <label>Check-in Location (optional)</label>
+    <input type="text" id="checkin-location" value="Main Entrance" />
+    
+    <label>Notes (optional)</label>
+    <input type="text" id="attendance-notes" placeholder="Any additional notes" />
+    
+    <button id="btn-record-attendance" class="success" disabled>Record Attendance (with identity proof)</button>
+    <pre id="attendance-output"></pre>
+  </div>
+
+  <!-- Query Tickets -->
+  <div class="section">
+    <h2>🔍 Query Attended Events</h2>
+    <p>Find tickets with matching attendance attestations from specific issuers.</p>
+    
+    <label>Trusted Signer Public Keys (comma-separated)</label>
+    <textarea id="trusted-signers" rows="3" placeholder="pubkey1, pubkey2, pubkey3"></textarea>
+    
+    <label>Event ID Filter (optional)</label>
+    <input type="text" id="query-event-id" placeholder="Leave empty for all events" />
+    
+    <button id="btn-query-attended" disabled>Query Attended Events</button>
+    <button id="btn-query-all" class="secondary" disabled>Query All Tickets</button>
+    
+    <div id="query-results"></div>
+  </div>
+
+  <!-- Debug Output -->
+  <div class="section">
+    <h2>📋 Debug Log</h2>
+    <pre id="debug-log"></pre>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

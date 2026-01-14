@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ethberlin04",
+    "label": "ETHBerlin04 Attendee",
+    "type": "eddsa-ticket-pcd",
+    "match": {
+      "event": ["ETHBERLIN04"]
+    }
+  }
+]

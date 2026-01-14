@@ -1,21 +1,35 @@
+import { createPODSession, getPODCookieOptions } from '$lib/server/podAuth.js';
 import { redirect } from '@sveltejs/kit';
-import { id } from "$lib/stores"
-import * as devalue from 'devalue';
+
+const secret = process.env.SESSION_SECRET || process.env.ZUPASS_SESSION_SECRET || 'dev-secret-change-in-production';
 
 export const actions = {
-    default: async ({ cookies, request }) => {
-        const formdata = await request.formData();
-        //db.createTodo(cookies.get('userid'), data.get('description'));
-        console.log("fdata",formdata)
-        const data = devalue.parse(formdata.get('ID'))
-        console.log("data",data)
-        if (data.nullifier > 0) {
-            console.log('pass')
-            redirect(303, '/');
-        } else {
-            console.log('boo')
-            //throw redirect(307, '/login');
-        }
-
+  default: async ({ cookies, request }) => {
+    try {
+      const formData = await request.formData();
+      const sessionData = formData.get('sessionData');
+      
+      if (!sessionData) {
+        return { success: false, error: 'No session data provided' };
+      }
+      
+      let session;
+      try {
+        session = JSON.parse(sessionData);
+      } catch (e) {
+        return { success: false, error: 'Invalid session data' };
+      }
+      
+      // Create session cookie
+      const sessionCookie = await createPODSession(session, secret);
+      const cookieOptions = getPODCookieOptions();
+      
+      cookies.set('pod_session', sessionCookie, cookieOptions);
+      
+      throw redirect(303, '/');
+    } catch (error) {
+      console.error('Login error:', error);
+      return { success: false, error: error.message };
     }
+  },
 };
