@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from 'svelte';
     import Calendar from '@event-calendar/core';
     import DayGrid from '@event-calendar/day-grid';
     import TimeGrid from '@event-calendar/time-grid';
@@ -20,6 +21,10 @@
     let errorMessage = null;
     let zupassElement = null;
 
+    onMount(async () => {
+        await connectToZupass(zupassElement);
+        });
+
     function handleEventClick({ event }) {
         selectedEvent = event;
         showSelectedEvent = true;
@@ -29,6 +34,7 @@
         showSelectedEvent = false;
         errorMessage = null;
     }
+
 
 async function handleRSVP_2(event) {
     event.preventDefault();
@@ -72,7 +78,6 @@ async function handleRSVP_2(event) {
             attendeeName: "Attendee",
             attendeeEmail: `${getState().userPublicKey.slice(0, 8)}@zupass.org`,
             attendeePublicKey: getState().userPublicKey,
-            privateKey: getState().issuerPrivateKey
         };
         
         console.log("Calling createTicketPOD with params:", ticketParams);
@@ -122,21 +127,19 @@ async function handleRSVP_2(event) {
                 pod: {
                     signature: "dummy-pod-signature-" + Math.random().toString(36).substring(2),
                     entries: {
-                        pod_type: { type: "string", value: "ticket.event" },
-                        ticket_id: { type: "string", value: "test-ticket-" + Date.now() },
-                        event_name: { type: "string", value: "Test Event" },
-                        event_id: { type: "string", value: "test-event-id" },
-                        product_id: { type: "string", value: "general" },
-                        attendee_name: { type: "string", value: "Test Attendee" },
-                        attendee_email: { type: "string", value: "test@example.com" },
-                        owner: { type: "eddsa_pubkey", value: "dummy-owner-key" },
-                        issued_at: { type: "int", value: BigInt(Date.now()) }
+                        ticketId: { type: "string", value: "test-ticket-" + Date.now() },
+                        eventName: { type: "string", value: "Test Event" },
+                        eventId: { type: "string", value: "test-event-id" },
+                        productId: { type: "string", value: "general" },
+                        attendeeName: { type: "string", value: "Test Attendee" },
+                        attendeeEmail: { type: "string", value: "test@example.com" },
+                        attendeePublicKey: { type: "eddsa_pubkey", value: "dummy-owner-key" },
+                        ticketType: { type: "string", value: "ga" },
                     }
                 }
             };
 
-            
-            console.log('creating...')
+                     console.log('creating...', dummyResult.pod.entries)
             const result = await createTicketPOD(dummyResult.pod.entries);
             
             console.log('inserting...')
@@ -207,7 +210,7 @@ async function handleRSVP_2(event) {
                 attendeeName: "Attendee",
                 attendeeEmail: userEmail,
                 attendeePublicKey: podState.userPublicKey,
-                privateKey: podState.issuerPrivateKey
+                //privateKey: podState.issuerPrivateKey
             });
 
             console.log("Ticket POD created:", {

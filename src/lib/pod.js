@@ -115,7 +115,7 @@ export function loadKeypair() {
 /**
  * Create a ticket POD with timeout protection
  */
-export async function createTicketPOD(params) {
+export async function createTicketPOD(params, privateKey) {
   console.log("Starting ticket creation with params:", {
     eventName: params.eventName,
     eventId: params.eventId,
@@ -123,7 +123,7 @@ export async function createTicketPOD(params) {
     productId: params.productId,
     attendeeName: params.attendeeName,
     attendeeEmail: params.attendeeEmail,
-    attendeePublicKey: params.attendeePublicKey ? `${params.attendeePublicKey.slice(0, 20)}...` : null
+    attendeePublicKey: params.attendeePublicKey 
   });
 
   const {
@@ -134,7 +134,6 @@ export async function createTicketPOD(params) {
     attendeeName,
     attendeeEmail,
     attendeePublicKey,
-    privateKey,
   } = params;
 
   const ticketId = crypto.randomUUID();
@@ -180,8 +179,7 @@ export async function createTicketPOD(params) {
   console.log("=== POD ENTRIES TO BE SIGNED ===");
   console.log("entries:", entries);
   console.log("=== PRIVATE KEY INFO ===");
-  console.log("privateKey provided:", privateKey ? `${privateKey.slice(0, 20)}...` : null);
-  console.log("privateKey length:", privateKey ? privateKey.length : 0);
+  console.log("issuerPrivateKey :", state.issuerPrivateKey)
   console.log("=== ZUPASS CONNECTION INFO ===");
   console.log("state.z type:", typeof state.z);
   console.log("state.z.pod:", state.z?.pod);
