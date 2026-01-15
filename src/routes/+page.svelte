@@ -106,24 +106,77 @@ async function handleRSVP_2(event) {
     }
 }
 
+    async function handleTestTicket(event) {
+        event.preventDefault();
+        isCreatingTicket = true;
+        errorMessage = null;
+        console.log("TEST TICKET: Running dummy ticket creation");
+
+        try {
+            
+            // Create a dummy ticket result
+            const dummyResult = {
+                ticketId: "test-ticket-" + Date.now(),
+                signature: "dummy-signature-" + Math.random().toString(36).substring(2),
+                signerPublicKey: "dummy-public-key-" + Math.random().toString(36).substring(2),
+                pod: {
+                    signature: "dummy-pod-signature-" + Math.random().toString(36).substring(2),
+                    entries: {
+                        pod_type: { type: "string", value: "ticket.event" },
+                        ticket_id: { type: "string", value: "test-ticket-" + Date.now() },
+                        event_name: { type: "string", value: "Test Event" },
+                        event_id: { type: "string", value: "test-event-id" },
+                        product_id: { type: "string", value: "general" },
+                        attendee_name: { type: "string", value: "Test Attendee" },
+                        attendee_email: { type: "string", value: "test@example.com" },
+                        owner: { type: "eddsa_pubkey", value: "dummy-owner-key" },
+                        issued_at: { type: "int", value: BigInt(Date.now()) }
+                    }
+                }
+            };
+
+            
+            console.log('creating...')
+            const result = await createTicketPOD(dummyResult.pod.entries);
+            
+            console.log('inserting...')
+            const insert =  await insertPOD("Tickets", result.pod);
+            k
+            // Show success message
+            alert("Test ticket created successfully!\nTicket ID: " + dummyResult.ticketId);
+            
+        } catch (error) {
+            console.error("Test ticket creation failed:", error);
+            errorMessage = `Test failed: ${error.message}`;
+        } finally {
+            isCreatingTicket = false;
+        }
+    }
+
     async function handleRSVP(event) {
         event.preventDefault();
         isCreatingTicket = true;
         errorMessage = null;
         console.log("RSVP process started for event:", selectedEvent.title);
 
-        const podState = getState();
+        let podState = getState();
 
         // If not connected, initiate Zupass connection
-        if (!podState.connected) {
+        if (!podState.connected || !podState.z) {
           isConnecting = true;
           console.log("No Zupass connection detected, initiating connection...");
           if (!zupassElement) {
-            throw new Error('Zupass connector element not found');
+            // Wait for the element to be bound
+            await new Promise(resolve => setTimeout(resolve, 0));
+            if (!zupassElement) {
+              throw new Error('Zupass connector element not found');
+            }
           }
           await connectToZupass(zupassElement);
           console.log("Zupass connection established successfully");
           isConnecting = false;
+          // Refresh state after connection
+          podState = getState();
         }
 
         //const userEmail = podState.userPublicKey ? `${podState.userPublicKey.slice(0, 8)}@zupass.org` : null;
@@ -199,6 +252,12 @@ async function handleRSVP_2(event) {
 </script>
 
 <div class="container">
+                <form on:submit|preventDefault={handleTestTicket}>
+                    <button type="submit" disabled={isCreatingTicket || isConnecting}>
+                        {isConnecting ? 'Connecting to Zupass...' : isCreatingTicket ? 'Creating Ticket...' : 'TEST TICKET'}
+                    </button>
+                </form>
+ 
     <Calendar {plugins} {options} />
     {#if showSelectedEvent}
         <dialog open class="modal">
@@ -231,7 +290,7 @@ async function handleRSVP_2(event) {
     {/if}
 </div>
 <!--<div bind:this={zupassElement} id="zupass-connector" style="position: fixed; bottom: 0; right: 0; width: 1px; height: 1px; opacity: 0;"></div>-->
-<div bind:this={zupassElement} id="zupass-connector" ></div>
+<div bind:this={zupassElement} id="zupass-connector" style="position: fixed; bottom: 0; right: 0; width: 1px; height: 1px; opacity: 0;"></div>
 
 <style>
     .add-to-calendar-links {

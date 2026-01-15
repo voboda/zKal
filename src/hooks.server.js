@@ -8,12 +8,17 @@ export async function handle({ event, resolve }) {
   const raw = event.cookies.get(cookieName);
   event.locals.user = null;
   event.locals.tickets = [];
-
+  
+  console.log("[hooks] Raw session cookie:", raw ? "present" : "missing");
+  
   if (raw) {
     const { valid, session, reason } = await validatePODSession(raw, secret);
+    console.log("[hooks] Session validation result:", { valid, reason, user: session?.user ? "present" : "null" });
+    
     if (valid && session?.user) {
       event.locals.user = session.user;
       event.locals.tickets = session.tickets || [];
+      console.log("[hooks] User set in locals:", event.locals.user);
     } else {
       console.log('Invalid session:', reason);
     }
