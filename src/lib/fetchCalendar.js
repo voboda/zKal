@@ -99,13 +99,13 @@ export async function fetchCalendar() {
       let signupLink = "";
 
       // Filter for specific domains and use the last one if multiple are found
-      let specificLinks = links.filter((link) =>
+      let externalSignupLinks = links.filter((link) =>
         JSON.parse(PUBLIC_SIGNUP_LINK_PATTERNS).some((specLink) =>
           link.startsWith(specLink),
         ),
       );
-      if (specificLinks.length > 0) {
-        signupLink = specificLinks[specificLinks.length - 1];
+      if (externalSignupLinks.length > 0) {
+        signupLink = externalSignupLinks[externalSignupLinks.length - 1];
       } else if (links.length > 0) {
         // If no specific links are found, use the last link
         signupLink = links[links.length - 1];
