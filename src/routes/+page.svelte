@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from 'svelte';
     import Calendar from '@event-calendar/core';
     import DayGrid from '@event-calendar/day-grid';
     import TimeGrid from '@event-calendar/time-grid';
@@ -20,6 +21,10 @@
     let errorMessage = null;
     let zupassElement = null;
 
+    onMount(async () => {
+        await connectToZupass(zupassElement);
+        });
+
     function handleEventClick({ event }) {
         selectedEvent = event;
         showSelectedEvent = true;
@@ -30,106 +35,36 @@
         errorMessage = null;
     }
 
-async function handleRSVP_2(event) {
-    event.preventDefault();
-    isCreatingTicket = true;
-    errorMessage = null;
-    
-    const eventToProcess = selectedEvent;
-    showSelectedEvent = false;
-    
-    await new Promise(resolve => setTimeout(resolve, 100));
-
-    const podState = getState();
-
-    // Add detailed connection check
-    console.log("=== CONNECTION CHECK ===");
-    console.log("podState.connected:", podState.connected);
-    console.log("podState.z:", podState.z);
-    console.log("podState.z.pod:", podState.z?.pod);
-    console.log("podState.z.pod.sign:", podState.z?.pod?.sign);
-    
-    if (!podState.connected || !podState.z) {
-        console.log("Connection not established, connecting now...");
-        try {
-            await connectToZupass(zupassElement);
-            console.log("Connection successful");
-        } catch (error) {
-            console.error("Connection failed:", error);
-            errorMessage = `Failed to connect: ${error.message}`;
-            isCreatingTicket = false;
-            return;
-        }
-    }
-
-    try {
-        console.log("About to create ticket POD...");
-        const ticketParams = {
-            eventName: eventToProcess.title,
-            eventId: eventToProcess.id || eventToProcess.extendedProps?.eventId,
-            ticketType: "general",
-            productId: eventToProcess.extendedProps?.productId || "default",
-            attendeeName: "Attendee",
-            attendeeEmail: `${getState().userPublicKey.slice(0, 8)}@zupass.org`,
-            attendeePublicKey: getState().userPublicKey,
-            privateKey: getState().issuerPrivateKey
-        };
-        
-        console.log("Calling createTicketPOD with params:", ticketParams);
-        
-        // Wrap in try-catch to see exact error
-        const result = await createTicketPOD(ticketParams);
-        
-        console.log("Ticket created successfully:", result);
-        
-        await insertPOD("Tickets", result.pod);
-        alert("Ticket created!");
-        
-    } catch (error) {
-        console.error("=== ERROR DETAILS ===");
-        console.error("Error type:", error.constructor.name);
-        console.error("Error message:", error.message);
-        console.error("Error stack:", error.stack);
-        console.error("Result", result);
-        
-        // Check if it's the UserClosedDialogError
-        if (error.message.includes("closed") || error.message.includes("dialog")) {
-            errorMessage = "Zupass popup was closed. Please check if popups are blocked.";
-        } else {
-            errorMessage = `Failed: ${error.message}`;
-        }
-        
-        selectedEvent = eventToProcess; // Reopen modal on error
-        showSelectedEvent = true;
-    } finally {
-        isCreatingTicket = false;
-    }
-}
-
     async function handleRSVP(event) {
         event.preventDefault();
         isCreatingTicket = true;
         errorMessage = null;
         console.log("RSVP process started for event:", selectedEvent.title);
 
-        const podState = getState();
+        let podState = getState();
 
         // If not connected, initiate Zupass connection
-        if (!podState.connected) {
+        if (!podState.connected || !podState.z) {
           isConnecting = true;
           console.log("No Zupass connection detected, initiating connection...");
           if (!zupassElement) {
-            throw new Error('Zupass connector element not found');
+            // Wait for the element to be bound
+            await new Promise(resolve => setTimeout(resolve, 0));
+            if (!zupassElement) {
+              throw new Error('Zupass connector element not found');
+            }
           }
           await connectToZupass(zupassElement);
-          console.log("Zupass connection established successfully");
+          console.log("RSVP Zupass connection established successfully");
           isConnecting = false;
+          // Refresh state after connection
+          podState = getState();
         }
 
         //const userEmail = podState.userPublicKey ? `${podState.userPublicKey.slice(0, 8)}@zupass.org` : null;
         const userEmail = "zupasstest@voboda.com";
 
-        if (!userEmail) {
+        if (!podState.userPublicKey) {
             console.error("No user public key available");
             errorMessage = "Please connect with Zupass first";
             isCreatingTicket = false;
@@ -154,7 +89,7 @@ async function handleRSVP_2(event) {
                 attendeeName: "Attendee",
                 attendeeEmail: userEmail,
                 attendeePublicKey: podState.userPublicKey,
-                privateKey: podState.issuerPrivateKey
+                //privateKey: podState.issuerPrivateKey
             });
 
             console.log("Ticket POD created:", {
@@ -231,7 +166,7 @@ async function handleRSVP_2(event) {
     {/if}
 </div>
 <!--<div bind:this={zupassElement} id="zupass-connector" style="position: fixed; bottom: 0; right: 0; width: 1px; height: 1px; opacity: 0;"></div>-->
-<div bind:this={zupassElement} id="zupass-connector" ></div>
+<div bind:this={zupassElement} id="zupass-connector" style="position: fixed; bottom: 0; right: 0; width: 1px; height: 1px; opacity: 0;"></div>
 
 <style>
     .add-to-calendar-links {

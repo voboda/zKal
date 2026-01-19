@@ -6,14 +6,15 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "npm run test:integration && npm run test:unit",
+    "test": "npm run test:integration && npm run test:unit && npm run test:e2e",
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
     "test:integration": "playwright test",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "^1.28.1",
+    "@playwright/test": "^1.57.0",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/adapter-node": "^5.4.0",
     "@sveltejs/kit": "^2.48.3",
@@ -47,5 +48,10 @@
     "dotenv": "^16.4.5",
     "ical.js": "^2.0.1",
     "svelte-persisted-store": "^0.9.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

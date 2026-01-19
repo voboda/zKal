@@ -115,7 +115,7 @@ export function loadKeypair() {
 /**
  * Create a ticket POD with timeout protection
  */
-export async function createTicketPOD(params) {
+export async function createTicketPOD(params, privateKey) {
   console.log("Starting ticket creation with params:", {
     eventName: params.eventName,
     eventId: params.eventId,
@@ -123,7 +123,7 @@ export async function createTicketPOD(params) {
     productId: params.productId,
     attendeeName: params.attendeeName,
     attendeeEmail: params.attendeeEmail,
-    attendeePublicKey: params.attendeePublicKey ? `${params.attendeePublicKey.slice(0, 20)}...` : null
+    attendeePublicKey: params.attendeePublicKey 
   });
 
   const {
@@ -134,7 +134,6 @@ export async function createTicketPOD(params) {
     attendeeName,
     attendeeEmail,
     attendeePublicKey,
-    privateKey,
   } = params;
 
   const ticketId = crypto.randomUUID();
@@ -150,8 +149,8 @@ export async function createTicketPOD(params) {
     ticket_id: { type: "string", value: ticketId },
 
     // Event info
-    event_name: { type: "string", value: "ddd"},
-    event_id: { type: "string", value: "DDDDD"},
+    event_name: { type: "string", value: eventName },
+    event_id: { type: "string", value: "test"},
     //eventStartDate: {type: "date", value: new Date(new Date().setDate(new Date().getDate() + 1))},
 
     //ticketCategory: { type: "int", value: 4n },
@@ -180,8 +179,7 @@ export async function createTicketPOD(params) {
   console.log("=== POD ENTRIES TO BE SIGNED ===");
   console.log("entries:", entries);
   console.log("=== PRIVATE KEY INFO ===");
-  console.log("privateKey provided:", privateKey ? `${privateKey.slice(0, 20)}...` : null);
-  console.log("privateKey length:", privateKey ? privateKey.length : 0);
+  console.log("issuerPrivateKey :", state.issuerPrivateKey)
   console.log("=== ZUPASS CONNECTION INFO ===");
   console.log("state.z type:", typeof state.z);
   console.log("state.z.pod:", state.z?.pod);
@@ -333,32 +331,54 @@ export async function createAttendancePOD(params) {
 // ============================================
 
 export async function connectToZupass(element) {
-  console.log("Starting Zupass connection...");
+  console.log("[pod] Starting Zupass connection...");
   try {
+    console.log('CONFIG', ZAPP_CONFIG, 'element', element, 'ZUPASSURL', ZUPASS_URL);
     state.z = await connect(ZAPP_CONFIG, element, ZUPASS_URL);
-    console.log("Zupass connection established");
+    p
+    console.log("[pod] Zupass connection established, instance:", state.z ? "created" : "failed");
+    
+    console.log('PUBKEY', await state.z.identity.getPublicKey());
+    if (!state.z) {
+      throw new Error("Zupass connection returned null/undefined");
+    }
 
     // Get user's public key
     state.userPublicKey = await state.z.identity.getPublicKey();
-    console.log("Retrieved user public key:", `${state.userPublicKey.slice(0, 20)}...`);
+    console.log("[pod] Retrieved user public key:", `${state.userPublicKey.slice(0, 20)}...`, state.z.identity);
+    console.log(state.z);
 
     state.connected = true;
-    console.log("Zupass connection completed successfully");
+    console.log("[pod] Zupass connection completed successfully");
+    
+    // Log connection details
+    console.log("[pod] Connection details:", {
+      hasPod: !!state.z.pod,
+      hasIdentity: !!state.z.identity,
+      userPublicKey: state.userPublicKey
+    });
 
     return state.userPublicKey;
   } catch (error) {
-    console.error("Zupass connection failed:", error);
+    console.error('[pod] Zupass connection failed:', error);
     throw error;
   }
 }
 
 export async function ensureZupassConnection(element) {
-  console.log("Checking Zupass connection status...");
-  if (!state.connected) {
-    console.log("Not connected, initiating connection...");
+  console.log("[pod] Checking Zupass connection status...");
+  console.log("[pod] Current state:", { 
+    connected: state.connected, 
+    userPublicKey: state.userPublicKey ? `${state.userPublicKey.slice(0, 10)}...` : "null",
+    hasZupassInstance: !!state.z
+  });
+  
+  if (!state.connected || !state.z) {
+    console.log("[pod] Not connected or missing Zupass instance, initiating connection...");
     return await connectToZupass(element);
   }
-  console.log("Already connected to Zupass, user public key:", `${state.userPublicKey.slice(0, 20)}...`);
+  
+  console.log("[pod] Already connected to Zupass");
   return state.userPublicKey;
 }
 
@@ -506,6 +526,43 @@ export async function queryAttendedEvents(ownerPubKeys = [], eventId = null) {
 
   console.log(`Matched ${results.length} tickets with attendance data`);
   return results;
+}
+
+// ============================================
+// DUMMY FUNCTIONS FOR TESTING
+// ============================================
+
+/**
+ * Create a dummy ticket for testing without Zupass connection
+ */
+export async function createDummyTicket(params) {
+  console.log("Creating dummy ticket with params:", params);
+  
+  // Simulate network delay
+  await new Promise(resolve => setTimeout(resolve, 500));
+  
+  const dummyTicket = {
+    pod: {
+      signature: "dummy-signature-" + Math.random().toString(36).substring(2),
+      entries: {
+        pod_type: { type: "string", value: "ticket.event" },
+        ticket_id: { type: "string", value: "dummy-ticket-" + Date.now() },
+        event_name: { type: "string", value: params.eventName || "Test Event" },
+        event_id: { type: "string", value: params.eventId || "test-event-id" },
+        product_id: { type: "string", value: params.productId || "general" },
+        attendee_name: { type: "string", value: params.attendeeName || "Test Attendee" },
+        attendee_email: { type: "string", value: params.attendeeEmail || "test@example.com" },
+        owner: { type: "eddsa_pubkey", value: params.attendeePublicKey || "dummy-owner-key" },
+        issued_at: { type: "int", value: BigInt(Date.now()) }
+      }
+    },
+    ticketId: "dummy-ticket-" + Date.now(),
+    signature: "dummy-signature-" + Math.random().toString(36).substring(2),
+    signerPublicKey: "dummy-public-key-" + Math.random().toString(36).substring(2)
+  };
+  
+  console.log("Dummy ticket created:", dummyTicket);
+  return dummyTicket;
 }
 
 // ============================================
