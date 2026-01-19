@@ -8,6 +8,7 @@ import {
   PUBLIC_CACHE_TIME,
   PUBLIC_CALENDAR_URLS,
   PUBLIC_SIGNUP_LINK_PATTERNS,
+  PUBLIC_ZKAL_LINK_PATTERNS,
 } from "$env/static/public";
 
 const PUBLIC_CACHE_DIR_PATH = path.join(process.cwd(), PUBLIC_CACHE_DIR);
@@ -97,6 +98,7 @@ export async function fetchCalendar() {
       // Search for links in the description
       let links = description.match(/https?:\/\/[^\s]+/g) || [];
       let signupLink = "";
+      let zkalUri = "";
 
       // Filter for specific domains and use the last one if multiple are found
       let externalSignupLinks = links.filter((link) =>
@@ -115,6 +117,17 @@ export async function fetchCalendar() {
         event.updatePropertyWithValue("X-SIGNUP-LINK", signupLink);
       }
 
+      // Check for ZKAL link patterns
+      let zkalLinks = links.filter((link) =>
+        JSON.parse(PUBLIC_ZKAL_LINK_PATTERNS).some((zkalPattern) =>
+          link.startsWith(zkalPattern),
+        ),
+      );
+      if (zkalLinks.length > 0) {
+        zkalUri = zkalLinks[zkalLinks.length - 1];
+        event.updatePropertyWithValue("X-ZKAL-URI", zkalUri);
+      }
+
       // Add the event to the JSON array
       events.push({
         summary: event.getFirstPropertyValue("summary"),
@@ -125,6 +138,7 @@ export async function fetchCalendar() {
         calendarColor: calendar.color,
         attendees: attendees.length + 1, // Add 1 to account for the proposer or host of the event
         signupLink: event.getFirstPropertyValue("X-SIGNUP-LINK"),
+        zkalUri: event.getFirstPropertyValue("X-ZKAL-URI"),
       });
     });
   }
