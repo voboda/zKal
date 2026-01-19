@@ -1,7 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import eyes from "eyes";
-//import env from '$env'
 import {
   PUBLIC_CACHE_DIR,
   PUBLIC_CACHE_FILE,
@@ -36,6 +35,7 @@ export async function fetchCalendar() {
       const calendarData = JSON.parse(
         await fs.readFile(PUBLIC_CACHE_FILE_PATH, "utf8"),
       );
+      console.log("[fetchCalendar] read cache");
       return calendarData;
     }
     console.log("[fetchCalendar] no cache");
@@ -49,98 +49,103 @@ export async function fetchCalendar() {
 
   for (let calendar of JSON.parse(PUBLIC_CALENDAR_URLS)) {
     console.log("[fetchCalendar] feed url:", calendar.url);
-    const response = await fetch(calendar.url);
-    const data = await response.text();
+    try {
+      const response = await fetch(calendar.url);
+      const data = await response.text();
 
-    // Parse the .ics data
-    let jcalData = ICAL.parse(data);
-    let comp = new ICAL.Component(jcalData);
+      // Parse the .ics data
+      let jcalData = ICAL.parse(data);
+      let comp = new ICAL.Component(jcalData);
 
-    // Iterate over the events
-    comp.getAllSubcomponents("vevent").forEach((vevent) => {
-      // Create a new event and set its properties
-      let event = new ICAL.Component("vevent");
+      // Iterate over the events
+      comp.getAllSubcomponents("vevent").forEach((vevent) => {
+        // Create a new event and set its properties
+        let event = new ICAL.Component("vevent");
 
-      let summary, dtstart, dtend;
-      try {
-        summary = vevent.getFirstPropertyValue("summary");
-        dtstart = vevent.getFirstPropertyValue("dtstart");
-        dtend = vevent.getFirstPropertyValue("dtend");
-      } catch (err) {
-        console.error("Error getting summary, dtstart, or dtend:", err);
-        inspector(vevent);
-        return; // Skip this event
-      }
+        let summary, dtstart, dtend;
+        try {
+          summary = vevent.getFirstPropertyValue("summary");
+          dtstart = vevent.getFirstPropertyValue("dtstart");
+          dtend = vevent.getFirstPropertyValue("dtend");
+        } catch (err) {
+          console.error("Error getting summary, dtstart, or dtend:", err);
+          inspector(vevent);
+          return; // Skip this event
+        }
 
-      if (summary) {
-        event.updatePropertyWithValue("summary", summary);
-      }
+        if (summary) {
+          event.updatePropertyWithValue("summary", summary);
+        }
 
-      let description = "";
-      let attendees = [];
-      try {
-        description = vevent.getFirstPropertyValue("description") || "";
-        attendees = vevent.getAllProperties("attendee");
-      } catch (err) {
-        console.error("Error getting description or attendees:", err);
-        inspector(vevent);
-      }
-      event.updatePropertyWithValue("description", description);
+        let description = "";
+        let attendees = [];
+        try {
+          description = vevent.getFirstPropertyValue("description") || "";
+          attendees = vevent.getAllProperties("attendee");
+        } catch (err) {
+          console.error("Error getting description or attendees:", err);
+          inspector(vevent);
+        }
+        event.updatePropertyWithValue("description", description);
 
-      if (dtstart) {
-        event.updatePropertyWithValue("dtstart", dtstart);
-      }
+        if (dtstart) {
+          event.updatePropertyWithValue("dtstart", dtstart);
+        }
 
-      if (dtend) {
-        event.updatePropertyWithValue("dtend", dtend);
-      }
+        if (dtend) {
+          event.updatePropertyWithValue("dtend", dtend);
+        }
 
-      // Search for links in the description
-      let links = description.match(/https?:\/\/[^\s]+/g) || [];
-      let signupLink = "";
-      let zkalUri = "";
+        // Search for links in the description
+        let links = description.match(/https?:\/\/[^\s]+/g) || [];
+        let signupLink = "";
+        let zkalUri = "";
 
-      // Filter for specific domains and use the last one if multiple are found
-      let externalSignupLinks = links.filter((link) =>
-        JSON.parse(PUBLIC_SIGNUP_LINK_PATTERNS).some((specLink) =>
-          link.startsWith(specLink),
-        ),
-      );
-      if (externalSignupLinks.length > 0) {
-        signupLink = externalSignupLinks[externalSignupLinks.length - 1];
-      } else if (links.length > 0) {
-        // If no specific links are found, use the last link
-        signupLink = links[links.length - 1];
-      }
+        // Filter for specific domains and use the last one if multiple are found
+        let externalSignupLinks = links.filter((link) =>
+          JSON.parse(PUBLIC_SIGNUP_LINK_PATTERNS).some((specLink) =>
+            link.startsWith(specLink),
+          ),
+        );
+        if (externalSignupLinks.length > 0) {
+          signupLink = externalSignupLinks[externalSignupLinks.length - 1];
+        } else if (links.length > 0) {
+          // If no specific links are found, use the last link
+          signupLink = links[links.length - 1];
+        }
 
-      if (signupLink) {
-        event.updatePropertyWithValue("X-SIGNUP-LINK", signupLink);
-      }
+        if (signupLink) {
+          event.updatePropertyWithValue("X-SIGNUP-LINK", signupLink);
+        }
 
-      // Check for ZKAL link patterns
-      let zkalLinks = links.filter((link) =>
-        JSON.parse(PUBLIC_ZKAL_LINK_PATTERNS).some((zkalPattern) =>
-          link.startsWith(zkalPattern),
-        ),
-      );
-      if (zkalLinks.length > 0) {
-        zkalUri = zkalLinks[zkalLinks.length - 1];
-        event.updatePropertyWithValue("X-ZKAL-URI", zkalUri);
-      }
+        // Check for ZKAL link patterns
+        console.log('PUBLIC_ZKAL_LINK_PATTERNS', PUBLIC_ZKAL_LINK_PATTERNS);
+        let zkalLinks = links.filter((link) =>
+          JSON.parse(PUBLIC_ZKAL_LINK_PATTERNS).some((zkalPattern)=>
+            link.startsWith(zkalPattern),
+          ),
+        );
+        if (zkalLinks.length > 0) {
+          zkalUri = zkalLinks[zkalLinks.length - 1];
+          event.updatePropertyWithValue("X-ZKAL-URI", zkalUri);
+        }
 
-      // Add the event to the JSON array
-      events.push({
-        summary: event.getFirstPropertyValue("summary"),
-        description: event.getFirstPropertyValue("description"),
-        dtstart: event.getFirstPropertyValue("dtstart"),
-        dtend: event.getFirstPropertyValue("dtend"),
-        calendarName: calendar.name || calendar.url,
-        calendarColor: calendar.color,
-        attendees: attendees.length + 1, // Add 1 to account for the proposer or host of the event
-        signupLink: event.getFirstPropertyValue("X-SIGNUP-LINK"),
-        zkalUri: event.getFirstPropertyValue("X-ZKAL-URI"),
+        // Add the event to the JSON array
+        events.push({
+          summary: event.getFirstPropertyValue("summary"),
+          description: event.getFirstPropertyValue("description"),
+          dtstart: event.getFirstPropertyValue("dtstart"),
+          dtend: event.getFirstPropertyValue("dtend"),
+          calendarName: calendar.name || calendar.url,
+          calendarColor: calendar.color,
+          attendees: attendees.length + 1, // Add 1 to account for the proposer or host of the event
+          signupLink: event.getFirstPropertyValue("X-SIGNUP-LINK"),
+          zkalUri: event.getFirstPropertyValue("X-ZKAL-URI"),
+        });
       });
-    });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   // Write the data to the cache file

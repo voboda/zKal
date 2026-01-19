@@ -135,7 +135,7 @@
 
 <div class="container">
     <Calendar {plugins} {options} />
-    {#if showSelectedEvent}
+    {#if showSelectedEvent && selectedEvent}
         <dialog open class="modal">
             <article>
                 <header>
