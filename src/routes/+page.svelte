@@ -169,14 +169,6 @@
 <div bind:this={zupassElement} id="zupass-connector" style="position: fixed; bottom: 0; right: 0; width: 1px; height: 1px; opacity: 0;"></div>
 
 <style>
-    .add-to-calendar-links {
-        display: flex;
-        flex-direction: row;
-        gap: 2.5rem;
-        margin-top: 1rem;
-        justify-content: center;
-    }
-
     .error-message {
         color: #d32f2f;
         background-color: #ffebee;

@@ -37,7 +37,7 @@ export async function fetchCalendar() {
       );
       return calendarData;
     }
-    console.log("no cache");
+    console.log("[fetchCalendar] no cache");
   } catch (err) {
     // Ignore errors (the file probably doesn't exist)
   }
@@ -47,6 +47,7 @@ export async function fetchCalendar() {
   let events = [];
 
   for (let calendar of JSON.parse(PUBLIC_CALENDAR_URLS)) {
+    console.log("[fetchCalendar] feed url:", calendar.url);
     const response = await fetch(calendar.url);
     const data = await response.text();
 
