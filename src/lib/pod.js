@@ -333,16 +333,20 @@ export async function createAttendancePOD(params) {
 export async function connectToZupass(element) {
   console.log("[pod] Starting Zupass connection...");
   try {
+    console.log('CONFIG', ZAPP_CONFIG, 'element', element, 'ZUPASSURL', ZUPASS_URL);
     state.z = await connect(ZAPP_CONFIG, element, ZUPASS_URL);
+    p
     console.log("[pod] Zupass connection established, instance:", state.z ? "created" : "failed");
     
+    console.log('PUBKEY', await state.z.identity.getPublicKey());
     if (!state.z) {
       throw new Error("Zupass connection returned null/undefined");
     }
 
     // Get user's public key
     state.userPublicKey = await state.z.identity.getPublicKey();
-    console.log("[pod] Retrieved user public key:", `${state.userPublicKey.slice(0, 20)}...`);
+    console.log("[pod] Retrieved user public key:", `${state.userPublicKey.slice(0, 20)}...`, state.z.identity);
+    console.log(state.z);
 
     state.connected = true;
     console.log("[pod] Zupass connection completed successfully");
@@ -351,7 +355,7 @@ export async function connectToZupass(element) {
     console.log("[pod] Connection details:", {
       hasPod: !!state.z.pod,
       hasIdentity: !!state.z.identity,
-      userPublicKeyLength: state.userPublicKey?.length
+      userPublicKey: state.userPublicKey
     });
 
     return state.userPublicKey;

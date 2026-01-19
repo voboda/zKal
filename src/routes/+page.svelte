@@ -35,127 +35,6 @@
         errorMessage = null;
     }
 
-
-async function handleRSVP_2(event) {
-    event.preventDefault();
-    isCreatingTicket = true;
-    errorMessage = null;
-    
-    const eventToProcess = selectedEvent;
-    showSelectedEvent = false;
-    
-    await new Promise(resolve => setTimeout(resolve, 100));
-
-    const podState = getState();
-
-    // Add detailed connection check
-    console.log("=== CONNECTION CHECK ===");
-    console.log("podState.connected:", podState.connected);
-    console.log("podState.z:", podState.z);
-    console.log("podState.z.pod:", podState.z?.pod);
-    console.log("podState.z.pod.sign:", podState.z?.pod?.sign);
-    
-    if (!podState.connected || !podState.z) {
-        console.log("Connection not established, connecting now...");
-        try {
-            await connectToZupass(zupassElement);
-            console.log("Connection successful");
-        } catch (error) {
-            console.error("Connection failed:", error);
-            errorMessage = `Failed to connect: ${error.message}`;
-            isCreatingTicket = false;
-            return;
-        }
-    }
-
-    try {
-        console.log("About to create ticket POD...");
-        const ticketParams = {
-            eventName: eventToProcess.title,
-            eventId: eventToProcess.id || eventToProcess.extendedProps?.eventId,
-            ticketType: "general",
-            productId: eventToProcess.extendedProps?.productId || "default",
-            attendeeName: "Attendee",
-            attendeeEmail: `${getState().userPublicKey.slice(0, 8)}@zupass.org`,
-            attendeePublicKey: getState().userPublicKey,
-        };
-        
-        console.log("Calling createTicketPOD with params:", ticketParams);
-        
-        // Wrap in try-catch to see exact error
-        const result = await createTicketPOD(ticketParams);
-        
-        console.log("Ticket created successfully:", result);
-        
-        await insertPOD("Tickets", result.pod);
-        alert("Ticket created!");
-        
-    } catch (error) {
-        console.error("=== ERROR DETAILS ===");
-        console.error("Error type:", error.constructor.name);
-        console.error("Error message:", error.message);
-        console.error("Error stack:", error.stack);
-        console.error("Result", result);
-        
-        // Check if it's the UserClosedDialogError
-        if (error.message.includes("closed") || error.message.includes("dialog")) {
-            errorMessage = "Zupass popup was closed. Please check if popups are blocked.";
-        } else {
-            errorMessage = `Failed: ${error.message}`;
-        }
-        
-        selectedEvent = eventToProcess; // Reopen modal on error
-        showSelectedEvent = true;
-    } finally {
-        isCreatingTicket = false;
-    }
-}
-
-    async function handleTestTicket(event) {
-        event.preventDefault();
-        isCreatingTicket = true;
-        errorMessage = null;
-        console.log("TEST TICKET: Running dummy ticket creation");
-
-        try {
-            
-            // Create a dummy ticket result
-            const dummyResult = {
-                ticketId: "test-ticket-" + Date.now(),
-                signature: "dummy-signature-" + Math.random().toString(36).substring(2),
-                signerPublicKey: "dummy-public-key-" + Math.random().toString(36).substring(2),
-                pod: {
-                    signature: "dummy-pod-signature-" + Math.random().toString(36).substring(2),
-                    entries: {
-                        ticketId: { type: "string", value: "test-ticket-" + Date.now() },
-                        eventName: { type: "string", value: "Test Event" },
-                        eventId: { type: "string", value: "test-event-id" },
-                        productId: { type: "string", value: "general" },
-                        attendeeName: { type: "string", value: "Test Attendee" },
-                        attendeeEmail: { type: "string", value: "test@example.com" },
-                        attendeePublicKey: { type: "eddsa_pubkey", value: "dummy-owner-key" },
-                        ticketType: { type: "string", value: "ga" },
-                    }
-                }
-            };
-
-                     console.log('creating...', dummyResult.pod.entries)
-            const result = await createTicketPOD(dummyResult.pod.entries);
-            
-            console.log('inserting...')
-            const insert =  await insertPOD("Tickets", result.pod);
-            k
-            // Show success message
-            alert("Test ticket created successfully!\nTicket ID: " + dummyResult.ticketId);
-            
-        } catch (error) {
-            console.error("Test ticket creation failed:", error);
-            errorMessage = `Test failed: ${error.message}`;
-        } finally {
-            isCreatingTicket = false;
-        }
-    }
-
     async function handleRSVP(event) {
         event.preventDefault();
         isCreatingTicket = true;
@@ -176,7 +55,7 @@ async function handleRSVP_2(event) {
             }
           }
           await connectToZupass(zupassElement);
-          console.log("Zupass connection established successfully");
+          console.log("RSVP Zupass connection established successfully");
           isConnecting = false;
           // Refresh state after connection
           podState = getState();
@@ -185,7 +64,7 @@ async function handleRSVP_2(event) {
         //const userEmail = podState.userPublicKey ? `${podState.userPublicKey.slice(0, 8)}@zupass.org` : null;
         const userEmail = "zupasstest@voboda.com";
 
-        if (!userEmail) {
+        if (!podState.userPublicKey) {
             console.error("No user public key available");
             errorMessage = "Please connect with Zupass first";
             isCreatingTicket = false;
@@ -255,12 +134,6 @@ async function handleRSVP_2(event) {
 </script>
 
 <div class="container">
-                <form on:submit|preventDefault={handleTestTicket}>
-                    <button type="submit" disabled={isCreatingTicket || isConnecting}>
-                        {isConnecting ? 'Connecting to Zupass...' : isCreatingTicket ? 'Creating Ticket...' : 'TEST TICKET'}
-                    </button>
-                </form>
- 
     <Calendar {plugins} {options} />
     {#if showSelectedEvent}
         <dialog open class="modal">
