@@ -1,5 +1,8 @@
 import { connect } from "@parcnet-js/app-connector";
 import * as p from "@parcnet-js/podspec";
+import * as POD from '@pcd/pod';
+const { PODEntries } = POD;
+
 
 // ============================================
 // CONSTANTS
@@ -150,10 +153,7 @@ export async function createTicketPOD(params, privateKey) {
 
     // Event info
     event_name: { type: "string", value: eventName },
-    event_id: { type: "string", value: "test"},
-    //eventStartDate: {type: "date", value: new Date(new Date().setDate(new Date().getDate() + 1))},
-
-    //ticketCategory: { type: "int", value: 4n },
+    event_id: { type: "string", value: eventId || "test"},
 
     // Product info
     product_id: { type: "string", value: productId },
@@ -170,43 +170,18 @@ export async function createTicketPOD(params, privateKey) {
   };
 
   console.log("Signing POD with issuer private key");
-  console.log("=== COMPLETE STATE BEFORE SIGNING ===");
-  console.log("state.z:", state.z);
-  console.log("state.connected:", state.connected);
-  console.log("state.userPublicKey:", state.userPublicKey ? `${state.userPublicKey.slice(0, 20)}...` : null);
-  console.log("state.issuerPrivateKey:", state.issuerPrivateKey ? `${state.issuerPrivateKey.slice(0, 20)}...` : null);
-  console.log("state.issuerPublicKey:", state.issuerPublicKey ? `${state.issuerPublicKey.slice(0, 20)}...` : null);
   console.log("=== POD ENTRIES TO BE SIGNED ===");
   console.log("entries:", entries);
   console.log("=== PRIVATE KEY INFO ===");
-  console.log("issuerPrivateKey :", state.issuerPrivateKey)
-  console.log("=== ZUPASS CONNECTION INFO ===");
-  console.log("state.z type:", typeof state.z);
-  console.log("state.z.pod:", state.z?.pod);
-  console.log("state.z.pod.sign:", state.z?.pod?.sign);
   console.log("=================================");
 
   try {
-    // Check if we have a valid connection
-    if (!state.z || !state.connected) {
-      throw new Error("Not connected to Zupass. Please connect first.");
+    if (!privateKey) {
+      throw new Error("No private key available for signing");
     }
 
-    // Add timeout protection for the signing operation
-    const pod = await state.z.pod.sign(entries, state.issuerPrivateKey);
-    //const signingPromise = state.z.pod.sign(entries, state.issuerPrivateKey);
-
-    /*
-    // Create a timeout promise
-    const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error(`POD signing operation timed out after ${POD_SIGNING_TIMEOUT/1000} seconds`));
-      }, POD_SIGNING_TIMEOUT);
-    });
-
-    // Race the signing operation against the timeout
-    const pod = await Promise.race([signingPromise, timeoutPromise]);
-    */
+    // Use POD.sign directly
+    const pod = POD.POD.sign(entries, privateKey);
 
     console.log("Ticket POD created successfully:", {
       ticketId,

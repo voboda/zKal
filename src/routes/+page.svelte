@@ -8,7 +8,7 @@
     import DOMPurify from 'dompurify';
     import CalendarLegend from '$lib/CalendarLegend.svelte';
     import AddToCalendar from '$lib/AddToCalendar.svelte';
-    import { createTicketPOD, getState, ensureZupassConnection, insertPOD, connectToZupass } from '$lib/pod';
+    import { getState, ensureZupassConnection, connectToZupass, insertPOD } from '$lib/pod';
 
     export let data;
     export let { events } = data.props;
@@ -80,26 +80,39 @@
 
             console.log('selectedEvent', selectedEvent);
 
-            const result = await createTicketPOD({
-                eventName: selectedEvent.title,
-                eventId: selectedEvent.id || selectedEvent.extendedProps?.eventId,
-                ticketType: "general",
-                productId: selectedEvent.extendedProps?.productId || "default",
-                eventStartDate: BigInt(Date.now()),
-                attendeeName: "Attendee",
-                attendeeEmail: userEmail,
-                attendeePublicKey: podState.userPublicKey,
-                //privateKey: podState.issuerPrivateKey
+            console.log("Requesting ticket issuance from server...");
+
+            const response = await fetch('/issue-ticket', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    eventName: selectedEvent.title,
+                    eventId: selectedEvent.id || selectedEvent.extendedProps?.eventId,
+                    ticketType: "general",
+                    productId: selectedEvent.extendedProps?.productId || "default",
+                    eventStartDate: Date.now(),
+                    attendeeName: "Attendee",
+                    attendeeEmail: "zupasstest@voboda.com",
+                    attendeePublicKey: podState.userPublicKey,
+                }),
             });
 
-            console.log("Ticket POD created:", {
-                ticketId: result.ticketId,
-                signature: result.signature
-            });
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Server error: ${response.status} - ${errorText}`);
+            }
 
-            console.log("Inserting ticket POD into collection...");
-            await insertPOD("Tickets", result.pod);
-            console.log("Ticket POD inserted successfully");
+            const result = await response.json();
+            console.log("Ticket issued by server:", result);
+
+            // Insert the POD into the user's collection
+            if (result.pod) {
+                console.log("Inserting ticket POD into collection...");
+                await insertPOD("Tickets", result.pod);
+                console.log("Ticket POD inserted successfully");
+            }
 
             alert("Ticket created successfully!");
             handleCloseModal();
