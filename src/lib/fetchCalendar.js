@@ -9,9 +9,8 @@ import {
   PUBLIC_ZKAL_LINK_PATTERNS,
 } from "$env/static/public";
 
-const PUBLIC_CACHE_DIR_PATH = path.join(process.cwd(), PUBLIC_CACHE_DIR);
 const PUBLIC_CACHE_FILE_PATH = path.join(
-  PUBLIC_CACHE_DIR_PATH,
+  PUBLIC_CACHE_DIR,
   PUBLIC_CACHE_FILE,
 );
 
