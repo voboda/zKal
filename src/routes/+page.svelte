@@ -8,7 +8,50 @@
     import DOMPurify from 'dompurify';
     import CalendarLegend from '$lib/CalendarLegend.svelte';
     import AddToCalendar from '$lib/AddToCalendar.svelte';
-    import { getState, ensureZupassConnection, connectToZupass, insertPOD } from '$lib/pod';
+    import { getState, ensureZupassConnection, connectToZupass, insertPOD, toInsertablePOD} from '$lib/pod';
+    import * as POD from '@pcd/pod';
+
+    console.log('POD', POD.POD);
+
+
+//import { checkPODValue } from '@pcd/pod';
+import * as p from '@parcnet-js/podspec';
+const checkPODValue = POD.checkPODValue;
+console.log('checkPODValue', checkPODValue);
+
+function toPODEntriesWithSpec(insertablePOD) {
+  const converted = {};
+  
+  for (const [key, value] of Object.entries(insertablePOD.entries)) {
+    // Handle the special owner field that's already partially formatted
+    if (key === 'owner' && typeof value === 'object' && value.eddsa_pubkey) {
+      converted[key] = { 
+        type: 'eddsa_pubkey', 
+        value: value.eddsa_pubkey 
+      };
+      continue;
+    }
+    
+    // Handle primitives
+    if (typeof value === 'string') {
+      converted[key] = { type: 'string', value };
+    } else if (typeof value === 'number') {
+      converted[key] = { type: 'int', value: BigInt(value) };
+    } else if (typeof value === 'bigint') {
+      converted[key] = { type: 'int', value };
+    } else if (typeof value === 'boolean') {
+      converted[key] = { type: 'boolean', value };
+    } else if (value === null) {
+      converted[key] = { type: 'null', value: null };
+    }
+  }
+  
+  return {
+    entries: converted,
+    signature: insertablePOD.signature,
+    signerPublicKey: insertablePOD.signerPublicKey
+  };
+}
 
     export let data;
     export let { events } = data.props;
@@ -20,6 +63,23 @@
     let isConnecting = false;
     let errorMessage = null;
     let zupassElement = null;
+
+    export function makeInsertable(pod) {
+      console.log('MAKING INSERTABLE', pod);
+
+      const entries = pod.entries;
+
+      const ret = {
+        entries: Object.fromEntries(pod.entries.entries()), // { field: { type, value }, ... }
+        signature: pod.signature ?? pod._signature,
+        signerPublicKey: pod.signerPublicKey ?? pod._signerPublicKey
+      };
+
+      console.log('RET', ret);
+
+      return ret;
+
+    }
 
     onMount(async () => {
         await connectToZupass(zupassElement);
@@ -101,16 +161,27 @@
 
             if (!response.ok) {
                 const errorText = await response.text();
+                console.error("Ticket error:", response);
                 throw new Error(`Server error: ${response.status} - ${errorText}`);
             }
 
             const result = await response.json();
+
             console.log("Ticket issued by server:", result);
+            const deserializedPod = POD.POD.fromJSON(result);
+            console.log("POD constructed from server:", deserializedPod);
+            const insertablePOD = toInsertablePOD(deserializedPod);
+            console.log('insertablePOD',insertablePOD);
+            //console.log(POD.POD.toEntries(deserializedPod.toJSON()));
+
+            //const result = await response.json();
+            //console.log("Ticket issued by server:", result);
 
             // Insert the POD into the user's collection
-            if (result.pod) {
+            if (deserializedPod) {
                 console.log("Inserting ticket POD into collection...");
-                await insertPOD("Tickets", result.pod);
+                //await insertPOD("Tickets", toPODEntriesWithSpec(result));
+                await insertPOD("Tickets", toPODEntriesWithSpec(result));
                 console.log("Ticket POD inserted successfully");
             }
 

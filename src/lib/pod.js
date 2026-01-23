@@ -1,7 +1,7 @@
 import { connect } from "@parcnet-js/app-connector";
 import * as p from "@parcnet-js/podspec";
 import * as POD from '@pcd/pod';
-const { PODEntries } = POD;
+
 
 
 // ============================================
@@ -139,10 +139,9 @@ export async function createTicketPOD(params, privateKey) {
     attendeePublicKey,
   } = params;
 
+
   const ticketId = crypto.randomUUID();
   const issuedAt = BigInt(Date.now());
-
-  console.log("Generated ticket ID:", ticketId);
 
   const entries = {
     // POD type identifier
@@ -169,32 +168,26 @@ export async function createTicketPOD(params, privateKey) {
     issued_at: { type: "int", value: issuedAt },
   };
 
-  console.log("Signing POD with issuer private key");
-  console.log("=== POD ENTRIES TO BE SIGNED ===");
-  console.log("entries:", entries);
-  console.log("=== PRIVATE KEY INFO ===");
-  console.log("=================================");
-
   try {
     if (!privateKey) {
       throw new Error("No private key available for signing");
     }
 
     // Use POD.sign directly
-    const pod = POD.POD.sign(entries, privateKey);
+    let pod = POD.POD.sign(entries, privateKey);
+
+    pod.entries = entries;
+
 
     console.log("Ticket POD created successfully:", {
-      ticketId,
-      signature: pod.signature,
-      signerPublicKey: pod.signerPublicKey
+      pod: pod.toJSON(),
     });
+    console.log("POD object structure:", pod);
+    console.log("POD object json:", pod.toJSON());
+    console.log("POD entries:", entries);
+   
+    return pod;
 
-    return {
-      pod,
-      ticketId,
-      signature: pod.signature,
-      signerPublicKey: pod.signerPublicKey,
-    };
   } catch (error) {
     console.error("POD signing failed:", error);
     throw new Error(`Failed to sign POD: ${error.message}`);
@@ -225,8 +218,6 @@ export async function createAttendancePOD(params) {
   const attestationId = crypto.randomUUID();
   const checkedInAt = BigInt(Date.now());
 
-  console.log("Generated attestation ID:", attestationId);
-
   const entries = {
     // POD type identifier
     pod_type: { type: "string", value: "attendance.checkin" },
@@ -251,24 +242,6 @@ export async function createAttendancePOD(params) {
     ...(location && { location: { type: "string", value: location } }),
     ...(notes && { notes: { type: "string", value: notes } }),
   };
-
-  console.log("Signing attendance attestation with issuer private key");
-  console.log("=== COMPLETE STATE BEFORE SIGNING ATTESTATION ===");
-  console.log("state.z:", state.z);
-  console.log("state.connected:", state.connected);
-  console.log("state.userPublicKey:", state.userPublicKey ? `${state.userPublicKey.slice(0, 20)}...` : null);
-  console.log("state.issuerPrivateKey:", state.issuerPrivateKey ? `${state.issuerPrivateKey.slice(0, 20)}...` : null);
-  console.log("state.issuerPublicKey:", state.issuerPublicKey ? `${state.issuerPublicKey.slice(0, 20)}...` : null);
-  console.log("=== ATTESTATION ENTRIES TO BE SIGNED ===");
-  console.log("entries:", entries);
-  console.log("=== PRIVATE KEY INFO ===");
-  console.log("privateKey provided:", privateKey ? `${privateKey.slice(0, 20)}...` : null);
-  console.log("privateKey length:", privateKey ? privateKey.length : 0);
-  console.log("=== ZUPASS CONNECTION INFO ===");
-  console.log("state.z type:", typeof state.z);
-  console.log("state.z.pod:", state.z?.pod);
-  console.log("state.z.pod.sign:", state.z?.pod?.sign);
-  console.log("=================================");
 
   try {
     // Check if we have a valid connection
@@ -358,7 +331,7 @@ export async function ensureZupassConnection(element) {
 }
 
 export async function insertPOD(collection, pod) {
-  console.log(`Inserting POD into collection: ${collection}`);
+  console.log(`Inserting POD into collection: ${collection}`, pod);
   if (!state.connected) {
     console.error("Cannot insert POD - not connected to Zupass");
     throw new Error("Not connected to Zupass");
@@ -369,6 +342,7 @@ export async function insertPOD(collection, pod) {
     console.log(`Retrieved collection: ${collection}`);
 
     const result = await zcollection.insert(pod);
+
     console.log(`POD inserted successfully into ${collection}`, {
       signature: pod.signature,
       result,
@@ -550,4 +524,16 @@ export function serializeForDisplay(data) {
 
 export function formatPublicKey(key) {
   return key ? `${key.slice(0, 20)}...` : 'N/A';
+}
+
+export function toInsertablePOD(pod) {
+  const signature = pod.signature ?? pod._signature;
+  const signerPublicKey = pod.signerPublicKey ?? pod._signerPublicKey;
+  const entries =
+    typeof pod.content?.toJSON === "function"
+      ? pod.content.toJSON()
+      : pod._content.toJSON(); // your _POD has _content
+
+
+  return { entries, signature, signerPublicKey };
 }

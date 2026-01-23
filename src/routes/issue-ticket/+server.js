@@ -26,7 +26,7 @@ export async function POST({ request }) {
 
         // Create ticket POD using the server-side private key
         // Note: We pass the privateKey as a second parameter
-        const result = await createTicketPOD({
+        let result = await createTicketPOD({
             eventName: body.eventName,
             eventId: body.eventId,
             ticketType: body.ticketType || 'general',
@@ -37,17 +37,24 @@ export async function POST({ request }) {
             attendeePublicKey: body.attendeePublicKey,
         }, issuerPrivateKey);
 
-        console.log('Ticket POD created:', {
-            ticketId: result.ticketId,
-            signature: result.signature
-        });
+        console.log('Result from createTicketPOD:', 
+          result
+        );
 
-        return json({
-            success: true,
-            ticketId: result.ticketId,
+        // Serialize the POD for transmission
+        // Must preserve typed entry structure: {type: "string", value: "..."}
+      /*
+        const podForClient = {
             signature: result.signature,
-            pod: result.pod
-        });
+            signerPublicKey: result.signerPublicKey,
+            entries: result.pod.content
+        };
+        */
+
+
+        return json(
+            result
+        );
 
     } catch (error) {
         console.error('Error issuing ticket:', error);

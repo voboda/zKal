@@ -38,6 +38,7 @@
     "@event-calendar/list": "^3.0.1",
     "@event-calendar/time-grid": "^3.0.1",
     "@parcnet-js/app-connector": "^1.1.10",
+    "@parcnet-js/podspec": "^1.2.0",
     "@pcd/eddsa-ticket-pcd": "^0.10.0",
     "@pcd/pcd-types": "^0.10.0",
     "@pcd/pod": "^0.5.1",
