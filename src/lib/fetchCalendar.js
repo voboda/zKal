@@ -19,9 +19,9 @@ export async function fetchCalendar() {
 
   try {
     // Check if the cache directory exists, if not create it
-    await fs.access(PUBLIC_CACHE_DIR_PATH);
+    await fs.access(PUBLIC_CACHE_DIR);
   } catch (err) {
-    await fs.mkdir(PUBLIC_CACHE_DIR_PATH);
+    await fs.mkdir(PUBLIC_CACHE_DIR);
   }
 
   try {
