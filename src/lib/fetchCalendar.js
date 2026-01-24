@@ -1,6 +1,5 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import eyes from "eyes";
 import {
   PUBLIC_CACHE_DIR,
   PUBLIC_CACHE_FILE,
@@ -10,21 +9,19 @@ import {
   PUBLIC_ZKAL_LINK_PATTERNS,
 } from "$env/static/public";
 
-const PUBLIC_CACHE_DIR_PATH = path.join(process.cwd(), PUBLIC_CACHE_DIR);
 const PUBLIC_CACHE_FILE_PATH = path.join(
-  PUBLIC_CACHE_DIR_PATH,
+  PUBLIC_CACHE_DIR,
   PUBLIC_CACHE_FILE,
 );
-const inspector = eyes.inspector({ maxLength: false });
 
 export async function fetchCalendar() {
   const now = Date.now();
 
   try {
     // Check if the cache directory exists, if not create it
-    await fs.access(PUBLIC_CACHE_DIR_PATH);
+    await fs.access(PUBLIC_CACHE_DIR);
   } catch (err) {
-    await fs.mkdir(PUBLIC_CACHE_DIR_PATH);
+    await fs.mkdir(PUBLIC_CACHE_DIR);
   }
 
   try {
@@ -69,7 +66,6 @@ export async function fetchCalendar() {
           dtend = vevent.getFirstPropertyValue("dtend");
         } catch (err) {
           console.error("Error getting summary, dtstart, or dtend:", err);
-          inspector(vevent);
           return; // Skip this event
         }
 
@@ -84,7 +80,6 @@ export async function fetchCalendar() {
           attendees = vevent.getAllProperties("attendee");
         } catch (err) {
           console.error("Error getting description or attendees:", err);
-          inspector(vevent);
         }
         event.updatePropertyWithValue("description", description);
 

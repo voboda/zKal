@@ -195,7 +195,6 @@ curl -sS -X POST http://localhost:5173/auth/verify \
 
 - Check `.cache/calendar.json` to inspect parsed event data
 - Use `npm run dev` and browser DevTools to inspect network requests to `/feed/json`
-- The `eyes` package provides detailed logging in `fetchCalendar.js` for troubleshooting
 
 ### Modifying Authentication
 

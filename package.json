@@ -23,7 +23,6 @@
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.35.1",
-    "eyes": "^0.1.8",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
     "svelte": "^5.43.1",
@@ -38,13 +37,20 @@
     "@event-calendar/list": "^3.0.1",
     "@event-calendar/time-grid": "^3.0.1",
     "@parcnet-js/app-connector": "^1.1.10",
+    "@parcnet-js/podspec": "^1.2.0",
     "@pcd/eddsa-ticket-pcd": "^0.10.0",
     "@pcd/pcd-types": "^0.10.0",
+    "@pcd/pod": "^0.5.1",
     "@types/node": "^20.12.12",
     "devalue": "^5.0.0",
     "dompurify": "^3.1.4",
     "dotenv": "^16.4.5",
     "ical.js": "^2.0.1"
+  },
+  "overrides": {
+    "@pcd/pod": {
+      "@zk-kit/eddsa-poseidon": "1.0.4"
+    }
   },
   "pnpm": {
     "onlyBuiltDependencies": [
