@@ -29,6 +29,7 @@ console.log('checkPODValue', checkPODValue);
     let isConnecting = false;
     let errorMessage = null;
     let zupassElement = null;
+    let attendeeEmail = '';
 
 function toPODEntriesWithSpec(pod) {
   const converted = {};
@@ -72,15 +73,25 @@ function toPODEntriesWithSpec(pod) {
     function handleEventClick({ event }) {
         selectedEvent = event;
         showSelectedEvent = true;
+        errorMessage = null;
+        attendeeEmail = '';
     }
 
     function handleCloseModal() {
         showSelectedEvent = false;
         errorMessage = null;
+        attendeeEmail = '';
     }
 
     async function handleRSVP(event) {
         event.preventDefault();
+        
+        // Validate email
+        if (!attendeeEmail || !attendeeEmail.includes('@')) {
+            errorMessage = 'Please enter a valid email address';
+            return;
+        }
+        
         isCreatingTicket = true;
         errorMessage = null;
         console.log("RSVP process started for event:", selectedEvent.title);
@@ -138,7 +149,7 @@ function toPODEntriesWithSpec(pod) {
                     productId: selectedEvent.extendedProps?.productId || "default",
                     eventStartDate: Date.now(),
                     attendeeName: "Attendee",
-                    attendeeEmail: "zupasstest@voboda.com",
+                    attendeeEmail: attendeeEmail || "zupasstest@voboda.com",
                     attendeePublicKey: podState.userPublicKey,
                 }),
             });
@@ -211,6 +222,17 @@ function toPODEntriesWithSpec(pod) {
                 </header>
                 <p>{@html DOMPurify.sanitize(selectedEvent.extendedProps.description)}</p>
                 <form on:submit|preventDefault={handleRSVP}>
+                    <label for="attendee-email">
+                        Email Address
+                        <input 
+                            type="email" 
+                            id="attendee-email" 
+                            bind:value={attendeeEmail}
+                            placeholder="Enter your email"
+                            required
+                            disabled={isCreatingTicket || isConnecting}
+                        />
+                    </label>
                     <button type="submit" disabled={isCreatingTicket || isConnecting}>
                         {isConnecting ? 'Connecting to Zupass...' : isCreatingTicket ? 'Creating Ticket...' : 'RSVP'}
                     </button>
@@ -236,5 +258,17 @@ function toPODEntriesWithSpec(pod) {
         border-radius: 4px;
         margin-top: 10px;
         text-align: center;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    
+    input[type="email"] {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.25rem;
+        box-sizing: border-box;
     }
 </style>
