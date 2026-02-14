@@ -4,1246 +4,1301 @@ PRODID:-//VAR Leaderboard//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:var-event-event-119-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T103000Z
-DTEND:20260617T180000Z
-SUMMARY:Co-working & Private Chef with Polkadot 💻 #2026
-DESCRIPTION:Join Polkadot at The Blockspați Berlin, Berlin's hidden gem, for four days of co-working, networking and private-chef-made food. ​🪑 An authentic Berlin club for co-working & private calls 👨‍🍳 Private chef-made BBQ & drinks: morning, lunch, and evening.\nOrganizer: WebZero | Venue: Mena Berlin | Group chat: Telegram https://t.me/joinWebzero/408
-LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin
-X-VAR-SCORE:44
-X-VAR-QUARTILE:4
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-31-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260615T110000Z
-DTEND:20260615T143000Z
-SUMMARY:EASYCON BERLIN 🇩🇪 #2026
-DESCRIPTION:We’re touching down in Berlin 🇩🇪 for the next chapter: a builder-first meetup during Berlin Blockchain Week. ​​📍EASYCON Berlin Venue: LUKSO Hub Rooftop User Uploaded Image ​* vibrant Web3 space in the heart of Berlin.\nOrganizer: CoinEasy | Venue: LUKSO Hub Rooftop | Group chat: Telegram https://t.me/coineasy_official
-LOCATION:Köpenicker Ch 3a, 10317 Berlin, Germany
-X-VAR-SCORE:40
-X-VAR-QUARTILE:4
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-29-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T170000Z
-DTEND:20260616T210000Z
-SUMMARY:A taste of integrating 350 Assets over 75 Blockchains #2026
-DESCRIPTION:About the EventJoin us for an exclusive evening hosted by Bitvavo, where crypto infrastructure meets real-world scale. Over drinks and bites, we’ll take you behind the scenes of one of Europe’s leading digital asset platforms—and share what it really takes to support 350+ asse...\nOrganizer: Bitvavo  | Venue: w3.hub Berlin
-LOCATION:Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:34
-X-VAR-QUARTILE:4
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-106-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T150000Z
-DTEND:20260614T180000Z
-SUMMARY:Investors, look at Berlin! #2026
-DESCRIPTION:​Everyone is complaining that Berlin is dead. ​🟩 It's not.\nOrganizer: Dennis Daiber | Venue: MENA Kreuzberg
-LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin
-X-VAR-SCORE:34
-X-VAR-QUARTILE:4
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-160-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T100000Z
-DTEND:20260617T190000Z
-SUMMARY:Solana Startup Village #2026
-DESCRIPTION:Join us at Solana Startup Village during Berlin Blockchain Week — a 6-day experience for founders, developers, investors, creators, and curious minds. Take part in hands-on workshops, 1:1 mentorship, and cultural experiences while discovering the possibilities of building with...\nOrganizer: Superteam Germany | Venue: w3.hub | Group chat: Telegram https://t.me/+3Y2DX_7Plus1NzMy
-LOCATION:Möckernstraße 120, 10963 Berlin
-X-VAR-SCORE:33
-X-VAR-QUARTILE:4
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-185-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T190000Z
-DTEND:20260616T230000Z
-SUMMARY:Farconnect #2026
-DESCRIPTION:Join us for Farconnect Berlin: A sufficiently decentralized Farcaster meetup during Berlin Blockchain Week. Wtf is Farcaster?\nOrganizer: ekinci.xyz | Venue: Holzmarkt 25 | Group chat: Other https://warpcast.com/~/group/IJjKTeZGlRpVIQRDYP3xfQ
-LOCATION:Holzmarktstraße 25, 10243 Berlin, Germany
-X-VAR-SCORE:33
-X-VAR-QUARTILE:4
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-88-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260620T120000Z
-DTEND:20260620T200000Z
-SUMMARY:Eureka #2026
-DESCRIPTION:Eureka Conference is a space for thoughtful exchange and shared discovery in the world of blockchain and decentralized technologies. Through talks on governance, decentralized digital economy, and scaling solutions - alongside workshops and panel discussions -participants expl...\nOrganizer: Robin Böning | Venue: Pfefferberg Haus 13 | Group chat: Discord https://discord.gg/fdK3K3nSDe
-LOCATION:Schönhauser Allee 176, 10119 Berlin
-X-VAR-SCORE:31
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-134-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T110000Z
-DTEND:20260614T140000Z
-SUMMARY:Sightseeing Tour over the Berlin Wall with Currywurst and Travala.com #2026
-DESCRIPTION:Experience the real Berlin vibe with a 2-hour sightseeing adventure led by a professional guide! This exclusive side event at German Blockchain Week & AI is a must for anyone looking to explore the city’s fascinating past.\nOrganizer: German Blockchain & AI Week | Venue: Berlin Wall | Group chat: Telegram https://t.me/germanblockchainweek
-LOCATION:Berlin Wall
-X-VAR-SCORE:31
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-59-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T173000Z
-DTEND:20260616T210000Z
-SUMMARY:Buidlers Meetup #2026
-DESCRIPTION:Join us for an event to talk blockchain interoperability, what hurdles we still need to solve to achieve true interoperability, and what we’re already doing right already. Connect with fellow builders, protocol teams, and ecosystem leaders pushing the boundaries of multichain...\nOrganizer: Neon EVM | Venue: AMANO Hotel, East side | Group chat: Telegram https://t.me/+V8IqcLzg0hQyZjM6
-LOCATION:Stralauer Platz 30-31 | 10243 Berlin
-X-VAR-SCORE:30
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-37-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T190000Z
-DTEND:20260611T220000Z
-SUMMARY:Bitcoin BitDevs Socratic Seminar Berlin #2026
-DESCRIPTION:Welcome to the Bitcoin Socratic Seminar hosted by BitDevs Berlin at c-base Raumstation Berlin! There will be Pizza and Beer sponsored by Ordimint.com.\nOrganizer: Freerk | Venue: c-base
-LOCATION:Rungestraße 20, 10179 Berlin
-X-VAR-SCORE:29
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-163-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T210000Z
-DTEND:20260612T230000Z
-SUMMARY:Ledger Presents "UNDER THE MOON" - An Immersive Film & Art Experience #2026
-DESCRIPTION:Ledger presents In collaboration with the Paris Opera and the Hôtel Le Meurice (Dorchester Collection) A production by Kiritosu Studio ​UNDER THE MOON - An Immersive Film & Art Experience ​🗓️ June 12, 2025 📍 Villa Elisabeth, Invalidenstr. 4a, 10115 Berlin 🕰️ 21:00 – 23:00 ​Joi...\nOrganizer: Ledger  | Venue: Villa Elisabeth
-LOCATION:Invalidenstr. 4a, 10115 Berlin
-X-VAR-SCORE:29
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-172-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T100000Z
-DTEND:20260616T134500Z
-SUMMARY:Core Connect meetup with Blockchain Founders Capital #2026
-DESCRIPTION:Build What Matters. Build on Core.\nOrganizer: Sagar Barvaliya | Venue: Möckernstraße 120, 10963 Berlin
-LOCATION:Möckernstraße 120, 10963 Berlin
-X-VAR-SCORE:29
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-142-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T153000Z
-DTEND:20260613T160000Z
-SUMMARY:🎬 The Nostalgia of Bitcoin – A Short Movie Event at GBW & AI 2025 #2026
-DESCRIPTION:⏳ Relive the Journey of Bitcoin – Take the Orange Pill Join us for an exclusive short film screening at German Blockchain Week & AI 2025, as we dive deep into the revolutionary story of Bitcoin — from its anonymous beginnings in 2008 to its role today as a hedge against inflat...\nOrganizer: German Blockchain & AI Week | Venue: Spielfeld Hub | Group chat: Telegram https://t.me/germanblockchainweek
-LOCATION:Skalitzer Str. 85/86, 10997 Berlin
-X-VAR-SCORE:27
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-47-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T160000Z
-DTEND:20260611T180000Z
-SUMMARY:Data Sovereignty + App Launch #2026
-DESCRIPTION:How does healthcare change when patients own their own data? And can data the world?\nOrganizer: AsteriskDAO | Venue: Lynk & Co
-LOCATION:Münzstr 21 10178 Berlin
-X-VAR-SCORE:26
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-175-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T180000Z
-DTEND:20260616T203000Z
-SUMMARY:Web3 Roast Night 🔥 #2026
-DESCRIPTION:🍖♨️🔥🥩🥓 WELCOME TO WEB3 ROAST NIGHT ​Have something you're building in Web3 that's ready for the spotlight? This is your chance to take the stage and share your vision with a room packed with developers, investors, and marketers to win up to 1,000 USD worth of prizes.\nOrganizer: WebZero & Polkadot | Venue: Mena Berlin | Group chat: t.me/joinWebzero
-LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
-X-VAR-SCORE:26
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-193-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T093000Z
-DTEND:20260613T173000Z
-SUMMARY:🚀 THE FIRST LIVE CRYPTO WORLD RECORD in Berlin🏆 #2026
-DESCRIPTION:🌍 Making Crypto History – Be Part of It! For the first time ever, German Blockchain Week & AI is hosting an official world record attempt, uniting the global crypto community for an unforgettable live event.\nOrganizer: German Blockchain & AI Week | Venue: Spielfeld Hub | Group chat: Telegram https://t.me/germanblockchainweek
-LOCATION:Skalitzer Str. 85/86, 10997 Berlin
-X-VAR-SCORE:26
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-26-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T100000Z
-DTEND:20260620T170000Z
-SUMMARY:Uniswap v4 Builder Space: Berlin #2026
-DESCRIPTION:​Work alongside Uniswap Foundation team members and mentors to shape your hook roadmap, sharpen your go-to-market strategy, and bring your project from idea, to impact. ​Hooks unlock the design space for an entirely new set of DeFi primitives, enabling novel features like dyna...\nOrganizer: Uniswap Foundation | Venue: Mindspace Krausenstraße
-LOCATION: Krausenstraße 9-10, 10117 Berlin, Germany
-X-VAR-SCORE:25
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-52-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T170000Z
-DTEND:20260614T230000Z
-SUMMARY:Satoshi Nakamoto Forum - Take the Orange Pill #2026
-DESCRIPTION:🇩🇪 German Blockchain & AI Week presents: ​An Exclusive ₿itcoin Evening in Berlin ​Join us on June 14, 2025, at Berlin 🏙️ Spielfeld Hub for an unforgettable evening dedicated to the vision of Satoshi Nakamoto and the revolution of decentralized money 🌐. This exclusive gathering...\nOrganizer: German Blockchain & AI Week | Venue: Spielfeld Hub | Group chat: Telegram https://t.me/germanblockchainweek
-LOCATION:Skalitzer Str. 85/86, 10997 Berlin
-X-VAR-SCORE:25
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-91-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260615T170000Z
-DTEND:20260615T220000Z
-SUMMARY:Visions of the New - an Evening of Digital Art & Culture #2026
-DESCRIPTION:Digital Art Vernissage. Curated by Dr.\nOrganizer: Bitvavo | Venue: Web3 Hub
-LOCATION:Möckernstraße 120, 10963 Berlin
-X-VAR-SCORE:25
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-223-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T183000Z
-DTEND:20260613T210000Z
-SUMMARY:BlueYard and Friends: Berlin Mixer #2026
-DESCRIPTION:​Hackers and researchers remain the essential backbone of the crypto industry. BlueYard is proud to have supported the work of research-focused companies like Protocol Labs, Filecoin, Flashbots, Privy, Ingonyama, Tromero and more in solving critical crypto compute and infrastr...\nOrganizer: BlueYard | Venue: Register for Location
-LOCATION:Register for Location
-X-VAR-SCORE:25
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-209-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T190000Z
-DTEND:20260617T010000Z
-SUMMARY:EigenLayer Berlin Soirée #2026
-DESCRIPTION:​Drinks, bites, pool tables, and Berlin at its best — with a curated crowd of partners and friends from the ecosystem. ​Vibes guaranteed.\nOrganizer: EigenLayer | Venue: Peter's
-LOCATION:Am Tacheles Friedrichstrasse 110 A 10117 Berlin
-X-VAR-SCORE:24
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-126-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T170000Z
-DTEND:20260613T190000Z
-SUMMARY:Get Together On The Block! | LF Decentralized Trust European Chapter Meetup #2026
-DESCRIPTION:Hello #european-chapter ! During Berlin Blockchain Week 2025, we'd like to get together for a casual drink at BRLO Brwhouse - just a five-minute walk from w3.hub.\nOrganizer: LF Decentralized Trust | Venue: BRLO Brwhouse
-LOCATION:Schöneberger Str. 16, 10963 Berlin, Germany
-X-VAR-SCORE:23
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-144-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T180000Z
-DTEND:20260617T220000Z
-SUMMARY:The Tokenization Forum #2026
-DESCRIPTION:The Tokenization Forum invites you to an exclusive evening exploring how asset tokenization is shaping the future of capital markets. The event will begin with a panel discussion featuring leading experts who will share their perspectives on the latest trends, challenges, and...\nOrganizer: STOKR & NYALA | Venue: Beyond Quartier Heidestrasse
-LOCATION:Heidestraße 34, 10557 Berlin
-X-VAR-SCORE:23
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-151-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T100000Z
-DTEND:20260619T120000Z
-SUMMARY:The Vault Demo Day #2026
-DESCRIPTION:​The Grand Finale of The Vault Berlin Hacker Village! ​The Vault is a multi-house hacker village in the heart of Berlin.\nOrganizer: EigenLayer | Venue: Register to see
-LOCATION:Register to see
-X-VAR-SCORE:23
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-6-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T090000Z
-DTEND:20260614T180000Z
-SUMMARY:Interchain Summit #2026
-DESCRIPTION:Series: Interchain\nCapacity: 300\nRSVPs: 252\nAccess Events: 3\nVAR Score: 22\nVAR Quartile: 3
+UID:var-event-event-1-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
+SUMMARY:ETHBerlin #2024
+DESCRIPTION:Series: ETHBerlin\nCapacity: 600\nRSVPs: 600\nAccess Events: 0\nVAR Score: 0\nVAR Quartile: 1
 LOCATION:Berlin, Germany
-X-VAR-SCORE:22
-X-VAR-QUARTILE:3
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-86-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T180000Z
-DTEND:20260618T230000Z
-SUMMARY:Telekom & Friends Vol. 2 #2026
-DESCRIPTION:Join us for the second Telekom and Friends Party on the rooftop of Deutsche Telekom HQ in Berlin. ​Expect an evening of engaging conversations, a thought-provoking panel with Web3 leaders, food, drinks and a vibrant rooftop party with all the Berlin vibes.\nOrganizer: Deutsche Telekom | Venue: Telekom HQ Berlin @Rooftop
-LOCATION:Winterfeldtstraße 21, 10781 Berlin, Germany
-X-VAR-SCORE:22
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-180-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T180000Z
-DTEND:20260619T210000Z
-SUMMARY:RWA-Tokenization: Real Estate Case Studies #2026
-DESCRIPTION:The process of RWA tokenization is well underway. Now that the infrastructure has been created, the focus is on the projects.\nOrganizer: MÖHRLE HAPP LUTHER | Venue: TOMAS – Transformation of Material and Space
-LOCATION:Mollstraße 1, 10178 Berlin
-X-VAR-SCORE:22
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-190-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T140000Z
-DTEND:20260614T170000Z
-SUMMARY:Infrastructure for Culture — Day 1: Metadata |  Berlin Blockchain Week #2026
-DESCRIPTION:​Join us for Day 1 of Infrastructure for Culture — a focused session on the evolving foundations of cultural tools, happening at LUKSO Hub during Berlin Blockchain Week. ​We’ll explore how metadata standards and onchain notifications are enabling a new generation of programmab...\nOrganizer: LUKSO | Venue: LUKSO Hub
-LOCATION:Köpenicker Ch 3a, 10317 Berlin, Germany
-X-VAR-SCORE:22
-X-VAR-QUARTILE:3
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-9-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T090000Z
-DTEND:20260614T180000Z
-SUMMARY:Gnosis Dappcon #2026
-DESCRIPTION:Series: Gnosis\nCapacity: 400\nRSVPs: 400\nAccess Events: 3\nVAR Score: 21\nVAR Quartile: 2
+UID:var-event-event-2-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
+SUMMARY:ETHBerlin #2025
+DESCRIPTION:Series: ETHBerlin\nCapacity: 600\nRSVPs: 600\nAccess Events: 3\nVAR Score: 17\nVAR Quartile: 3
 LOCATION:Berlin, Germany
-X-VAR-SCORE:21
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-83-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260607T113000Z
-DTEND:20260607T193000Z
-SUMMARY:Arweave Day Berlin 2025 #2026
-DESCRIPTION:This June, join us for an Arweave Day Berlin like never before! We’re taking the event outdoors, embracing Berlin’s stunning lakeside scenery for an unforgettable day filled with innovation, connection, and fun.\nOrganizer: Forward Research Inc. | Venue: Seminaris SeeHotel Potsdam
-LOCATION:An d. Pirschheide 40, 14471 Potsdam, Germany
-X-VAR-SCORE:21
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-228-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260615T160000Z
-DTEND:20260615T180000Z
-SUMMARY:Intern Ping Pong Championships w/Bitget & Polkadot 🏓 #2026
-DESCRIPTION:Join us for the Intern Ping Pong Championship featuring Bitget Wallet and Polkadot! Compete, connect, and claim your crown in Berlin’s ultimate ping pong showdown.\nOrganizer: Sarthi (Bitget Wallet) | Venue: Mena Berlin
-LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin
-X-VAR-SCORE:21
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-23-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T183000Z
-DTEND:20260616T230000Z
-SUMMARY:DeFi Trading & Asset Management Summit #2026
-DESCRIPTION:At the DeFi Trading & Asset Management Summit, we explore the next generation of capital coordination. From on-chain fund infrastructure to decentralized prop trading and AI-powered strategy execution, this summit brings together builders, traders, and fund managers reshaping...\nOrganizer: w3.group | Venue: w3.hub Creative Campus
-LOCATION:Tempelhofer Ufer 17, 10963 Berlin, Germany
-X-VAR-SCORE:20
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-138-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260610T100000Z
-DTEND:20260611T180000Z
-SUMMARY:Funding the Commons Berlin #2026
-DESCRIPTION:Funding the Commons brings "Infrastructures of Resilience: Stewarding Open Technologies & Public Goods" to Berlin: our urgent call to align incentives and coordintation around protecting, nourishing and catalyzing and open + decentralized technologies. Join researchers, policy...\nOrganizer: Funding the Commons: Infrastructures of Resilience Symposium | Venue: Engelnest | Group chat: Telegram https://t.me/1902068671/40
-LOCATION:Wilhelm-Kabus-Straße 24, 10829 Berlin, Germany
-X-VAR-SCORE:20
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-140-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T153000Z
-DTEND:20260617T173000Z
-SUMMARY:Acre Community Meet up: Berlin 2025! #2026
-DESCRIPTION:About Our Event ​Join us for a relaxing afternoon unwind, about 10 minutes from Dappcon and Onchain Growth Summit conferences. ​Get to know our Community and learn more about compounding Bitcoin!\nOrganizer: Acre.fi | Venue: The Greens  | Group chat: Discord https://discord.gg/kCvvKsyQvK
-LOCATION:The Greens Am Krögel 2, 10179 Berlin, Germany
-X-VAR-SCORE:20
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-157-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T100000Z
-DTEND:20260622T180000Z
-SUMMARY:ZuBerlin – Futura Garden #2026
-DESCRIPTION:A co-living experience during Berlin Blockchain Week for building a technologically advanced, decentralized, human-friendly future. Spend time with top researchers, founders, technologists – genuinely kind humans who care, to inspire each other and flourish together.\nOrganizer: Futura Labs | Venue: tba | Group chat: Telegram https://t.me/zuberlin
-LOCATION:tba
-X-VAR-SCORE:20
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-121-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T093000Z
-DTEND:20260611T180000Z
-SUMMARY:Hashberg #2026
-DESCRIPTION:​Join us for an intimate, 1-day event to collaborate on critical topics across the IPFS ecosystem! The majority of the day will be spent in working sessions.\nOrganizer: IPFS Foundation | Venue: c-base
-LOCATION:Rungestraße 20, Berlin, Germany
-X-VAR-SCORE:19
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-166-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T090000Z
-DTEND:20260613T173000Z
-SUMMARY:🌀 MEMECON 360° - The First Meme Tent in the World #2026
-DESCRIPTION:🏕️ The First MEMECON 360° Tent in the World at German Blockchain & AI Week "Where memes motivate, inspire, and protect you." Welcome to the official MEMECON 360° Tent Experience at German Blockchain & AI Week 2025 — where memes become reality and crypto meets culture in the mo...\nOrganizer: German Blockchain & AI Week | Venue: Spielfeld Hub | Group chat: Telegram https://t.me/germanblockchainweek
-LOCATION:Skalitzer Str. 85/86, 10997 Berlin
-X-VAR-SCORE:19
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-200-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T100000Z
-DTEND:20260616T130000Z
-SUMMARY:BLOCKCHAIN FOR GOOD - The Stellar Way #2026
-DESCRIPTION:Join the Stellar Europe Chapter, GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit) and Bundesblock for a collaborative breakfast during Berlin Blockchain Week. This event will mark the official kick-off of the Stellar Europe Ambassador Chapter in Germany and bring...\nOrganizer: Stellar Europ Chapter & Stellar Development Foundation | Venue: w3.hub | Group chat: Discord https://discord.gg/stellardev
-LOCATION:Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:19
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-62-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T100000Z
-DTEND:20260618T170000Z
-SUMMARY:Safe{Con} 3 #2026
-DESCRIPTION:Conference dedicated to the future of onchain self-custody, security and UX.\nOrganizer: Safe | Venue: Stage A, Radialsystem
-LOCATION:Holzmarktstraße 33, 10243 Berlin
-X-VAR-SCORE:18
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-78-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260615T140000Z
-DTEND:20260615T170000Z
-SUMMARY:Infrastructure for Culture — Day 2: Mini Apps | Berlin Blockchain Week #2026
-DESCRIPTION:​Join us for Day 2 of Infrastructure for Culture — an open session dedicated to the apps and tools shaping the next foundation of culture onchain. We'll explore the rise of mini apps, how they differ from traditional dApps, and why they’re radically easier to build.\nOrganizer: LUKSO | Venue: LUKSO Hub
-LOCATION:Köpenicker Ch 3a, 10317 Berlin, Germany
-X-VAR-SCORE:18
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-116-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T100000Z
-DTEND:20260618T140000Z
-SUMMARY:Open Source Essentials for Blockchain Legal Professionals (and Friends) #2026
-DESCRIPTION:Join us for an engaging workshop with Andrew Katz, a leading expert in open source law and governance. This interactive session will explore the core principles of open source, covering licensing, compliance, and best practices for collaboration.\nOrganizer: JUST Open Source Stiftung | Venue: JuggleHUB
-LOCATION: Immanuelkirchstraße 14a, 10405 Berlin
-X-VAR-SCORE:18
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-225-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T170000Z
-DTEND:20260613T220000Z
-SUMMARY:Rad New World #2026
-DESCRIPTION:Years of heads-down building have led to this moment. While the broader industry drifts into dark waters, we have been quietly building alternatives.\nOrganizer: Radworks | Venue: Treehouse 
-LOCATION:Treehouse Berlin Revaler Str. 99 10245 Berlin
-X-VAR-SCORE:18
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-73-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T100000Z
-DTEND:20260613T173000Z
-SUMMARY:SmartFutures - UNDP x Cardano #2026
-DESCRIPTION:SmartFutures brings together thought leaders, innovators, and changemakers for a two-day hybrid event in Berlin, where technology, collaboration, and sustainability converge. With participants from the UNDP BOOST and UNDP Cities Network, the Cardano ecosystem, and a range of i...\nOrganizer: Disruptive Elements GmbH | Venue: w3.hub
-LOCATION:Möckernstraße 120, 10963 Berlin
 X-VAR-SCORE:17
-X-VAR-QUARTILE:2
+X-VAR-QUARTILE:3
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-79-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T180000Z
-DTEND:20260619T200000Z
-SUMMARY:Psychedelic Breath™ with Dr. Natalie Tillack - Dappcon Special: Liquid State #2026
-DESCRIPTION:Deep, immersive breathwork meets deep, immersive techno. ​Liquidity isn't just for markets.\nOrganizer: So So Scaled!  | Venue: Wild Side Studio @Tillack
-LOCATION:Schinkestr. 4-5, 6th floor rooftop, 12047 Berlin
-X-VAR-SCORE:17
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-103-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T100000Z
-DTEND:20260614T150000Z
-SUMMARY:Decentralized Media Summit #2026
-DESCRIPTION:​Join us for the Decentralized Media Summit, where crypto enthusiasts and journalism pros collide for a lively exploration of media's decentralized future. This Berlin Blockchain Week, we'll dive into how decentralized tech can empower journalists, protect free speech, and rev...\nOrganizer: Decentralized Media Summit | Venue: w3.hub
-LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:17
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-112-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T083000Z
-DTEND:20260618T220000Z
-SUMMARY:Dappcon 2025 #2026
-DESCRIPTION:Hosted by Gnosis since 2018, DappCon is a fantastic opportunity for developers and blockchain professionals to come together, network, and stay up to date on the latest trends in the ecosystem. Berlin has a reputation as one of the core sites of innovation in the Ethereumverse...\nOrganizer: Gnosis | Venue: Radialsystem | Group chat: Telegram https://t.me/+ZYUWnz0kxWo4NTMy
-LOCATION:Holzmarktstr. 33 10243 Berlin
-X-VAR-SCORE:17
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-167-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T140000Z
-DTEND:20260614T200000Z
-SUMMARY:VCs, look this way: Bitwala shows Berlin #2026
-DESCRIPTION:​Everyone is complaining that Berlin is dead. ​🟩 It's not.\nOrganizer: Bitwala & Webzero | Venue: Mena Berlin | Group chat: t.me/joinWebzero
-LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
-X-VAR-SCORE:17
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-212-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260609T090000Z
-DTEND:20260609T103000Z
-SUMMARY:Community Run – Zone 2 Fitness Session #2026
-DESCRIPTION:Get ready to lace up your running shoes and join us for a refreshing Zone 2 Community Run! Whether you’re an experienced runner or just starting out, everyone is welcome to participate at their own pace.\nOrganizer: w3.group | Venue: w3.hub
-LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:17
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-3-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T090000Z
-DTEND:20260614T180000Z
+UID:var-event-event-3-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
 SUMMARY:ETHBerlin #2026
-DESCRIPTION:Series: ETHBerlin\nCapacity: 600\nRSVPs: 600\nAccess Events: 3\nVAR Score: 16\nVAR Quartile: 2
+DESCRIPTION:Series: ETHBerlin\nCapacity: 600\nRSVPs: 600\nAccess Events: 3\nVAR Score: 16\nVAR Quartile: 3
 LOCATION:Berlin, Germany
 X-VAR-SCORE:16
-X-VAR-QUARTILE:2
+X-VAR-QUARTILE:3
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-20-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T140000Z
-DTEND:20260614T180000Z
-SUMMARY:ZK Research Day Berlin #2026
-DESCRIPTION:​ZK Research Day Berlin is an invite-only, highly technical gathering dedicated to zero-knowledge (ZK) research and development. Our research day will bring together a specially curated group of researchers, builders, and engineers to exchange ideas, present ZK use cases, and...\nOrganizer: Citrea & Boundless | Venue: Scaling Spaces - Willner Brauerei
-LOCATION:Berliner Str. 80, 13189 Berlin, Germany
-X-VAR-SCORE:16
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-56-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T100000Z
-DTEND:20260617T234500Z
-SUMMARY:OpenServ Berlin Hack - Build Telegram Apps with AI Agents #2026
-DESCRIPTION:Get ready for an exclusive one-day fast hack focused on building AI agent-powered Telegram apps using OpenServ. But first - you’ll need to prove you’re ready.\nOrganizer: Openserv | Venue: UMA Hub Coworking & Cafe | Group chat: Discord https://discord.com/invite/busaj4SQcb
-LOCATION:Großbeerenstraße 60, 10965 Berlin, Germany
-X-VAR-SCORE:16
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-152-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260610T090000Z
-DTEND:20260611T170000Z
-SUMMARY:DeSci.Berlin #2026
-DESCRIPTION:Our goal is to deepen attendees’ understanding of decentralized science, and specifically, of BioDAOs. ​We host a program of insightful talks by scientists, technologists, blockchain experts and key players in the biotech industry.\nOrganizer: Molecule AG & BIO Protocol | Venue: Konig Gallery / Molecule Office | Group chat: Telegram https://t.me/desciberlin
-LOCATION:Alexandrinenstraße 118-121, 10969 Berlin, Germany
-X-VAR-SCORE:16
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-153-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T100000Z
-DTEND:20260616T130000Z
-SUMMARY:Core Connect Global Buildathon IRL Meetup - Berlin #2026
-DESCRIPTION:Build What Matters. Build on Core.\nOrganizer: Core | Venue: w3.hub
-LOCATION:Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:16
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-154-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T100000Z
-DTEND:20260617T120000Z
-SUMMARY:Stroll & Scale: A Web3 Builders’ Walk #2026
-DESCRIPTION:Calling All Web3 Builders in Berlin! ​Join the Divvi team for an adventure off the beaten conference track: a walking tour through Berlin’s most iconic historical sites from the Third Reich to the Cold War, ending with coffee and conversations about the future of Web3.\nOrganizer: Divvi | Venue: Outdoor walking tour 
-LOCATION:Starts at Brandenburg Gate
-X-VAR-SCORE:16
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-196-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T100000Z
-DTEND:20260613T120000Z
-SUMMARY:Build Smart Contracts on Alephium – A Dev Workshop with Core Devs #2026
-DESCRIPTION:​Curious about how smart contracts can work on a Proof-of-Work blockchain? Want to explore something beyond the EVM world?\nOrganizer: Alephium | Venue: 42 Berlin Auditorium | Group chat: Telegram https://t.me/+0zH6AEkWr401Njdi
-LOCATION:Harzer Str. 42, 12059 Berlin
-X-VAR-SCORE:16
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-221-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T230000Z
-DTEND:20260613T010000Z
-SUMMARY:Codemachine Kreuzberg Safari #2026
-DESCRIPTION:🎯 Codemachine Berlin Tour – Berlin Blockchain Week 2024 Ich bin in Kreuzberg unterwegs – komm vorbei, stoß mit mir an und tauch ein in die KI-Kunst-Krypto-Realität: 🗓️ Freitag, 13. Juli – 23:00 Uhr 🍸 Bar 11, Wiener Str.\nOrganizer: Codemachine | Venue: Bar11 | Group chat: Discord https://discord.gg/29ZUjhDZ?event=1379182792256131072
-LOCATION:Wiener Straße 21, Berlin, BE, DE, 10999
-X-VAR-SCORE:16
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-21-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T160000Z
-DTEND:20260619T220000Z
-SUMMARY:Builder Night Berlin - ZK edition - Presented by MetaMask 🦊 & Aztec #2026
-DESCRIPTION:Join us on June 19th at w3.hub for a special Builder Night dedicated to Zero-Knowledge proofs and privacy in Web3. This is not your typical crypto meetup.\nOrganizer: MetaMask and Aztec | Venue: W3 Hub | Group chat: Telegram https://t.me/+KtXibRxEUpA4YzY8
-LOCATION:Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:15
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-27-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T090000Z
-DTEND:20260613T180000Z
-SUMMARY:Protocol Berg v2 #2026
-DESCRIPTION:Protocol Berg v2 is a conference focusing on protocol research, decentralized infrastructure, and core-developer experience. The two-day event with multiple stages, opportunities for technical workshops, and protocol community gatherings brings together protocol researchers an...\nOrganizer: Department of Decentralization | Venue: Colosseum | Group chat: Matrix https://matrix.to/#/%23protocol:dod.ngo
-LOCATION:Gleimstraße 30, 10437 Berlin-Prenzlauer Berg
-X-VAR-SCORE:15
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-77-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T104500Z
-DTEND:20260614T140000Z
-SUMMARY:Digital Asset Roundtable Expert (DARTE) Series Berlin 3.0 #2026
-DESCRIPTION:The DARTE Series is an initiative of Mariana de la Roche and Nina-Luisa Siedler with the aim to increase legal certainty within the realm of the EU crypto markets. As a new regulatory framework, the application of MiCAR and related regulations still raises numerous questions a...\nOrganizer: Nina Siedler | Venue: HTW Berlin
-LOCATION:HTW Berlin, Wilhelminenhofstraße 75A, 12459 Berlin, Building H
-X-VAR-SCORE:15
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-195-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260620T150000Z
-DTEND:20260621T210000Z
-SUMMARY:InterChain Summit #2026
-DESCRIPTION:​The InterChain Summit will bring together project teams, investors, developers, and active community members during Berlin Blockchain Week Join us for two days of talks, panels, and presentations focused on InterChain communication, as between blockchains, as between communit...\nOrganizer: Cosmos Ecosystem | Venue: CIC Berlin | Group chat: Telegram https://t.me/InterChain_Summit
-LOCATION:Lohmühlenstraße 65, 12435 Berlin, Germany
-X-VAR-SCORE:15
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-129-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T170000Z
-DTEND:20260618T220000Z
-SUMMARY:Regen AI Builders #2026
-DESCRIPTION:How can AI actually help build regenerative futures? - live demos - pioneer talks - friendly networking - food and drinks Local organizers from Berlin AI Builders Club and Regens Unite are coming together to co-create this special edition event that bridges communities — from...\nOrganizer: AI Builders Club & Regens Unite | Venue: CIC
-LOCATION:Lohmühlenstraße 65, 12435 Berlin
-X-VAR-SCORE:14
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-128-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T090000Z
-DTEND:20260616T140000Z
-SUMMARY:Digital Assets Round Table Expert (DARTE) Series Berlin 4.0 #2026
-DESCRIPTION:The DARTE Series is an initiative of Mariana de la Roche and Nina-Luisa Siedler with the aim to increase legal certainty within the realm of the EU crypto markets. As a new regulatory framework, the application of MiCAR and related regulations still raises numerous questions a...\nOrganizer: Nina Siedler and Mariana de la Roche | Venue: Spielfeld
-LOCATION:Skalitzer Str. 85/85, Berlin 
-X-VAR-SCORE:13
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-215-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T100000Z
-DTEND:20260614T010000Z
-SUMMARY:EigenLayer Builder Breakfast #2026
-DESCRIPTION:​The EigenLayer Builder Breakfast is a morning meetup for developers who are building (or looking to build) within the EigenLayer ecosystem. Join us for coffee, conversation, and collaboration with fellow innovators in the space.\nOrganizer: EigenLayer | Venue: Register to see address.
-LOCATION:Register to see address.
-X-VAR-SCORE:13
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-217-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T173000Z
-DTEND:20260617T220000Z
-SUMMARY:Exclusive Ivy Rooftop Event at Berlin Blockchain Week #2026
-DESCRIPTION:​Join Ivy for an exclusive evening of networking with leading voices from the crypto and blockchain space. Enjoy great food, drinks, and inspiring conversations-all with a stunning view of the TV Tower in the heart of Berlin.\nOrganizer: Ivy | Venue: TBA
-LOCATION:TBA
-X-VAR-SCORE:13
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-15-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T090000Z
-DTEND:20260613T180000Z
-SUMMARY:Promiscuous Event (5 access) #2025
-DESCRIPTION:Series: Promiscuous1\nCapacity: 80\nRSVPs: 80\nAccess Events: 5\nVAR Score: 12\nVAR Quartile: 2
+UID:var-event-event-4-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
+SUMMARY:Interchain Summit #2024
+DESCRIPTION:Series: Interchain\nCapacity: 500\nRSVPs: 340\nAccess Events: 0\nVAR Score: 0\nVAR Quartile: 1
 LOCATION:Berlin, Germany
-X-VAR-SCORE:12
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-183-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T130000Z
-DTEND:20260613T160000Z
-SUMMARY:Chess Crypto Tournament – Win a Shiba Inu Prize Pool! #2026
-DESCRIPTION:🎮 Win at MEMECON 360° and Claim Your Meme Glory!Think you’ve got what it takes? Beat our players and earn a golden scratch card per game — your chance to win up to 1 million Shiba Inu tokens per scratch card!\nOrganizer: German Blockhain & AI Week | Venue: Spielfeld Hub | Group chat: Telegram https://t.me/germanblockchainweek
-LOCATION:Skalitzer Str. 85/86, 10997 Berlin
-X-VAR-SCORE:12
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-207-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T120000Z
-DTEND:20260618T230000Z
-SUMMARY:Gaming Summit #2026
-DESCRIPTION:The future of gaming is here! Abstract ​The Gaming Summit brings together the key players in the gaming universe: industry professionals, passionate gamers, forward-thinking brands, investors, and those exploring blockchain's transformative potential in gaming.\nOrganizer: w3.group | Venue: w3.hub
-LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:12
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-216-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T220000Z
-DTEND:20260618T050000Z
-SUMMARY:Degen Rave #2026
-DESCRIPTION:💊Trenches RAVE💊 Get ready to dive deep into the web3 digital underworld at Trenches RAVE, the most electrifying side event of Berlin Blockchain Week! 💊 LINEUP TBD 💊 TIME 10:00 PM - 5:00 AM\nOrganizer: 0xCypheer | Venue: tba
-LOCATION:tba
-X-VAR-SCORE:12
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-69-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T150000Z
-DTEND:20260616T170000Z
-SUMMARY:Krypto-Steuer Deutschland  #2026
-DESCRIPTION:Du investierst in Bitcoin, Ethereum & Co., aber beim Thema Steuern drückst du lieber auf „später erinnern“? Krypto-Steuern müssen kein Angstthema sein.\nOrganizer: Blockpit | Venue: w3 Hub Berlin
-LOCATION:Möckernstraße 120, 10963 Berlin, Deutschland
-X-VAR-SCORE:11
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-110-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T100000Z
-DTEND:20260618T120000Z
-SUMMARY:Student Graffiti Meetup at the Berlin Wall #2026
-DESCRIPTION:​Calling all students in Berlin for Blockchain Week, pull up to the Berlin Wall and paint some graffiti! We’ve lined up an epic workshop that starts with an introduction to real Berlin graffiti culture (the stuff you won’t find online or in books).\nOrganizer: EigenLayer | Venue: Sign up to see full address.
-LOCATION:Sign up to see full address.
-X-VAR-SCORE:11
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-135-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T190000Z
-DTEND:20260612T210000Z
-SUMMARY:RWA & Real Estate Tokenization #2026
-DESCRIPTION:We currently experience a worldwide rise in real world asset tokenization that includes a massive increase of real estate tokenization solutions. Therefore we would like to spend this evening listening to RWA solution providers and how they plan to develop this market further:...\nOrganizer: Achim Jedelsky | Venue: w3.hub
-LOCATION:Möckernstrasse 120 · Berlin
-X-VAR-SCORE:11
-X-VAR-QUARTILE:2
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-97-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T110000Z
-DTEND:20260619T170000Z
-SUMMARY:Distill Podcast: Humans of Web3 #2026
-DESCRIPTION:This Berlin Blockchain Week, we're kickstarting Distill, a podcast focusing on the stories, convictions, and ideas of the people shaping Web3. On June 19, we’re having a few interview spots for our series 'People of Web3', happening during ZuBerlin at Michelberger Hotel.\nOrganizer: DISTILL | Venue: Michelberger Hotel
-LOCATION:Warschauer Str. 39-40, 10243 Berlin
-X-VAR-SCORE:10
+X-VAR-SCORE:0
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-147-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T100000Z
-DTEND:20260619T173000Z
-SUMMARY:NoirCon2 #2026
-DESCRIPTION:NoirCon 2 is coming to Berlin ​🫡 Noir Güt ​NoirCon first made its debut in Thailand, then expanded to the U.S. and now we’re headed to Germany for Berlin Blockchain Week!\nOrganizer: Aztec Labs | Venue: Web3.hub
-LOCATION:Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:10
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-205-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260615T140000Z
-DTEND:20260615T170000Z
-SUMMARY:🍺 O'zapft is! – The Legendary Oktoberfest with German Blockchain & AI Week #2026
-DESCRIPTION:O’zapft is! The barrel is tapped — and so is the spirit of celebration!\nOrganizer: German Blockchain & AI Week | Venue: Hofbräu Wirtshaus Berlin | Group chat: Telegram https://t.me/germanblockchainweek
-LOCATION:Karl-Liebknecht-Str. 30, 10178 Berlin
-X-VAR-SCORE:10
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-220-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T180000Z
-DTEND:20260611T210000Z
-SUMMARY:Regulating the Future: Web3 & Crypto Dinner #2026
-DESCRIPTION:​Join Bitpanda and Baker Tilly for an evening at the crossroads of innovation and regulation. As Web3, crypto, and AI converge, new opportunities and challenges arise.\nOrganizer: Bitpanda | Baker Tilly | Venue: Fabrik 23
-LOCATION:Fabrik 23 Gerichtstraße 23, 13347 Berlin
-X-VAR-SCORE:10
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-55-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T190000Z
-DTEND:20260615T170000Z
-SUMMARY:W3PN_Hacks #2026
-DESCRIPTION:W3PN_Hacks is a privacy & security-focused hackathon where the focus lies on building the foundations for the next generation of users and applications. Create applications without being limited by technology bounties, build what you want however you want as long as it pushes...\nOrganizer: Web3PrivacyNow | Venue: Engelnest | Group chat: Telegram https://t.me/+ZGFx7P_uaLUxZThk
-LOCATION:Wilhelm-Kabus-Str. 24, 10829 Berlin
-X-VAR-SCORE:9
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-94-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260615T160000Z
-DTEND:20260616T160000Z
-SUMMARY:Agents Without Masters Hackathon with NEAR AI #2026
-DESCRIPTION:Hack AI like it means something. ​On June 15–16, join us at w3.hub for 24 hours of focused, irreverent, and community-driven AI x blockchain hacking.\nOrganizer: Hackbox Co | Venue: w3.hub
-LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:9
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-187-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260615T073000Z
-DTEND:20260615T223000Z
-SUMMARY:Movie Night #2026
-DESCRIPTION:During Berlin Blockchain Week, join us for a relaxed Movie Night in a cozy setting. We will watch the fascinating story of how Ethereum was born, followed by another exciting film focused on Bitcoin.\nOrganizer: w3.group | Venue: w3.hub
-LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:9
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-211-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T183000Z
-DTEND:20260611T203000Z
-SUMMARY:BCP partners x Stellar RWAs Dinner #2026
-DESCRIPTION:Kick off the Berlin Blockchain Week with us! ​Join our private ecosystem dinner, hosted by BCPP and sponsored by Stellar!\nOrganizer: BCP partners | Venue: Must register to see address.
-LOCATION:Must register to see address.
-X-VAR-SCORE:9
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-67-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T100000Z
-DTEND:20260614T180000Z
-SUMMARY:Against Crypto-Economics #2026
-DESCRIPTION:Back in the halcyon days, our crypto "industry" understood itself to have embarked upon a project of crypto-economic engineering, where coordination problems were luscious opportunities for socio-technical mechanism design -- Bitcoin's "proof-of-work" the OG example. In 2025,...\nOrganizer: Anoma | Venue: Haus Ungarn
-LOCATION:Karl-Liebknecht-Str. 9, 10178 Berlin, Germany
-X-VAR-SCORE:8
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-81-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T090000Z
-DTEND:20260617T180000Z
-SUMMARY:Onchain Growth Summit  #2026
-DESCRIPTION:Onchain Growth Summit is a curated conference devoted to elevating growth as a dedicated discipline within crypto. This curated, full-day event unites 200+ growth leaders, founders, marketers, DevRels, and ecosystem builders to exchange expertise and insights on driving adoption.\nOrganizer: OGC | Venue: Spielfeld Digital Hub
-LOCATION:Skalitzer Str. 85/86, 10997 Berlin
-X-VAR-SCORE:8
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-170-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T110000Z
-DTEND:20260616T140000Z
-SUMMARY:Morning Coffee Disco: Women in Polkadot 🪩 #2026
-DESCRIPTION:​🪩 Women in Polkadot & crypto girls club are teaming up for a morning party at The Blockspäti, June 16. This one's just for the ladies.\nOrganizer: WebZero & Crypto girls club | Venue: Mena Berlin | Group chat: t.me/joinWebzero
-LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
-X-VAR-SCORE:8
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-186-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260620T140000Z
-DTEND:20260620T180000Z
-SUMMARY:RESONATE: Conversations with Multidisciplinary Creators | Powered by LUKSO #2026
-DESCRIPTION:​An open call for creatives ready to share their story. ​Intimate, off-the-record conversations with DJs, producers, musicians, designers, filmmakers, creative directors, photographers, visual artists, digital creators, and cultural builders.\nOrganizer: LUKSO | Venue: LUKSO Hub
-LOCATION:Köpenicker Ch 3a, 10317 Berlin, Germany
-X-VAR-SCORE:8
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-41-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T170000Z
-DTEND:20260622T234500Z
-SUMMARY:On-chain Book Giveaway : “I can Aiken” #2026
-DESCRIPTION:This is an on-chain book giveaway sponsored by book.io and the Cardano Foundation. Contact @cardanobook on X for a free book, or if you prefer LinkedIn comment on following post: https://www.linkedin.com/posts/cardano-foundation_the-response-to-i-can-aiken-has-been-incredible-...\nOrganizer: John Greene | Venue: On-chain… order on X | Group chat: Other https://x.com/cardanobook
-LOCATION:https://x.com/cardanobook
-X-VAR-SCORE:7
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-89-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T180000Z
-DTEND:20260611T200000Z
-SUMMARY:Psychedelic Breath™ with Dr. Natalie Tillack - BBW Special: System Reboot #2026
-DESCRIPTION:Deep, immersive breathwork meets deep, immersive techno. ​Psychedelic Breath gives you space to process, recalibrate, and see things with a fresh pair of eyes.\nOrganizer: So So Scaled! | Venue: Wild Side Studio @Tillack | Group chat: Telegram https://t.me/psychedelicbreath
-LOCATION:Schinkestr. 4-5, 12047 Berlin, 6th Floor Rooftop
-X-VAR-SCORE:6
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-71-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260620T140000Z
-DTEND:20260620T170000Z
-SUMMARY:DePIN, Pitches & Popcorn #2026
-DESCRIPTION:How to turn Germany’s DePIN projects into a coherent mesh to support innovative industry collaboration Check out the CIC cinema location of several infamous Blockchain meetup and the Blockchain Brunches. Kick back and get into DePin while sipping a drink and enjoying popcorn.\nOrganizer: Berchain e.V. & Bundesblock (Blockchain Bundesverband e.V.) | Venue: CIC Berlin | Group chat: Telegram https://t.me/+HdZPHQay6H5hMTAy
-LOCATION:Lohmühlenstraße 65, 12435 Berlin, Germany
-X-VAR-SCORE:5
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-132-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T170000Z
-DTEND:20260612T193000Z
-SUMMARY:The Art of Investing #2026
-DESCRIPTION:​This exciting evening is hosted by Finance Loop in proud collaboration with Blockchain Bundesverband (the German Blockchain Association) and SwissBorg (one of Europe’s leading crypto investment platforms which lets you buy and sell crypto safely at low fees, engineered in Swi...\nOrganizer: SwissBorg, FinanceLoop, Blockchain Bundesverband | Venue: Galerie Molitor
-LOCATION:Kurfürstenstraße 143, 10785 Berlin
-X-VAR-SCORE:5
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-12-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T090000Z
-DTEND:20260612T180000Z
-SUMMARY:Cartel Event 3 #2024
-DESCRIPTION:Series: Cartel3\nCapacity: 143\nRSVPs: 143\nAccess Events: 3\nVAR Score: 4\nVAR Quartile: 1
+UID:var-event-event-5-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
+SUMMARY:Interchain Summit #2025
+DESCRIPTION:Series: Interchain\nCapacity: 500\nRSVPs: 340\nAccess Events: 2\nVAR Score: 19\nVAR Quartile: 4
 LOCATION:Berlin, Germany
-X-VAR-SCORE:4
+X-VAR-SCORE:19
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-6-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
+SUMMARY:Interchain Summit #2026
+DESCRIPTION:Series: Interchain\nCapacity: 500\nRSVPs: 340\nAccess Events: 3\nVAR Score: 17\nVAR Quartile: 3
+LOCATION:Berlin, Germany
+X-VAR-SCORE:17
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-7-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
+SUMMARY:Gnosis Dappcon #2024
+DESCRIPTION:Series: Gnosis\nCapacity: 400\nRSVPs: 400\nAccess Events: 0\nVAR Score: 0\nVAR Quartile: 1
+LOCATION:Berlin, Germany
+X-VAR-SCORE:0
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-49-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T100000Z
-DTEND:20260611T180000Z
-SUMMARY:d/acc Berlin #2026
-DESCRIPTION:About Event Led by Vitalik Buterin, d/acc is his vision for a more thoughtful approach to technological acceleration one that prioritizes decentralization, defense, and democracy. In recent years, he has emphasized the need to advance technology without concentrating power, pu...\nOrganizer: Ethereum Ecosystem Fund | Venue: Silent Green 
-LOCATION:Gerichtstraße 35, 13347 Berlin, Germany
-X-VAR-SCORE:4
-X-VAR-QUARTILE:1
+UID:var-event-event-8-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
+SUMMARY:Gnosis Dappcon #2025
+DESCRIPTION:Series: Gnosis\nCapacity: 400\nRSVPs: 400\nAccess Events: 3\nVAR Score: 20\nVAR Quartile: 4
+LOCATION:Berlin, Germany
+X-VAR-SCORE:20
+X-VAR-QUARTILE:4
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-53-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260621T150000Z
-DTEND:20260621T200000Z
-SUMMARY:PEER IDEATHON #2026
-DESCRIPTION:Decentralizing Transparency: Building the Future of Social Media About the Ideaathon Join us for an exciting Ideathon during Blockchain Week 2025, where innovators, developers, designers, and thinkers will rethink transparency, data ownership, and decentralisation in social me...\nOrganizer: PEER NETWORK PSE | Venue: PEER NETWORK PSE WORKPLACE
-LOCATION:Möckernstraße 68/Aufgang C, 10965 Berlin
-X-VAR-SCORE:4
-X-VAR-QUARTILE:1
+UID:var-event-event-9-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
+SUMMARY:Gnosis Dappcon #2026
+DESCRIPTION:Series: Gnosis\nCapacity: 400\nRSVPs: 400\nAccess Events: 4\nVAR Score: 19\nVAR Quartile: 4
+LOCATION:Berlin, Germany
+X-VAR-SCORE:19
+X-VAR-QUARTILE:4
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-76-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T163000Z
-DTEND:20260617T223000Z
-SUMMARY:Global Staking Forum #2026
-DESCRIPTION:Global Staking Forum – Berlin Blockchain Week 2025 ​What is it? A special event for everyone involved in blockchain staking: validators, blockchains, big investors, stakers, and regulation experts.\nOrganizer: w3.group | Venue: w3.hub
-LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:4
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-109-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T130000Z
-DTEND:20260613T180000Z
-SUMMARY:German Blockchain & AI Conference #2026
-DESCRIPTION:Step into Europe’s premier blockchain & AI conference — welcome to Day 1 of GBW&AI 2025 in Berlin. We kick off the journey at w3hub (https://w3hub.berlin/), the city’s hidden crypto hotspot, with an exclusive afternoon of networking, finger food, and drinks.\nOrganizer: German Blockchain & AI Week | Venue: w3hub | Group chat: Telegram https://t.me/germanblockchainweek
-LOCATION:Möckernstraße 120, 10963 Berlin
-X-VAR-SCORE:4
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-139-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T100000Z
-DTEND:20260619T200000Z
-SUMMARY:AI Agents Summit 2025 #2026
-DESCRIPTION:​Join us for Berlin’s best Web3 x AI event, the premier AI Agents Summit during the Berlin Blockchain Week 2025. ​The summit is tailored for founders, developers, and AI agent entrepreneurs.\nOrganizer: AI Agents Berlin | Venue: w3.hub | Group chat: Telegram https://t.me/+vktpmnPzQLc1ZGUy
-LOCATION:Möckernstraße 120, 10963 Berlin
-X-VAR-SCORE:4
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-149-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T170000Z
-DTEND:20260613T190000Z
-SUMMARY:JAM BERLIN: Join-Accumulate Machine Explorer Night w/ Polkadot #2026
-DESCRIPTION:Crypto is broken. Why web3 needs a world computer ​Join Shawn Tabrizi, lead developer at Polkadot to work on building the most impactful project in the industry: the world's computer: JAM.​​\nOrganizer: WebZero | Venue: Mena Berlin | Group chat: t.me/joinWebzero
-LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
-X-VAR-SCORE:4
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-123-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260616T100000Z
-DTEND:20260616T130000Z
-SUMMARY:Mobility DePin Launch: AI + Web3 powering mobility #2026
-DESCRIPTION:​🚗✨ Join us for a hands-on showcase of real-world blockchain and AI applications transforming mobility—from public transit to connected vehicles. No fluff.\nOrganizer: Staex GmbH | Venue: w3.hub | Group chat: Other
-LOCATION:Möckernstr. 120, 10963 Berlin
-X-VAR-SCORE:3
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-178-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T100000Z
-DTEND:20260617T220000Z
-SUMMARY:LEDGER: Berlin Blockchain Week #2026
-DESCRIPTION:June 14th - 17th | 10:00-20:00 | w3.hub - 2nd Floor ​Maximize your Potential. Minimize Risks.\nOrganizer: Ledger | Venue: w3.hub
-LOCATION:Möckernstraße 120, 10963 Berlin
-X-VAR-SCORE:3
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-198-1771008220476@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260620T100000Z
-DTEND:20260622T200000Z
-SUMMARY:Resonance, Technology, and Democracy: Vibe Coding for a Scalable Culture of Consciousness #2026
-DESCRIPTION:# RTD@BBW 2025 Hackathon ## Resonance, Technology, and Democracy: Vibe Coding for a Scalable Culture of Consciousness The **RTD@BBW 2025 Hackathon** is about scaling meaningful human connection and sustainable transformation — about facilitating **R**esonance, developing **T**...\nOrganizer: MIND Foundation | Venue: MIND Foundation | Group chat: Telegram https://t.me/+tEfNWRAr2bo2OGZi
-LOCATION:In den Schreibfederhöfen (2nd backyard, Boxhagener Str. 78, 10245 Berlin
-X-VAR-SCORE:3
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-34-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260614T170000Z
-DTEND:20260614T234500Z
-SUMMARY:Krypto made in Europe: Zwischen Regulierung und Wettbewerb #2026
-DESCRIPTION:🎤 Krypto made in Europe: Zwischen Regulierung und Wettbewerb Europa will’s wissen: Mit MiCA nimmt die EU eine Vorreiterrolle in der Krypto-Regulierung ein – doch ist das ein Boost für Innovation oder ein Bremsklotz im globalen Rennen? Bei diesem Panel bringen wir führende Stim...\nOrganizer: Bitvavo and BTC Echo | Venue: w3.hub Berlin
-LOCATION:Möckernstraße 120, 10963 Berlin, Germany
-X-VAR-SCORE:2
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-75-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260615T100000Z
-DTEND:20260615T113000Z
-SUMMARY:Catholic Mass @ Berlin Blockchain Week #2026
-DESCRIPTION:Join us celebrating mass together 10:00 AM Sunday! ​We'll be joining the regular English mass at the cozy [Church of St.\nOrganizer: Crypto Catholics | Venue: Church of St. Thomas Aquinas | Group chat: Telegram https://t.me/+Fnzr9_wtC6FlZmNl
-LOCATION:Hannoversche Str. 5, 10115 Berlin
-X-VAR-SCORE:2
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-100-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T153000Z
-DTEND:20260614T160000Z
-SUMMARY:10. Blockchain@HTW Conference #2026
-DESCRIPTION:This unique event offers a distinctive platform to critically assess the evolution of blockchain technology over the past ten years—from its initial conceptualisation to its current status as a catalyst for transformative change across numerous sectors.\nOrganizer: Prof. Dr. Katarina Krüger | Venue: HTW Berlin
-LOCATION:Wilhelminenhofstraße 75A, 12459 Berlin, Building H
-X-VAR-SCORE:2
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-202-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260619T210000Z
-DTEND:20260619T060000Z
-SUMMARY:Es ist eine Rave. #2026
-DESCRIPTION:It's not a blockchain event It's a Rave. Forget the panels and the pitch decks.\nOrganizer: Jobited | Venue: Secret Location | Group chat: Telegram https://t.me/+GMNpHWmZa2Q0ODIy
-LOCATION:Secret Street 69
-X-VAR-SCORE:2
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-44-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T140000Z
-DTEND:20260618T180000Z
-SUMMARY:Zesty coworking Café  #2026
-DESCRIPTION:Step into our Zesty Coworking Café and join Hyli, the new proof-powered L1, for an afternoon of juicy ideas, bold builders, and sweet surprises. Whether you're here to dive into our tech or just vibe with the citrusy energy, you’ll leave refreshed, inspired, and maybe a little...\nOrganizer: HYLI | Venue: Mitosis Lab 3
-LOCATION:Sonnenallee 67, 12045 Berlin, Germany
+UID:var-event-event-10-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260916T090000Z
+DTEND:20260916T180000Z
+SUMMARY:Cartel Event 1 #2026
+DESCRIPTION:Series: Cartel1\nCapacity: 141\nRSVPs: 141\nAccess Events: 2\nVAR Score: 1\nVAR Quartile: 1
+LOCATION:Berlin, Germany
 X-VAR-SCORE:1
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-65-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T173000Z
-DTEND:20260618T203000Z
-SUMMARY:Bitcoin for Altcoiners #2026
-DESCRIPTION:​"Bitcoin for Altcoiners" are 3 presentations, which will show what maybe even altcoiners don`t know about Bitcoin: ​1. Money as a Network: Looking at the topic of money from the network lens and presenting why Bitcoin is the most resilient and important network of our time.\nOrganizer: w3.hub | Venue: w3.hub
-LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+UID:var-event-event-11-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260920T090000Z
+DTEND:20260920T180000Z
+SUMMARY:Cartel Event 2 #2026
+DESCRIPTION:Series: Cartel2\nCapacity: 90\nRSVPs: 90\nAccess Events: 2\nVAR Score: 0\nVAR Quartile: 1
+LOCATION:Berlin, Germany
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-12-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260916T090000Z
+DTEND:20260916T180000Z
+SUMMARY:Cartel Event 3 #2026
+DESCRIPTION:Series: Cartel3\nCapacity: 145\nRSVPs: 145\nAccess Events: 2\nVAR Score: 0\nVAR Quartile: 1
+LOCATION:Berlin, Germany
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-13-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260918T090000Z
+DTEND:20260918T180000Z
+SUMMARY:Cartel Event 4 #2026
+DESCRIPTION:Series: Cartel4\nCapacity: 149\nRSVPs: 149\nAccess Events: 2\nVAR Score: 1\nVAR Quartile: 1
+LOCATION:Berlin, Germany
 X-VAR-SCORE:1
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-10-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260609T090000Z
-DTEND:20260609T180000Z
-SUMMARY:Cartel Event 1 #2024
-DESCRIPTION:Series: Cartel1\nCapacity: 56\nRSVPs: 56\nAccess Events: 3\nVAR Score: 0\nVAR Quartile: 1
+UID:var-event-event-14-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260919T090000Z
+DTEND:20260919T180000Z
+SUMMARY:Promiscuous Event (5 access) #2026
+DESCRIPTION:Series: Promiscuous1\nCapacity: 80\nRSVPs: 59\nAccess Events: 5\nVAR Score: 15\nVAR Quartile: 3
 LOCATION:Berlin, Germany
-X-VAR-SCORE:0
-X-VAR-QUARTILE:1
+X-VAR-SCORE:15
+X-VAR-QUARTILE:3
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-11-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T090000Z
-DTEND:20260611T180000Z
-SUMMARY:Cartel Event 2 #2024
-DESCRIPTION:Series: Cartel2\nCapacity: 110\nRSVPs: 110\nAccess Events: 3\nVAR Score: 0\nVAR Quartile: 1
-LOCATION:Berlin, Germany
-X-VAR-SCORE:0
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-13-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260611T090000Z
-DTEND:20260611T180000Z
-SUMMARY:Cartel Event 4 #2024
-DESCRIPTION:Series: Cartel4\nCapacity: 61\nRSVPs: 61\nAccess Events: 3\nVAR Score: 0\nVAR Quartile: 1
-LOCATION:Berlin, Germany
-X-VAR-SCORE:0
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-14-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T090000Z
-DTEND:20260613T180000Z
-SUMMARY:Cartel Event 5 #2024
-DESCRIPTION:Series: Cartel5\nCapacity: 107\nRSVPs: 107\nAccess Events: 3\nVAR Score: 0\nVAR Quartile: 1
-LOCATION:Berlin, Germany
-X-VAR-SCORE:0
-X-VAR-QUARTILE:1
-END:VEVENT
-BEGIN:VEVENT
-UID:var-event-event-16-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260609T090000Z
-DTEND:20260609T180000Z
-SUMMARY:Promiscuous Event (8 access) #2025
+UID:var-event-event-15-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260919T090000Z
+DTEND:20260919T180000Z
+SUMMARY:Promiscuous Event (8 access) #2026
 DESCRIPTION:Series: Promiscuous2\nCapacity: 80\nRSVPs: 80\nAccess Events: 8\nVAR Score: 0\nVAR Quartile: 1
 LOCATION:Berlin, Germany
 X-VAR-SCORE:0
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-17-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260613T090000Z
-DTEND:20260613T180000Z
+UID:var-event-event-16-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260920T090000Z
+DTEND:20260920T180000Z
 SUMMARY:Promiscuous Event (12 access) #2026
-DESCRIPTION:Series: Promiscuous3\nCapacity: 80\nRSVPs: 80\nAccess Events: 12\nVAR Score: 0\nVAR Quartile: 1
+DESCRIPTION:Series: Promiscuous3\nCapacity: 80\nRSVPs: 62\nAccess Events: 12\nVAR Score: 0\nVAR Quartile: 1
 LOCATION:Berlin, Germany
 X-VAR-SCORE:0
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-18-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260612T090000Z
-DTEND:20260612T180000Z
+UID:var-event-event-17-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260914T090000Z
+DTEND:20260914T180000Z
 SUMMARY:Promiscuous Event (15 access) #2026
-DESCRIPTION:Series: Promiscuous4\nCapacity: 80\nRSVPs: 58\nAccess Events: 15\nVAR Score: 0\nVAR Quartile: 1
+DESCRIPTION:Series: Promiscuous4\nCapacity: 80\nRSVPs: 63\nAccess Events: 15\nVAR Score: 0\nVAR Quartile: 1
 LOCATION:Berlin, Germany
 X-VAR-SCORE:0
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-19-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260609T090000Z
-DTEND:20260609T180000Z
+UID:var-event-event-18-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260915T090000Z
+DTEND:20260915T180000Z
 SUMMARY:Promiscuous Event (25 access) #2026
-DESCRIPTION:Series: Promiscuous5\nCapacity: 80\nRSVPs: 64\nAccess Events: 25\nVAR Score: 0\nVAR Quartile: 1
+DESCRIPTION:Series: Promiscuous5\nCapacity: 80\nRSVPs: 80\nAccess Events: 25\nVAR Score: 0\nVAR Quartile: 1
 LOCATION:Berlin, Germany
 X-VAR-SCORE:0
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-40-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260617T170000Z
-DTEND:20260617T210000Z
-SUMMARY:Krypto & Steuer Meetup #2026
-DESCRIPTION:Du hast in Kryptowährungen investiert und jetzt lässt dich der Gedanke an das Finanzamt nicht mehr ruhig schlafen? ​​Dann solltest du dieses Meetup besuchen.\nOrganizer: Pekuna & Crypto Nerds | Venue: Taxfix Office
-LOCATION:Köpenicker Str. 122, 10179 Berlin, Germany
+UID:var-event-event-19-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260620T140000Z
+DTEND:20260620T170000Z
+SUMMARY:DePIN, Pitches & Popcorn #2026
+DESCRIPTION:How to turn Germany’s DePIN projects into a coherent mesh to support innovative industry collaboration\n\nCheck out the CIC cinema location of several infamous Blockchain meetup and the Blockchain Brunches.\nKick back and get into DePin while sipping a drink and enjoying popcorn.\nWe have brief intros of the organizers and their take on DePIN and innovations overall.\nOrganizer: Berchain e.V. & Bundesblock (Blockchain Bundesverband e.V.).\nVenue: CIC Berlin.\nChat: Telegram – https://t.me/+HdZPHQay6H5hMTAy
+LOCATION:Lohmühlenstraße 65, 12435 Berlin, Germany
+X-VAR-SCORE:17
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-20-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260610T100000Z
+DTEND:20260611T180000Z
+SUMMARY:Funding the Commons Berlin #2026
+DESCRIPTION:Funding the Commons brings "Infrastructures of Resilience: Stewarding Open Technologies & Public Goods" to Berlin: our urgent call to align incentives and coordintation around protecting, nourishing and catalyzing and open + decentralized technologies.\nJoin researchers, policymakers, builders, and funders at the 13th edition of Funding the Commons as we confront the future of AI, Web3, and digital public goods—not as idealized commons, but as contested spaces requiring intervention, governance, and resilient alternatives.\nOrganizer: Funding the Commons: Infrastructures of Resilience Symposium.\nVenue: Engelnest.\nChat: Telegram – https://t.me/1902068671/40
+LOCATION:Wilhelm-Kabus-Straße 24, 10829 Berlin, Germany
+X-VAR-SCORE:6
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-21-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T140000Z
+DTEND:20260617T200000Z
+SUMMARY:Movement Reforged #2025
+DESCRIPTION:Join us on June 17th in the heart of Berlin for an evening of insight, connection, and next-gen innovation.\nThis  gathering marks the European debut of Movement Industries—spotlighting the Labs → Industries transition, the launch of the Frankfurt Finance Hub, and new waves of modular tech including Parthenon and Monza.\nExpect sharp minds, meaningful conversations, and a rooftop view into the future of crypto infrastructure.\nOrganizer: Move Industries.\nVenue: La Flor.
+LOCATION:Französische Straße 15, 10117 Berlin
+X-VAR-SCORE:19
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-22-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T180000Z
+DTEND:20260619T210000Z
+SUMMARY:RWA-Tokenization: Real Estate Case Studies #2026
+DESCRIPTION:The process of RWA tokenization is well underway.\nNow that the infrastructure has been created, the focus is on the projects.\nStephan Rind (CEO Brickmark AG), Achim Jedelsky (FIBREE) and Axel von Goldbeck (Partner at Möhrle Happ Luther) will draw on their extensive experience with a large number of projects and share the insights they have gained in the form of a panel discussion.\nOrganizer: MÖHRLE HAPP LUTHER.\nVenue: TOMAS – Transformation of Material and Space.
+LOCATION:Mollstraße 1, 10178 Berlin
+X-VAR-SCORE:10
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-23-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T140000Z
+DTEND:20260614T170000Z
+SUMMARY:Infrastructure for Culture — Day 1: Metadata |  Berlin Blockchain Week #2026
+DESCRIPTION:​Join us for Day 1 of Infrastructure for Culture — a focused session on the evolving foundations of cultural tools, happening at LUKSO Hub during Berlin Blockchain Week.\n​We’ll explore how metadata standards and onchain notifications are enabling a new generation of programmable, creator-first infrastructure.\nThrough workshops and open discussions, we’ll unpack the systems, signals, and ideas shaping how culture is built and experienced onchain.\nOrganizer: LUKSO.\nVenue: LUKSO Hub.
+LOCATION:Köpenicker Ch 3a, 10317 Berlin, Germany
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-24-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T160000Z
+DTEND:20260619T220000Z
+SUMMARY:Builder Night Berlin - ZK edition - Presented by MetaMask 🦊 & Aztec #2026
+DESCRIPTION:Join us on June 19th at w3.hub for a special Builder Night dedicated to Zero-Knowledge proofs and privacy in Web3.\nThis is not your typical crypto meetup.\nBuilder Nights are high-signal, no-shill gatherings for developers, researchers, and protocol teams who care about what’s next — and in this edition, we’re diving deep into the role of ZK tech in building more private, secure, and scalable onchain systems.\nOrganizer: MetaMask and Aztec.\nVenue: W3 Hub.\nChat: Telegram – https://t.me/+KtXibRxEUpA4YzY8
+LOCATION:Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:2
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-25-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T173000Z
+DTEND:20260614T213000Z
+SUMMARY:Sunset Social: Rooftop Sessions | human.tech (by Holonym) × LUKSO #2026
+DESCRIPTION:​Join human.tech and LUKSO for Sunset Social at LUKSO Hub Berlin.\n​An open-air rooftop session with cocktails, light bites, and live DJs as we wrap Day 1 of Infrastructure for Culture.\nBuilders, creators, and friends — come catch the sunset and keep the conversations going.\nOrganizer: LUKSO.\nVenue: LUKSO Hub.
+LOCATION:Köpenicker Ch 3a, 10317 Berlin, Germany
+X-VAR-SCORE:11
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-26-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T190000Z
+DTEND:20260616T230000Z
+SUMMARY:Farconnect #2026
+DESCRIPTION:Join us for Farconnect Berlin: A sufficiently decentralized Farcaster meetup during Berlin Blockchain Week.\nWtf is Farcaster?\nFarcaster is a protocol to build and distribute social apps.\nOrganizer: ekinci.xyz.\nVenue: Holzmarkt 25.\nChat: Other – https://warpcast.com/~/group/IJjKTeZGlRpVIQRDYP3xfQ
+LOCATION:Holzmarktstraße 25, 10243 Berlin, Germany
+X-VAR-SCORE:11
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-27-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T100000Z
+DTEND:20260616T134500Z
+SUMMARY:Core Connect meetup with Blockchain Founders Capital #2026
+DESCRIPTION:Build What Matters.\nBuild on Core.\n​​Join us for the Core Connect Global Buildathon IRL Meetup in Berlin, Co-hosted with Blockchain Founders Capital — a high-energy in-person gathering of the most ambitious builders in BTCfi, AI, DeFi, Gaming, SocialFi, and Web3 Infra.\nOrganizer: Sagar Barvaliya.\nVenue: Möckernstraße 120, 10963 Berlin.
+LOCATION:Möckernstraße 120, 10963 Berlin
+X-VAR-SCORE:11
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-28-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260611T093000Z
+DTEND:20260611T180000Z
+SUMMARY:Hashberg #2026
+DESCRIPTION:​Join us for an intimate, 1-day event to collaborate on critical topics across the IPFS ecosystem!\nThe majority of the day will be spent in working sessions.\nTopics include:\n- ATProto Data Plumbing\n- IPFS Beyond Gateways\n- Improving CID Advertising and Routing\n- Private and Collaborative Networks\n- The State of Transports and Links (HTTP & beyond)\n- Rigour and Quality Metrics for IPFS\n\n​This summit brings together IPFS service providers, protocol designers, implementation maintainers, and developers of midsize and large content-addressed apps.\nOrganizer: IPFS Foundation.\nVenue: c-base.
+LOCATION:Rungestraße 20, Berlin, Germany
+X-VAR-SCORE:11
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-29-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T140000Z
+DTEND:20260615T170000Z
+SUMMARY:Infrastructure for Culture — Day 2: Mini Apps | Berlin Blockchain Week #2024
+DESCRIPTION:​Join us for Day 2 of Infrastructure for Culture — an open session dedicated to the apps and tools shaping the next foundation of culture onchain.\nWe'll explore the rise of mini apps, how they differ from traditional dApps, and why they’re radically easier to build.\nOrganizer: LUKSO.\nVenue: LUKSO Hub.
+LOCATION:Köpenicker Ch 3a, 10317 Berlin, Germany
 X-VAR-SCORE:0
 X-VAR-QUARTILE:1
 END:VEVENT
 BEGIN:VEVENT
-UID:var-event-event-115-1771008220477@var-leaderboard
-DTSTAMP:20260213T184340Z
-DTSTART:20260618T190000Z
+UID:var-event-event-30-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T160000Z
 DTEND:20260618T220000Z
-SUMMARY:Bitcoin at Holzmarkt (Stammtisch) #2026
-DESCRIPTION:Welcome to the Bitcoin meet-up at Café Holzmarktperle (Holzmarktstraße 25, Berlin). Since we can’t get enough of talking Bitcoin we are offering this meet-up as a another option in addition to the established Berliner Bitcoin-Stammtisch @ Friedel Richter.\nOrganizer: Freerk | Venue: Café Holzmarktperle
-LOCATION:Holzmarktstraße 25, 10243 Berlin
+SUMMARY:Rooftop Move and Groove by IOTA and Oak Security #2026
+DESCRIPTION:Get a panoramic view of Berlin's skyline and learn about the latest blockchain development and security trends.\n​IOTA is a true OG in the crypto space and recently launched a full rebase of its protocol, making it one of the most secure, modern, scalable, and easy-to-use blockchains in the space.\n​\nOak Security is your one-stop shop for web3 cybersecurity.\nOrganizer: IOTA Foundation & Oak Security.\nVenue: Kunkerkranich.
+LOCATION:Karl-Marx-Straße 66, 12043 Berlin, Germany
+X-VAR-SCORE:6
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-31-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T090000Z
+DTEND:20260613T180000Z
+SUMMARY:Protocol Berg  #2026
+DESCRIPTION:Protocol Berg is a conference focusing on protocol research, decentralized infrastructure, and core-developer experience.\nThe two-day event with multiple stages, opportunities for technical workshops, and protocol community gatherings brings together protocol researchers and other stakeholders from different decentralized protocols.\nAttendance is free of charge.\nOrganizer: Department of Decentralization.\nVenue: Colosseum.\nChat: Matrix – https://matrix.to/#/%23protocol:dod.ngo
+LOCATION:Gleimstraße 30, 10437 Berlin-Prenzlauer Berg
+X-VAR-SCORE:20
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-32-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260610T100000Z
+DTEND:20260610T190000Z
+SUMMARY:House of ZK's Ethproofs Summit  #2026
+DESCRIPTION:Welcome to the House of ZK’s Ethproofs Summit - a focused, high-signal event diving into Ethereum’s enshrinement roadmap.\nThis gathering brings together Ethproofs contributors and related teams to unpack the implications of real-time proofs on Ethereum - technical, political, economic.\nAbout a Host\n\nHouse of ZK - HoZK is a platform dedicated to exploring and promoting the latest advancements in the Zero-Knowledge industry, designed to be a one-stop hub for anyone interested in ZK, and consists of three main pillars: Podcast, Journal, and Events.\nOrganizer: House of ZK.\nVenue: House of Music.\nChat: Telegram – https://t.me/ethproofs_community
+LOCATION:Revaler Str. 99, 10245 Berlin, Germany
+X-VAR-SCORE:17
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-33-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T190000Z
+DTEND:20260614T000000Z
+SUMMARY:Daydream @night party #2026
+DESCRIPTION:​Daydream Berlin ☁️✨\nA Party for Creators\n​June 14th | Sonnenraum, Berlin | 7 PM – 1 AM\n\n​Live from Berlin, we’re closing out Protocol Berg with a night made by creators and for creators thanks to Daydream.\nFree drinks and bouncy music guaranteed.\n​Daydream is Livepeer’s new tool that turns live video into live visual expressions.\nOrganizer: Daydream by Livepeer.\nVenue: Sonnenraum.
+LOCATION:Eichenstraße 4a, 12435 Berlin, Germany
+X-VAR-SCORE:3
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-34-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T173000Z
+DTEND:20260616T210000Z
+SUMMARY:Buidlers Meetup #2026
+DESCRIPTION:Join us for an event to talk blockchain interoperability, what hurdles we still need to solve to achieve true interoperability, and what we’re already doing right already.\nConnect with fellow builders, protocol teams, and ecosystem leaders pushing the boundaries of multichain innovation.\nWhether you’re building on EVM, Solana, or beyond — this is where the ecosystems converge.\nOrganizer: Neon EVM.\nVenue: AMANO Hotel, East side.\nChat: Telegram – https://t.me/+V8IqcLzg0hQyZjM6
+LOCATION:Stralauer Platz 30-31 | 10243 Berlin
+X-VAR-SCORE:15
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-35-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T100000Z
+DTEND:20260619T173000Z
+SUMMARY:NoirCon2 #2025
+DESCRIPTION:NoirCon 2 is coming to Berlin \n\n​🫡 Noir Güt \n\n​NoirCon first made its debut in Thailand, then expanded to the U.S.\nand now we’re headed to Germany for Berlin Blockchain Week!\n​If you care about privacy-first, next-gen Ethereum apps, NoirCon 2 is the place to start—and ship—your zk journey.\nOrganizer: Aztec Labs.\nVenue: Web3.hub.
+LOCATION:Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:2
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-36-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T183000Z
+DTEND:20260616T230000Z
+SUMMARY:DeFi Trading & Asset Management Summit #2026
+DESCRIPTION:At the DeFi Trading & Asset Management Summit, we explore the next generation of capital coordination.\nFrom on-chain fund infrastructure to decentralized prop trading and AI-powered strategy execution, this summit brings together builders, traders, and fund managers reshaping how assets are managed in the permissionless and non-custodial economy.\n​Whether you're looking to capitalise on your DeFi edge, deploy algorithmic strategies, or build your own DeFi vault, this is the place to connect and exchange ideas.\nOrganizer: w3.group.\nVenue: w3.hub Creative Campus.
+LOCATION:Tempelhofer Ufer 17, 10963 Berlin, Germany
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-37-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260621T150000Z
+DTEND:20260621T200000Z
+SUMMARY:PEER IDEATHON #2026
+DESCRIPTION:Decentralizing Transparency: Building the Future of Social Media\n\nAbout the Ideaathon\nJoin us for an exciting Ideathon during Blockchain Week 2025, where innovators, developers, designers, and thinkers will rethink transparency, data ownership, and decentralisation in social media.\nThe goal is to reimagine platforms where users fully own and control their data by designing systems that securely store and distribute information across decentralised networks.\nThe Challenge\nCurrent social media platforms are controlled by centralised corporations with closed algorithms and restricted user data access.\nOrganizer: PEER NETWORK PSE.\nVenue: PEER NETWORK PSE WORKPLACE.
+LOCATION:Möckernstraße 68/Aufgang C, 10965 Berlin
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-38-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T140000Z
+DTEND:20260618T180000Z
+SUMMARY:Zesty coworking Café  #2026
+DESCRIPTION:Step into our Zesty Coworking Café and join Hyli, the new proof-powered L1, for an afternoon of juicy ideas, bold builders, and sweet surprises.\nWhether you're here to dive into our tech or just vibe with the citrusy energy, you’ll leave refreshed, inspired, and maybe a little more orange.\nOrganizer: HYLI.\nVenue: Mitosis Lab 3.
+LOCATION:Sonnenallee 67, 12045 Berlin, Germany
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-39-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T180000Z
+DTEND:20260613T210000Z
+SUMMARY:Alephium X Onekey Community Meetup #2025
+DESCRIPTION:Welcome Alephium community members, PoW enthusiasts, on-chain degens, OneKey KOLs, and cold wallet lovers!\n​Join us for a fun and relaxed Friday evening at the bar.\n​We'll be serving:\n\n​Drinks: Berliner Berg Lager & Pils, house wines, and mineral water\n\n​Snacks: Chips and dips, bread and olives, salamis, and a veggie platter\n\n​Event Flow\n\n​Brief introduction to kick things off\n\n​Icebreaker games and a quiz — quiz winners will receive an Alephium x OneKey co-branded cold wallet!\nOrganizer: Alephium.\nVenue: Geist im Glas.
+LOCATION:Lenaustraße 27, 12047 Berlin
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-40-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T160000Z
+DTEND:20260615T190000Z
+SUMMARY:SAFE SPACE: Privacy, Power & Practical Resistance #2026
+DESCRIPTION:We will be present throughout the W3PN_Hackathon, helping onboard new hackers and gather feedback on safety and inclusion from the hackers.\nOur main event is on Sunday 15th, 4–7PM\n\n4PM: Hackers & non-hackers welcome to contribute to the interactive art piece on surveillance, share thoughts, and make their own personalized merch\n\n5PM: Short Workshop & Circle Gathering\n\nWe’ll wrap before the Hackathon Closing Ceremony.\nNote: Capacity is limited for non hackers.\nOrganizer: Womxn in web3 Privacy.\nVenue: W3PN_Hacks Venue.\nChat: Telegram – https://t.me/@womeninweb3privacy
+LOCATION:Wilhelm-Kabus-Straße 24, 10829 Berlin, Germany
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-41-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T100000Z
+DTEND:20260614T180000Z
+SUMMARY:Against Crypto-Economics #2025
+DESCRIPTION:Back in the halcyon days, our crypto "industry" understood itself to have embarked upon a project of crypto-economic engineering, where coordination problems were luscious opportunities for socio-technical mechanism design -- Bitcoin's "proof-of-work" the OG example.\nIn 2025, we find ourselves lost in a melancholic miasma of financial and cultural woes, reduced by the token-attention economy to debates over unlock schedules, cashflow metaphors, and at times a wise-but-reactionary rejection of anything that smells like a token whatsoever.When did we lose our sight of the toolkit right in front of us?\nWas cryptoeconomics ever great to begin with?\nOrganizer: Anoma.\nVenue: Haus Ungarn.
+LOCATION:Karl-Liebknecht-Str. 9, 10178 Berlin, Germany
+X-VAR-SCORE:8
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-42-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T173000Z
+DTEND:20260618T203000Z
+SUMMARY:Bitcoin for Altcoiners #2026
+DESCRIPTION:​"Bitcoin for Altcoiners" are 3 presentations, which will show what maybe even altcoiners don`t know about Bitcoin:\n\n​1.\nMoney as a Network: Looking at the topic of money from the network lens and presenting why Bitcoin is the most resilient and important network of our time.\n2.\nOrganizer: w3.hub.\nVenue: w3.hub.
+LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:15
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-43-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T190000Z
+DTEND:20260615T170000Z
+SUMMARY:W3PN_Hacks #2026
+DESCRIPTION:W3PN_Hacks is a privacy & security-focused hackathon where the focus lies on building the foundations for the next generation of users and applications.\nCreate applications without being limited by technology bounties, build what you want however you want as long as it pushes forward the cypherpunk & privacy ethos.\nOrganizer: Web3PrivacyNow.\nVenue: Engelnest.\nChat: Telegram – https://t.me/+ZGFx7P_uaLUxZThk
+LOCATION:Wilhelm-Kabus-Str. 24, 10829 Berlin
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-44-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T140000Z
+DTEND:20260614T180000Z
+SUMMARY:ZK Research Day Berlin #2025
+DESCRIPTION:​ZK Research Day Berlin is an invite-only, highly technical gathering dedicated to zero-knowledge (ZK) research and development.\nOur research day will bring together a specially curated group of researchers, builders, and engineers to exchange ideas, present ZK use cases, and facilitate in-depth discussions.\nOrganizer: Citrea & Boundless.\nVenue: Scaling Spaces - Willner Brauerei.
+LOCATION:Berliner Str. 80, 13189 Berlin, Germany
+X-VAR-SCORE:9
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-45-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T100000Z
+DTEND:20260613T120000Z
+SUMMARY:Build Smart Contracts on Alephium – A Dev Workshop with Core Devs #2025
+DESCRIPTION:​Curious about how smart contracts can work on a Proof-of-Work blockchain?\nWant to explore something beyond the EVM world?\nJoin us for a relaxed, hands-on workshop with core developers from Alephium!\nOrganizer: Alephium.\nVenue: 42 Berlin Auditorium.\nChat: Telegram – https://t.me/+0zH6AEkWr401Njdi
+LOCATION:Harzer Str. 42, 12059 Berlin
+X-VAR-SCORE:11
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-46-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T160000Z
+DTEND:20260616T160000Z
+SUMMARY:Agents Without Masters Hackathon with NEAR AI #2025
+DESCRIPTION:Hack AI like it means something.\n​On June 15–16, join us at w3.hub for 24 hours of focused, irreverent, and community-driven AI x blockchain hacking.\n​At Agents Without Masters, we’re calling on builders, researchers, weirdos, and wanderers to create autonomous agents that actually do something.\nOrganizer: Hackbox Co.\nVenue: w3.hub.
+LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:20
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-47-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T100000Z
+DTEND:20260618T170000Z
+SUMMARY:Safe{Con} 3 #2026
+DESCRIPTION:Conference dedicated to the future of onchain self-custody, security and UX.\nOrganizer: Safe.\nVenue: Stage A, Radialsystem.
+LOCATION:Holzmarktstraße 33, 10243 Berlin
+X-VAR-SCORE:10
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-48-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T180000Z
+DTEND:20260614T180000Z
+SUMMARY:Cardano Hackathon and Networking | Berlin Blockchain Week #2026
+DESCRIPTION:Come Build the Future With Us at Berlin Blockchain Week!\nHosted by: Cardano, Masumi, and NMKR\n​What's This All About?\n​So here's the deal - the next wave of innovation on Cardano is happening right now, and we want you to be part of it.\nOrganizer: NMKR.\nVenue: w3.hub.
+LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:15
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-49-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T100000Z
+DTEND:20260617T220000Z
+SUMMARY:LEDGER: Berlin Blockchain Week #2025
+DESCRIPTION:June 14th - 17th | 10:00-20:00 | w3.hub - 2nd Floor\n\n​Maximize your Potential.\nMinimize Risks.\n​Find Ledger on the second floor at the w3.hub\n- at the heart of Berlin Blockchain Week.\nOrganizer: Ledger.\nVenue: w3.hub.
+LOCATION:Möckernstraße 120, 10963 Berlin
+X-VAR-SCORE:10
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-50-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T100000Z
+DTEND:20260617T234500Z
+SUMMARY:OpenServ Berlin Hack - Build Telegram Apps with AI Agents #2026
+DESCRIPTION:Get ready for an exclusive one-day fast hack focused on building AI agent-powered Telegram apps using OpenServ.\nBut first - you’ll need to prove you’re ready.\nOnly 20 top builders will make the cut.\nOrganizer: Openserv.\nVenue: UMA Hub Coworking & Cafe.\nChat: Discord – https://discord.com/invite/busaj4SQcb
+LOCATION:Großbeerenstraße 60, 10965 Berlin, Germany
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-51-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260620T100000Z
+DTEND:20260622T200000Z
+SUMMARY:Resonance, Technology, and Democracy: Vibe Coding for a Scalable Culture of Consciousness #2024
+DESCRIPTION:# RTD@BBW 2025 Hackathon\n\n## Resonance, Technology, and Democracy: Vibe Coding for a Scalable Culture of Consciousness\n\nThe **RTD@BBW 2025 Hackathon** is about scaling meaningful human connection and sustainable transformation — about facilitating **R**esonance, developing **T**echnology, and supporting **D**emocracy.\nWe especially invite non-programmers to join us in prototyping collaborative open-source technologies that facilitate resonance spaces.\n**Please note: Since we are utilizing AI, this event does not require any programming skills.**\n\n### What are Resonance Spaces?\nOrganizer: MIND Foundation.\nVenue: MIND Foundation.\nChat: Telegram – https://t.me/+tEfNWRAr2bo2OGZi
+LOCATION:In den Schreibfederhöfen (2nd backyard, Boxhagener Str. 78, 10245 Berlin
 X-VAR-SCORE:0
 X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-52-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T100000Z
+DTEND:20260616T130000Z
+SUMMARY:Core Connect Global Buildathon IRL Meetup - Berlin #2026
+DESCRIPTION:Build What Matters.\nBuild on Core.\n​Join us for the Core Connect Global Buildathon IRL Meetup in Berlin, Co-hosted with Blockchain Founders Capital — a high-energy in-person gathering of the most ambitious builders in BTCfi, AI, DeFi, Gaming, SocialFi, and Web3 Infra.\nOrganizer: Core.\nVenue: w3.hub.
+LOCATION:Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:21
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-53-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T210000Z
+DTEND:20260619T060000Z
+SUMMARY:Es ist eine Rave. #2025
+DESCRIPTION:It's not a blockchain event\n\nIt's a Rave.\nForget the panels and the pitch decks.\nDuring Berlin Blockchain Week, Jobited.com and a bunch of friends are doing things differently.\nOrganizer: Jobited.\nVenue: Secret Location.\nChat: Telegram – https://t.me/+GMNpHWmZa2Q0ODIy
+LOCATION:Secret Street 69
+X-VAR-SCORE:22
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-54-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T210000Z
+DTEND:20260614T040000Z
+SUMMARY:Community Rave #2024
+DESCRIPTION:On June 14th, FUTURE030 and w3.hub invite you to an event that pushes the boundaries of the ordinary – a true rave for the Web3 community!\n​Start your evening with a Sundowner Aperitivo in the courtyard of w3.hub.\nFrom 21:00 Uhr, we dive deep: immerse yourself in an experience where the essence of Berlin meets the vision of a new future.\nOrganizer: w3.group.\nVenue: w3.hub.
+LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-55-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T073000Z
+DTEND:20260615T223000Z
+SUMMARY:Movie Night #2025
+DESCRIPTION:During Berlin Blockchain Week, join us for a relaxed Movie Night in a cozy setting.\nWe will watch the fascinating story of how Ethereum was born, followed by another exciting film focused on Bitcoin.\n​This event offers a unique chance to get behind the scenes of the blockchain industry.\nOrganizer: w3.group.\nVenue: w3.hub.
+LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-56-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T160000Z
+DTEND:20260612T190000Z
+SUMMARY:NEAR Happy Hour @ BBW #2026
+DESCRIPTION:Join the NEAR Foundation for a relaxed and engaging happy hour during BBW!\nWhether you’re a longtime community member, investor or just curious about what NEAR is up to, this is a great chance to connect, share ideas, and unwind with fellow builders and investors.\n​Come by for good conversations, light refreshments, and a friendly atmosphere—we look forward to seeing you there!\nOrganizer: NEAR Foundation.\nVenue: Available upon approval.
+LOCATION:Available upon approval
+X-VAR-SCORE:2
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-57-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T180000Z
+DTEND:20260618T230000Z
+SUMMARY:Telekom & Friends #2026
+DESCRIPTION:Join us for the second Telekom and Friends Party on the rooftop of Deutsche Telekom HQ in Berlin.\n​Expect an evening of engaging conversations, a thought-provoking panel with Web3 leaders, food, drinks and a vibrant rooftop party with all the Berlin vibes.\n​We can't wait to welcome you - see you soon!\nOrganizer: Deutsche Telekom.\nVenue: Telekom HQ Berlin @Rooftop.
+LOCATION:Winterfeldtstraße 21, 10781 Berlin, Germany
+X-VAR-SCORE:17
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-58-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T170000Z
+DTEND:20260614T230000Z
+SUMMARY:Satoshi Nakamoto Forum - Take the Orange Pill #2026
+DESCRIPTION:🇩🇪 German Blockchain & AI Week presents:\n\n​An Exclusive ₿itcoin Evening in Berlin\n\n​Join us on June 14, 2025, at Berlin 🏙️ Spielfeld Hub for an unforgettable evening dedicated to the vision of Satoshi Nakamoto and the revolution of decentralized money 🌐.\nThis exclusive gathering is a must-attend for Bitcoin believers, blockchain enthusiasts, and industry leaders.\n​What to Expect:\n\n​🗣️ Keynote & Expert Talks – Gain insights from top Bitcoin thinkers on Bitcoin’s impact, philosophy, DeFi, and the mother of all blockchains\n\n​🎬 Exclusive Movie Premiere – Take the Orange Pill, a deep dive into the origins, impact, and legacy of Bitcoin\n\n​🍹 Legacy Drinks & Finger Food – Enjoy great conversations over delicious refreshments\n\n​🤝 Elite Networking – Connect with Bitcoiners, blockchain pioneers, and innovators on a beautiful summer Saturday evening in Berlin\n\n​Agenda:\n\n​🕔 5:30 PM – Registration\n🎤 6:30 PM – Keynotes, Q&A Session & Panel\n🎬 7:00 PM – Take the Orange Pill – Satoshi Nakamoto (Movie Premiere)\n🍽️ 8:30 PM – Networking, Finger Food & Drinks\n\n​📍 Location: Berlin Spielfeld Hub\n📅 Date: June 14, 2025\n⏰ Time: 5 PM – 10 PM\n🎟️ Free Entry – Registration Required \n\n​🔝 Priority Registration: Secure your spot with our GBW&AI 💎 VIP Ticket ✅\n\n​🚀 Secure your spot now and get ready to Take the Orange Pill!\nOrganizer: German Blockchain & AI Week.\nVenue: Spielfeld Hub.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Skalitzer Str. 85/86, 10997 Berlin
+X-VAR-SCORE:18
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-59-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T080000Z
+DTEND:20260612T100000Z
+SUMMARY:Breakfast "TO GO" with GBW&AI☀️ #2024
+DESCRIPTION:Start your morning with us!\n☕🥐\n\n​Rise and shine with a fresh, buttery croissant and a warm cup of coffee or tea—on us!\nFuel up for a day of innovation, networking, and inspiration at GBW & AI in Berlin.\nOrganizer: German Blockchain & AI Week.\nVenue: Kaffee lieben Wir.\nChat: Telegram – https://lu.ma/43cu3btb
+LOCATION:Schöneberger Straße 9
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-60-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T100000Z
+DTEND:20260613T173000Z
+SUMMARY:SmartFutures - UNDP x Cardano #2026
+DESCRIPTION:SmartFutures brings together thought leaders, innovators, and changemakers for a two-day hybrid event in Berlin, where technology, collaboration, and sustainability converge.\nWith participants from the UNDP BOOST and UNDP Cities Network, the Cardano ecosystem, and a range of industry experts, this event is designed to inspire and equip attendees to drive impactful change in urban and industrial systems.\n​At its core, SmartFutures is about harnessing the power of blockchain technology and sustainable innovation to address complex challenges and create transformative solutions.\nOrganizer: Disruptive Elements GmbH.\nVenue: w3.hub.
+LOCATION:Möckernstraße 120, 10963 Berlin
+X-VAR-SCORE:18
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-61-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T200000Z
+DTEND:20260613T023000Z
+SUMMARY:SPÄTI RAVE: The Blockspäti Opening Party with Polkadot #2026
+DESCRIPTION:​The Blockspäti with Polkadot is back for its second year.\n​We've renovated a Berlin club into a secret crypto mini market.\nA true Berlin club experience to celebrate Polkadot's birthplace.\nOrganizer: WebZero & Polkadot.\nVenue: Mena Berlin.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
+X-VAR-SCORE:18
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-62-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T104500Z
+DTEND:20260614T140000Z
+SUMMARY:Digital Asset Roundtable Expert (DARTE) Series Berlin #2026
+DESCRIPTION:The DARTE Series is an initiative of Mariana de la Roche and Nina-Luisa Siedler with the aim to increase legal certainty within the realm of the EU crypto markets.\nAs a new regulatory framework, the application of MiCAR and related regulations still raises numerous questions and as such the DARTE Series aims at facilitating expert discussions, resulting in industry best practice proposals, published in reports, and specific calls to action.\nVisit https://www.siedler.legal/micar for further information.\nOrganizer: Nina Siedler.\nVenue: HTW Berlin.
+LOCATION:HTW Berlin, Wilhelminenhofstraße 75A, 12459 Berlin, Building H
+X-VAR-SCORE:17
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-63-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T100000Z
+DTEND:20260618T120000Z
+SUMMARY:Student Graffiti Meetup at the Berlin Wall #2026
+DESCRIPTION:​Calling all students in Berlin for Blockchain Week, pull up to the Berlin Wall and paint some graffiti!\nWe’ve lined up an epic workshop that starts with an introduction to real Berlin graffiti culture (the stuff you won’t find online or in books).\nAfter that, the artists will guide you step-by-step to spray-paint your own unique design.\nOrganizer: EigenLayer.\nVenue: Sign up to see full address..
+LOCATION:Sign up to see full address.
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-64-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260620T140000Z
+DTEND:20260620T180000Z
+SUMMARY:RESONATE: Conversations with Multidisciplinary Creators | Powered by LUKSO #2026
+DESCRIPTION:​An open call for creatives ready to share their story.\n​Intimate, off-the-record conversations with DJs, producers, musicians, designers, filmmakers, creative directors, photographers, visual artists, digital creators, and cultural builders.\n​Honest dialogue.\nOrganizer: LUKSO.\nVenue: LUKSO Hub.
+LOCATION:Köpenicker Ch 3a, 10317 Berlin, Germany
+X-VAR-SCORE:20
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-65-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260607T113000Z
+DTEND:20260607T193000Z
+SUMMARY:Arweave Day Berlin #2026
+DESCRIPTION:This June, join us for an Arweave Day Berlin like never before!\nWe’re taking the event outdoors, embracing Berlin’s stunning lakeside scenery for an unforgettable day filled with innovation, connection, and fun.\n​Arweave Day Berlin 2025 brings together friends, ecosystem-family, and groundbreaking projects for a day packed with live demos, contests, keynote speeches, and plenty of surprises.\nOrganizer: Forward Research Inc..\nVenue: Seminaris SeeHotel Potsdam.
+LOCATION:An d. Pirschheide 40, 14471 Potsdam, Germany
+X-VAR-SCORE:10
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-66-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T210000Z
+DTEND:20260617T030000Z
+SUMMARY:The Blockspäti OGS x Hype x Polkadot Closing Party #2026
+DESCRIPTION:The official closing party for OnChain Growth Summit, just 5 minutes walking from the OGS venue.\n​Join On Chain Growth Club, Hype and Polkadot at The Blockspäti Berlin.\nThis is your last chance to visit the secret späti, as we wrap up another successful Berlin Blockchain Week.\nOrganizer: WebZero & Polkadot.\nVenue: Mena Berlin.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
+X-VAR-SCORE:17
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-67-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T100000Z
+DTEND:20260618T140000Z
+SUMMARY:Open Source Essentials for Blockchain Legal Professionals (and Friends) #2026
+DESCRIPTION:Join us for an engaging workshop with Andrew Katz, a leading expert in open source law and governance.\nThis interactive session will explore the core principles of open source, covering licensing, compliance, and best practices for collaboration.\nThe workshop will conclude with a dynamic panel discussion, where industry professionals will share insights and answer your questions about the evolving open source landscape.\nOrganizer: JUST Open Source Stiftung.\nVenue: JuggleHUB.
+LOCATION: Immanuelkirchstraße 14a, 10405 Berlin
+X-VAR-SCORE:8
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-68-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T010000Z
+DTEND:20260614T020000Z
+SUMMARY:GBW&AI loves🌭Currywurst🍟 #2025
+DESCRIPTION:Experience the taste of Berlin’s famous currywurst with German Blockchain Week & AI at the one and only Curry61🔥!\n​At the one and only Curry61, a family-run business where cooking is a passion.\nTheir secret?\nOrganizer: German Blockchain & AI Week.\nVenue: Curry61 Alexanderplatz.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Alexanderpl. 2, 10178 Berlin
+X-VAR-SCORE:10
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-69-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T160000Z
+DTEND:20260615T180000Z
+SUMMARY:Intern Ping Pong Championships w/Bitget & Polkadot 🏓 #2025
+DESCRIPTION:Join us for the Intern Ping Pong Championship featuring Bitget Wallet and Polkadot!\nCompete, connect, and claim your crown in Berlin’s ultimate ping pong showdown.\nAre you on board?\nOrganizer: Sarthi (Bitget Wallet).\nVenue: Mena Berlin.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin
+X-VAR-SCORE:10
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-70-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T140000Z
+DTEND:20260614T190000Z
+SUMMARY:Onchain Culture Summit #2026
+DESCRIPTION:🪩 ONCHAIN CULTURE SUMMIT\n​Tech meets Culture.\nAll eyes on Berlin.\n​w3.hub x FUTURE030 present a new kind of drop:\n\n​Digital Humans.\nOrganizer: w3.group.\nVenue: w3.hub.
+LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-71-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T153000Z
+DTEND:20260614T160000Z
+SUMMARY:10. Blockchain@HTW Conference #2026
+DESCRIPTION:This unique event offers a distinctive platform to critically assess the evolution of blockchain technology over the past ten years—from its initial conceptualisation to its current status as a catalyst for transformative change across numerous sectors.\nOrganizer: Prof. Dr. Katarina Krüger.\nVenue: HTW Berlin.
+LOCATION:Wilhelminenhofstraße 75A, 12459 Berlin, Building H
+X-VAR-SCORE:19
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-72-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T190000Z
+DTEND:20260617T220000Z
+SUMMARY:🐺☠️🌑 Werewolf: VCs & Founders 🌑☠️🐺 #2025
+DESCRIPTION:Pitching?\nMore like pitchforks.\nBluff, brew alliances, and hunt for hidden lycans.\nOrganizer: BlueYard Capital & Peanut.\nChat: Telegram – https://t.me/+hqPrBqBFg004MGM0
+LOCATION:Berlin, Germany
+X-VAR-SCORE:16
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-73-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T190000Z
+DTEND:20260612T210000Z
+SUMMARY:RWA & Real Estate Tokenization #2026
+DESCRIPTION:We currently experience a worldwide rise in real world asset tokenization that includes a massive increase of real estate tokenization solutions.\nTherefore we would like to spend this evening listening to RWA solution providers and how they plan to develop this market further:\n\nSustainable investments with arcneo bonds\nDespot Bitschnau & Jens Bredler, arcneo - https://arcneo.de/\nTokenized rights on Real Estate\nChristopher Haß, TokeItReal - https://tokeitreal.com/\nA new, more accessible way to invest in real estate!\nBogdan Almasi, asseto - https://assettoapp.com/\nInvest where you enjyo life - Tiny House Resorts in Portugal\nAchim Jedelsky, OWR Invest - https://owrinvest.com/\nI hope you will join in a discussion about this exciting topic and the state of the industry!\nOrganizer: Achim Jedelsky.\nVenue: w3.hub.
+LOCATION:Möckernstrasse 120 · Berlin
+X-VAR-SCORE:11
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-74-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T180000Z
+DTEND:20260616T220000Z
+SUMMARY:SheFi Berlin x BBW #2026
+DESCRIPTION:SheFi Berlin x BBW is a one-of-a-kind gathering bringing together talent from across and beyond the web3 space.\n​We’re building a more inclusive, connected future, and this event is where the ideas, conversations, and collaborations that shape it begin.\n​Most crypto professionals exist inside a bubble, fighting for attention and marketing to each other.\nOrganizer: SheFi Berlin.\nVenue: bUm - Raum für solidarisches Miteinander.
+LOCATION:Paul-Lincke-Ufer 21, 10999 Berlin
+X-VAR-SCORE:6
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-75-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T130000Z
+DTEND:20260613T160000Z
+SUMMARY:Chess Crypto Tournament – Win a Shiba Inu Prize Pool! #2025
+DESCRIPTION:🎮 Win at MEMECON 360° and Claim Your Meme Glory!Think you’ve got what it takes?\nBeat our players and earn a golden scratch card per game — your chance to win up to 1 million Shiba Inu tokens per scratch card!\n🔥 Step inside MEMECON 360° – The First Meme Tent Lounge in the World (lu.ma/6cionvuo)Experience a surreal mix of the nature of memes, meme art, chill zones, and a fully immersive meme fantasy — all inside a 360° projection tent to protect the memecon world.\nOrganizer: German Blockhain & AI Week.\nVenue: Spielfeld Hub.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Skalitzer Str. 85/86, 10997 Berlin
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-76-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T153000Z
+DTEND:20260613T160000Z
+SUMMARY:🎬 The Nostalgia of Bitcoin – A Short Movie Event at GBW & AI #2026
+DESCRIPTION:⏳ Relive the Journey of Bitcoin – Take the Orange Pill\n\nJoin us for an exclusive short film screening at German Blockchain Week & AI 2025, as we dive deep into the revolutionary story of Bitcoin — from its anonymous beginnings in 2008 to its role today as a hedge against inflation and a potential government-recognized store of value.\nA special preview of the Satoshi Nakamoto Forum, taking place on June 14, 2025.⏳ Relive the Journey of Bitcoin – Take the Orange Pill (https://lu.ma/ad0szfnc)\n\nOur commitment: "Driven by value, for the community!"\nOur mission: WE CHAIN THE WORLD\n\n​​👉 Follow for more: www.germanblockchainweek.com\nOrganizer: German Blockchain & AI Week.\nVenue: Spielfeld Hub.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Skalitzer Str. 85/86, 10997 Berlin
+X-VAR-SCORE:15
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-77-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T073000Z
+DTEND:20260619T093000Z
+SUMMARY:Open Internet Club/Berlin: Morning Run, Workout & Coffee #2025
+DESCRIPTION:​Re-fuel during Blockchain Week with an easy morning run, workout and coffee.\n​We meet at 7:20 at the Adidas Calisthenics in Volkspark Friedrichshain (see map).\n​The run starts at 7:30.\nOrganizer: Open Internet Club/berlin.\nVenue: Calisthenics Adidas open air gym .
+LOCATION:Danziger Str., 10407 Berlin, Germany
+X-VAR-SCORE:25
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-78-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T150000Z
+DTEND:20260614T180000Z
+SUMMARY:Investors, look at Berlin! #2024
+DESCRIPTION:​Everyone is complaining that Berlin is dead.\n​🟩 It's not.\n​We're bringing you Berlin's hottest and brightest startups of the Bitcoin and AI space.\nOrganizer: Dennis Daiber.\nVenue: MENA Kreuzberg.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-79-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T180000Z
+DTEND:20260617T220000Z
+SUMMARY:BONFIRE: The Gathering #2025
+DESCRIPTION:​12 spots at a table to play MAGIC: The Gathering together!\nThis session is repeated thrice: Sunday, Monday and Tuesday.\nIf the application numbers are high, we'll cycle attendees so everyone can play.\nOrganizer: Joshua Bate.\nVenue: Brettspielplatz - Das Spielecafé.\nChat: Telegram – https://t.me/+1T0rioWXwbxmOWQ0
+LOCATION:Waldstraße 50, 10551 Berlin, Germany
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-80-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T190000Z
+DTEND:20260615T230000Z
+SUMMARY:🥢 SOJUDAO meets KIMCHI 🇰🇷PRINCESS in Berlin  #2026
+DESCRIPTION:Join us for a flavorful fusion of culture, community, and crypto!\nAs part of German Blockchain & AI Week 2025, we proudly present a special evening where SOJUDAO — the Web3-native Korean collective — meets Berlin’s legendary Kimchi Princess.\nThis side event brings together authentic Korean food, blockchain builders, and global innovators in a casual and unforgettable setting.\nOrganizer: German Blockchain & AI Week.\nVenue: Kimchi Princess.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Skalitzer Str. 36, 10999 Berlin
+X-VAR-SCORE:9
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-81-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T190000Z
+DTEND:20260612T223000Z
+SUMMARY:Chain Reactions: How Startups Are Shaping Cardano #2026
+DESCRIPTION:Venture Hub by the Cardano Foundation, in partnership with w3.hub Berlin and CryptoInvest Berlin, invites you to an exclusive evening.\nLearn more about the promising startups emerging from the Venture Hub program.\n​What to expect\n\n​Meet the Founders: During curated presentations and Q&A sessions, hear inspiring, real-world insights directly from the founders of LW3, Iagon, and Andamio.\nOrganizer: w3.hub.\nVenue: w3.hub Creative Campus.
+LOCATION:Tempelhofer Ufer 17, 10963 Berlin, Germany
+X-VAR-SCORE:2
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-82-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T120000Z
+DTEND:20260618T230000Z
+SUMMARY:Gaming Summit #2025
+DESCRIPTION:The future of gaming is here!\nAbstract\n​The Gaming Summit brings together the key players in the gaming universe: industry professionals, passionate gamers, forward-thinking brands, investors, and those exploring blockchain's transformative potential in gaming.\nThis day-event addresses the critical intersection of traditional gaming culture and emerging blockchain technologies.\nOrganizer: w3.group.\nVenue: w3.hub.
+LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-83-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T180000Z
+DTEND:20260617T220000Z
+SUMMARY:The Tokenization Forum #2026
+DESCRIPTION:The Tokenization Forum invites you to an exclusive evening exploring how asset tokenization is shaping the future of capital markets.\nThe event will begin with a panel discussion featuring leading experts who will share their perspectives on the latest trends, challenges, and developments in the tokenization space.\nAfterwards, join us for rooftop networking with drinks, light refreshments, and a view over Berlin’s skyline.\nOrganizer: STOKR & NYALA.\nVenue: Beyond Quartier Heidestrasse.
+LOCATION:Heidestraße 34, 10557 Berlin
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-84-1771061781135@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T170000Z
+DTEND:20260613T220000Z
+SUMMARY:Rad New World #2024
+DESCRIPTION:Years of heads-down building have led to this moment.\nWhile the broader industry drifts into dark waters, we have been quietly building alternatives.\nGet ready for exciting announcements from Radicle, fresh insights from Drips, and the reveal of an all-new project that expands the frontier.\nOrganizer: Radworks.\nVenue: Treehouse .
+LOCATION:Treehouse Berlin Revaler Str. 99 10245 Berlin
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-85-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T180000Z
+DTEND:20260617T200000Z
+SUMMARY:WebZero x Polkadot Family closing BBQ #2024
+DESCRIPTION:We're wrapping up another successful Blockspace with our tradition: the family BBQ.\nEnjoy some wurst and vegetarian options as we come together to hang with our new friends from the week.\nOrganizer: WebZero & Polkadot.\nVenue: Mena Berlin.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-86-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T100000Z
+DTEND:20260614T010000Z
+SUMMARY:EigenLayer Builder Breakfast #2026
+DESCRIPTION:​The EigenLayer Builder Breakfast is a morning meetup for developers who are building (or looking to build) within the EigenLayer ecosystem.\nJoin us for coffee, conversation, and collaboration with fellow innovators in the space.\nOrganizer: EigenLayer.\nVenue: Register to see address..
+LOCATION:Register to see address.
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-87-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260611T180000Z
+DTEND:20260611T200000Z
+SUMMARY:Psychedelic Breath™ with Dr. Natalie Tillack - BBW Special: System Reboot #2026
+DESCRIPTION:Deep, immersive breathwork meets deep, immersive techno.\n​Psychedelic Breath gives you space to process, recalibrate, and see things with a fresh pair of eyes.\n​🌍 On a personal note, I love to host these spaces before or during Web3 conferences as they are a great way to connect all over the world!\nOrganizer: So So Scaled!.\nVenue: Wild Side Studio @Tillack.\nChat: Telegram – https://t.me/psychedelicbreath
+LOCATION:Schinkestr. 4-5, 12047 Berlin, 6th Floor Rooftop
+X-VAR-SCORE:18
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-88-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T090000Z
+DTEND:20260613T173000Z
+SUMMARY:🌀 MEMECON 360° - The First Meme Tent in the World #2026
+DESCRIPTION:🏕️ The First MEMECON 360° Tent in the World at German Blockchain & AI Week\n\n"Where memes motivate, inspire, and protect you."\n\nWelcome to the official MEMECON 360° Tent Experience at German Blockchain & AI Week 2025 — where memes become reality and crypto meets culture in the most chaotic, creative, and hilariously powerful way.\n🌍 Step into MemeCon Land — a fully immersive space designed for hipsters, crypto lovers, degen dreamers, and meme lords.\nA place to vibe, laugh, reflect, and experience the cultural revolution powered by memes.\nOrganizer: German Blockchain & AI Week.\nVenue: Spielfeld Hub.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Skalitzer Str. 85/86, 10997 Berlin
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-89-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T190000Z
+DTEND:20260622T000000Z
+SUMMARY:ZuBerlin – Futura Garden #2026
+DESCRIPTION:A co-living experience during Berlin Blockchain Week for building a technologically advanced, decentralized, human-friendly future.\nSpend time with top researchers, founders, technologists – genuinely kind humans who care, to inspire each other and flourish together.\n🌱\nOrganizer: Futura Labs.\nVenue: tba.\nChat: Telegram – https://t.me/zuberlin
+LOCATION:tba
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-90-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T100000Z
+DTEND:20260616T130000Z
+SUMMARY:Mobility DePin Launch: AI + Web3 powering mobility #2025
+DESCRIPTION:​🚗✨ Join us for a hands-on showcase of real-world blockchain and AI applications transforming mobility—from public transit to connected vehicles.\nNo fluff.\nJust deployment showcase on actual municipality buses and real conversations.\nOrganizer: Staex GmbH.\nVenue: w3.hub.
+LOCATION:Möckernstr. 120, 10963 Berlin
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-91-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T110000Z
+DTEND:20260619T170000Z
+SUMMARY:Distill Podcast: Humans of Web3 #2025
+DESCRIPTION:This Berlin Blockchain Week, we're kickstarting Distill, a podcast focusing on the stories, convictions, and ideas of the people shaping Web3.\nOn June 19, we’re having a few interview spots for our series 'People of Web3', happening during ZuBerlin at Michelberger Hotel.\nThe series is about the people who are in this space because they care.\nOrganizer: DISTILL.\nVenue: Michelberger Hotel.
+LOCATION:Warschauer Str. 39-40, 10243 Berlin
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-92-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T110000Z
+DTEND:20260619T140000Z
+SUMMARY:Builder's Club Brunch #2026
+DESCRIPTION:Builder's Club Brunch #BerlinEdition – Powered By Flare Network & Request Network\nOrganizer: Builder's Club.\nVenue: Anima Rooftop.\nChat: Telegram – https://t.me/brunchweb3
+LOCATION:Locke at East Side Gallery, Mühlenstraße 61-63, 10243 Berlin, Germany
+X-VAR-SCORE:10
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-93-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T170000Z
+DTEND:20260613T190000Z
+SUMMARY:Get Together On The Block! | LF Decentralized Trust European Chapter Meetup #2026
+DESCRIPTION:Hello #european-chapter !\nDuring Berlin Blockchain Week 2025, we'd like to get together for a casual drink at BRLO Brwhouse - just a five-minute walk from w3.hub.\nThis will be an informal opportunity to connect with fellow community members over craft beer and good company.\nOrganizer: LF Decentralized Trust.\nVenue: BRLO Brwhouse.
+LOCATION:Schöneberger Str. 16, 10963 Berlin, Germany
+X-VAR-SCORE:7
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-94-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260620T150000Z
+DTEND:20260621T210000Z
+SUMMARY:InterChain Summit #2026
+DESCRIPTION:​The InterChain Summit will bring together project teams, investors, developers, and active community members during Berlin Blockchain Week\n\nJoin us for two days of talks, panels, and presentations focused on InterChain communication, as between blockchains, as between communities\n\nIt’s the perfect place to network, discover new partners, meet old friends, and find new ones!\nDay 1: 20.06.2025 - 15:00-21:00\nDay 2: 21.06.2025 - 15:00-21:00\n\nRegistration: https://lu.ma/9h3zalw8\n\nGroup chat: https://t.me/InterChain_Summit\n\nWeb-page: https://www.interchain.digital/\nOrganizer: Cosmos Ecosystem.\nVenue: CIC Berlin.\nChat: Telegram – https://t.me/InterChain_Summit
+LOCATION:Lohmühlenstraße 65, 12435 Berlin, Germany
+X-VAR-SCORE:11
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-95-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T090000Z
+DTEND:20260617T180000Z
+SUMMARY:Onchain Growth Summit  #2026
+DESCRIPTION:Onchain Growth Summit is a curated conference devoted to elevating growth as a dedicated discipline within crypto.\nThis curated, full-day event unites 200+ growth leaders, founders, marketers, DevRels, and ecosystem builders to exchange expertise and insights on driving adoption.\nWith thought-provoking talks, candid panels, and structured networking opportunities, OGS2025 creates a home for the crypto growth tribe to connect and collaboratively advance the field.\nOrganizer: OGC.\nVenue: Spielfeld Digital Hub.
+LOCATION:Skalitzer Str. 85/86, 10997 Berlin
+X-VAR-SCORE:22
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-96-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T180000Z
+DTEND:20260615T200000Z
+SUMMARY:How to be a Web3 DJ with Dim Spirit #2026
+DESCRIPTION:​​Everyone wants to be one.\nFew know how.\nJoin us at The Blockspati club for a private workshop with Swedish musician, singer and electronic artist & Blockspace resident Dim Spirit - he'll run through the basics of mixing and we'll give you a few hints on how to make it as a DJ.\nOrganizer: WebZero & Polkadot.\nVenue: Mena Berlin.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
+X-VAR-SCORE:9
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-97-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T180000Z
+DTEND:20260612T203000Z
+SUMMARY:ETHGlobal Berlin Happy Hour & Talks #2026
+DESCRIPTION:oin us for our ETHGlobal Happy Hour in Berlin hosted @ 42 Berlin!\n🍻🇩🇪\n\n​We're gathering the best builders during Berlin Blockchain Week 2025 with an evening filled with great conversations, new connections, and plenty of crypto chatter.\n​The event will start with several short talks (10-20 mins) from members of the web3 community, followed by drinks and networking.\nOrganizer: EthGlobal & 42 Berlin.\nVenue: 42 Berlin.
+LOCATION:Harzer Str. 42, 12059 Berlin
+X-VAR-SCORE:18
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-98-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T091500Z
+DTEND:20260618T060000Z
+SUMMARY:interop/acc #2025
+DESCRIPTION:Conference / Happy Hour during Berlin Blockchain Week.\nHosted at Spindler & Klatt.\nOrganizer: LiFi.\nVenue: Spindler & Klatt.
+LOCATION: Köpenicker Str. 16-17 -17, 10997 Berlin
+X-VAR-SCORE:8
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-99-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260612T190000Z
+DTEND:20260612T140000Z
+SUMMARY:YACHTBOAT PARTY THROUGH BERLIN - German Blockchain & AI Week #2026
+DESCRIPTION:The Yachtboat Party Berlin is a standout highlight of the German Blockchain & AI Week (GBW&AI) 2025, taking place in the heart of Europe’s most vibrant city.\nThis exclusive side event combines blockchain networking with an unforgettable Berlin summer experience.\nEnjoy an elegantly designed bar offering all-you-can-drink beverages, paired with delicious finger foods to keep you refreshed as you connect with some of the brightest minds in blockchain.\nOrganizer: German Blockchain & AI Week.\nVenue: Register to See Address in Berlin.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Register to See Address in Berlin
+X-VAR-SCORE:3
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-100-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T170000Z
+DTEND:20260622T234500Z
+SUMMARY:On-chain Book Giveaway : “I can Aiken” #2025
+DESCRIPTION:This is an on-chain book giveaway sponsored by book.io and the Cardano Foundation.\nContact @cardanobook on X for a free book, or if you prefer LinkedIn comment on following post:\n\nhttps://www.linkedin.com/posts/cardano-foundation_the-response-to-i-can-aiken-has-been-incredible-activity-7324065668214018048-jP6J\nOrganizer: John Greene.\nVenue: On-chain… order on X.\nChat: Other – https://x.com/cardanobook
+LOCATION:https://x.com/cardanobook
+X-VAR-SCORE:8
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-101-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T150000Z
+DTEND:20260616T170000Z
+SUMMARY:Krypto-Steuer Deutschland  #2024
+DESCRIPTION:Du investierst in Bitcoin, Ethereum & Co., aber beim Thema Steuern drückst du lieber auf „später erinnern“?\nKrypto-Steuern müssen kein Angstthema sein.\nIn diesem Meetup zeigen wir dir gemeinsam mit den Experten von EY, was für dich als Krypto-Investor wichtig ist und wie du einfach rechtssicher bleibst.\nOrganizer: Blockpit.\nVenue: w3 Hub Berlin.
+LOCATION:Möckernstraße 120, 10963 Berlin, Deutschland
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-102-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T103000Z
+DTEND:20260614T180000Z
+SUMMARY:Co-working & Private Chef with Polkadot 💻 #2024
+DESCRIPTION:Join Polkadot at The Blockspați Berlin, Berlin's hidden gem, for four days of co-working, networking and private-chef-made food.\n​🪑 An authentic Berlin club for co-working & private calls\n👨‍🍳 Private chef-made BBQ & drinks: morning, lunch, and evening.\n🌳 Outdoor courtyard to catch the rays of sun\n🌃 Underground vibes & the best kiez in Berlin\n\nWhether you're hopping between side events, need to recharge, or want to connect with like-minded individuals, our space offers comfortable working desks, food & WiFi.\nOrganizer: WebZero.\nVenue: Mena Berlin.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-103-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T220000Z
+DTEND:20260618T050000Z
+SUMMARY:Degen Rave #2026
+DESCRIPTION:💊Trenches RAVE💊\n\nGet ready to dive deep into the web3 digital underworld at Trenches RAVE, the most electrifying side event of Berlin Blockchain Week!\n💊 LINEUP\n\nTBD\n\n💊 TIME\n\n10:00 PM - 5:00 AM\nOrganizer: 0xCypheer.\nVenue: tba.
+LOCATION:tba
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-104-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260618T180000Z
+DTEND:20260618T220000Z
+SUMMARY:DEFAI Penthouse  #2024
+DESCRIPTION:​Bringing together elite builders and investors in the DeFi x AI Space for an evening of workshops and vibing at a city centre Penthouse location.\nStrict guestlist\n\nHosted by\nMode Network https://x.com/modenetwork\nSynth https://x.com/SynthdataCo\nOrganizer: Mode .\nVenue: Penthouse Mitte .
+LOCATION:Luma 
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-105-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260619T100000Z
+DTEND:20260619T120000Z
+SUMMARY:The Vault Demo Day #2024
+DESCRIPTION:​The Grand Finale of The Vault Berlin Hacker Village!\n​The Vault is a multi-house hacker village in the heart of Berlin.\nWe invited the most innovative developers and founders to build the next generation of verifiable apps and AVSs on EigenLayer.\nOrganizer: EigenLayer.\nVenue: Register to see.
+LOCATION:Register to see
+X-VAR-SCORE:0
+X-VAR-QUARTILE:1
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-106-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T180000Z
+DTEND:20260615T203000Z
+SUMMARY:Welcome to Gno.land  #2026
+DESCRIPTION:Join the gnomes of Gno.land for a relaxed Sunday evening of discussions and drinks, and get to gno us in Berlin's crashed spaceship, the legendary c-base station, Rungestraße 20, Berlin, Germany.\nGno.land is a smart contract platform for writing dApps in Go, but goes beyond this initial scope.\nSimilar to how Tendermint changed the way blockchain developers think about blockchain consensus algorithms, Gno.land will change the way developers think about programming.\nOrganizer: Gno.land.\nVenue: c-base.
+LOCATION:Rungestraße 20, 10179 Berlin, Germany
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-107-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T170000Z
+DTEND:20260616T210000Z
+SUMMARY:A taste of integrating 350 Assets over 75 Blockchains #2026
+DESCRIPTION:About the EventJoin us for an exclusive evening hosted by Bitvavo, where crypto infrastructure meets real-world scale.\nOver drinks and bites, we’ll take you behind the scenes of one of Europe’s leading digital asset platforms—and share what it really takes to support 350+ assets across 75+ blockchains.In this session, we’ll unpack the technical and operational challenges of Web3 at scale.\nFrom managing high-throughput networks, to navigating new models of transaction finality on chains, to decoding the growing complexity of smart contract-based deposits—this is your backstage pass to the next generation of crypto integration.Stick around for an open Q&A, where our engineering and product leads will answer your questions and dive deeper into the realities of building resilient, scalable systems in an increasingly complex blockchain ecosystem.EVENT HIGHLIGHTS:\n\n\n\n\n\nA technical deep dive: Web3 at Scale – Behind the Scenes of Integrating 350 Assets on 75 Chains\n\n\n\nInsightful discussion on high-speed blockchains, new finality models, and the evolving role of smart contracts\n\n\n\nInteractive Q&A session with Bitvavo team members\n\n\n\nCasual networking with fellow builders, devs, and crypto-curious minds\n\n\n\nDrinks, bites, and a relaxed atmosphere\n\nWhether you're a developer, founder, or just passionate about Web3 infrastructure, this event offers a rare look into how enterprise-level crypto platforms operate under the hood.\nOrganizer: Bitvavo .\nVenue: w3.hub Berlin.
+LOCATION:Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-108-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260620T120000Z
+DTEND:20260620T200000Z
+SUMMARY:Eureka #2026
+DESCRIPTION:Eureka Conference is a space for thoughtful exchange and shared discovery in the world of blockchain and decentralized technologies.\nThrough talks on governance, decentralized digital economy, and scaling solutions - alongside workshops and panel discussions -participants explore ideas that push the space forward.\nTrue to its name, Eureka is about those moments of insight that happen when people come together to ask hard questions and imagine what is next.\nOrganizer: Robin Böning.\nVenue: Pfefferberg Haus 13.\nChat: Discord – https://discord.gg/fdK3K3nSDe
+LOCATION:Schönhauser Allee 176, 10119 Berlin
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-109-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260613T093000Z
+DTEND:20260613T173000Z
+SUMMARY:🚀 THE FIRST LIVE CRYPTO WORLD RECORD in Berlin🏆 #2025
+DESCRIPTION:🌍 Making Crypto History – Be Part of It!\nFor the first time ever, German Blockchain Week & AI is hosting an official world record attempt, uniting the global crypto community for an unforgettable live event.\nThis isn’t just another side event—this is history in the making!\nOrganizer: German Blockchain & AI Week.\nVenue: Spielfeld Hub.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Skalitzer Str. 85/86, 10997 Berlin
+X-VAR-SCORE:12
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-110-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T140000Z
+DTEND:20260614T200000Z
+SUMMARY:VCs, look this way: Bitwala shows Berlin #2026
+DESCRIPTION:​Everyone is complaining that Berlin is dead.\n​🟩 It's not.\n​We're bringing you Berlin's hottest and brightest startups of the Bitcoin and AI space.\nOrganizer: Bitwala & Webzero.\nVenue: Mena Berlin.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-111-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T140000Z
+DTEND:20260615T170000Z
+SUMMARY:🍺 O'zapft is! – The Legendary Oktoberfest with German Blockchain & AI Week #2026
+DESCRIPTION:O’zapft is!\nThe barrel is tapped — and so is the spirit of celebration!\n🎉🍻\n\n​Join us at the Hofbräu Wirtshaus Berlin, the only venue in the city that brings the full Oktoberfest experience to life all year round.\nOrganizer: German Blockchain & AI Week.\nVenue: Hofbräu Wirtshaus Berlin.\nChat: Telegram – https://t.me/germanblockchainweek
+LOCATION:Karl-Liebknecht-Str. 30, 10178 Berlin
+X-VAR-SCORE:19
+X-VAR-QUARTILE:4
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-112-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260614T120000Z
+DTEND:20260614T140000Z
+SUMMARY:Bitwala Invite Only Investor Lunch #2026
+DESCRIPTION:# Bitwala's Invite-Only VC Lunch.\\n## 🟩 Who's invited?\\n​💶 Angel Investors\\n💷 Early Stage VCs\\n🧸 Founders incorporated or with a presence in Berlin\\n🏆BWALA Whales and Leviathans\\n​\\nWe'll be discussing what to look for in the afternoon pitches, fundraising strategies, the dynamics between founders and investors, how regulatory and technical advancements influence the investment flow and how media might play a role.\\n\\n​If you are a Start Up and want to pitch, are looking for high-context networking, a chance to get in early on the scene or any combination of the above, [please use this link](https://lu.ma/raal3k5j) for our afternoon event.\\n\\n​🟩 Notes:\\n​While the lunch is accessible the venue for the later events is not.\nSorry for that.\\n\\n​Participation to the Lunch is subject to selection and approval.\\n\\n​We will take photographs and videos.\nBy registering and attending, you agree to appear on marketing videos and photos for Berlin Blockchain Week as well as parties involved in the hosting or participating in this event.\\n\\n​Your data may be used for event documentation, marketing materials, and promotional purposes.\\n\\n​🟩Sponsorship Opportunities!\nOrganizer: Dennis Daiber.\nVenue: MENA Kreuzberg.
+LOCATION:Revealed upon Registration
+X-VAR-SCORE:10
+X-VAR-QUARTILE:2
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-113-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T210000Z
+DTEND:20260616T020000Z
+SUMMARY:BLOCK ROOM BERLIN #2026
+DESCRIPTION:​After a successful pilot during ETHDenver & launch during Consensus Toronto, WebZero returns to bring you Block Room Berlin with Polkadot.\n​What is Block Room?\n​Block Room is an ode to Boiler Room, an intimate dance gathering, celebrating the simple yet rare pleasure of experimental music at crypto events.\nOrganizer: WebZero & Polkadot.\nVenue: Mena Berlin.
+LOCATION:Hinterhof Back-yard, Skalitzer Str. 114, 10999 Berlin, Germany
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-114-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260616T160000Z
+DTEND:20260616T220000Z
+SUMMARY:Stablecoin Day at Berlin Blockchain Week #2026
+DESCRIPTION:​Stablecoins have emerged as a significant innovation in the financial sector in recent years.\nWhile traditional cryptocurrencies like Bitcoin and Ethereum are known for their volatility, Stablecoins offer a more stable store of value as they are pegged to traditional currencies or other assets.\nThis makes them suitable for payments as well as for new use cases in decentralized finance (DeFi).\nOrganizer: AllUnity.\nVenue: w3.hub.
+LOCATION:w3.hub, Möckernstraße 120, 10963 Berlin, Germany
+X-VAR-SCORE:18
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-115-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T190000Z
+DTEND:20260617T010000Z
+SUMMARY:EigenLayer Berlin Soirée #2026
+DESCRIPTION:​Drinks, bites, pool tables, and Berlin at its best — with a curated crowd of partners and friends from the ecosystem.\n​Vibes guaranteed.\nOrganizer: EigenLayer.\nVenue: Peter's.
+LOCATION:Am Tacheles Friedrichstrasse 110 A 10117 Berlin
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-116-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260617T153000Z
+DTEND:20260617T173000Z
+SUMMARY:Acre Community Meet up: Berlin 2025! #2025
+DESCRIPTION:About Our Event\n\n​Join us for a relaxing afternoon unwind, about 10 minutes from Dappcon and Onchain Growth Summit conferences.\n​Get to know our Community and learn more about compounding Bitcoin!\n​What to Expect:\n\n​Our Community Lead, Nico186, will be onsite to meet up IRL, and welcome our new members to our community!\nOrganizer: Acre.fi.\nVenue: The Greens .\nChat: Discord – https://discord.gg/kCvvKsyQvK
+LOCATION:The Greens Am Krögel 2, 10179 Berlin, Germany
+X-VAR-SCORE:14
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-117-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260615T100000Z
+DTEND:20260615T113000Z
+SUMMARY:Catholic Mass @ Berlin Blockchain Week #2026
+DESCRIPTION:Join us celebrating mass together 10:00 AM Sunday!\n​We'll be joining the regular English mass at the cozy [Church of St.\nThomas Aquinas](https://maps.app.goo.gl/ZndggtByFuK2smGd6) in the heart of Berlin.\nOrganizer: Crypto Catholics.\nVenue: Church of St. Thomas Aquinas.\nChat: Telegram – https://t.me/+Fnzr9_wtC6FlZmNl
+LOCATION:Hannoversche Str. 5, 10115 Berlin
+X-VAR-SCORE:17
+X-VAR-QUARTILE:3
+END:VEVENT
+BEGIN:VEVENT
+UID:var-event-event-118-1771061781136@var-leaderboard
+DTSTAMP:20260214T093621Z
+DTSTART:20260611T180000Z
+DTEND:20260611T210000Z
+SUMMARY:Regulating the Future: Web3 & Crypto Dinner #2026
+DESCRIPTION:​Join Bitpanda and Baker Tilly for an evening at the crossroads of innovation and regulation.\nAs Web3, crypto, and AI converge, new opportunities and challenges arise.\nWe will explore how these technologies are shaping the future and discuss the evolving regulatory landscape in a casual setting.\nOrganizer: Bitpanda | Baker Tilly.\nVenue: Fabrik 23.
+LOCATION:Fabrik 23 Gerichtstraße 23, 13347 Berlin
+X-VAR-SCORE:13
+X-VAR-QUARTILE:3
 END:VEVENT
 END:VCALENDAR
