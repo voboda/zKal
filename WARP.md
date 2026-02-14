@@ -38,6 +38,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 - **Authentication**: Zupass Ticket PCD + server-side verification (legacy Semaphore code may remain in stores/UI)
 - **Calendar Parsing**: ical.js (parses .ICS feeds)
 - **Styling**: Pico CSS (minimal framework)
+- **PODs/ZK Proofs**: `@pcd/pod` and `@parcnet-js/*` packages for client-side ZK proof operations (must run in browser, not server)
 
 ### Data Flow
 
