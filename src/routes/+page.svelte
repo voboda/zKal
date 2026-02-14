@@ -10,17 +10,12 @@
     import AddToCalendar from '$lib/AddToCalendar.svelte';
     import { getState, ensureZupassConnection, connectToZupass, insertPOD, toInsertablePOD} from '$lib/pod';
     import {POD, checkPODValue} from '@pcd/pod';
-
-    console.log('POD', POD);
-
-
-//import { checkPODValue } from '@pcd/pod';
-import * as p from '@parcnet-js/podspec';
-//const checkPODValue = POD.checkPODValue;
-console.log('checkPODValue', checkPODValue);
+    import * as p from '@parcnet-js/podspec';
 
     export let data;
     export let { events } = data.props;
+
+    console.log(events);
 
     let plugins = [DayGrid, TimeGrid, List, Interaction];
     let selectedEvent = null;
@@ -30,45 +25,47 @@ console.log('checkPODValue', checkPODValue);
     let errorMessage = null;
     let zupassElement = null;
     let attendeeEmail = '';
-
-function toPODEntriesWithSpec(pod) {
-  const converted = {};
-  
-  for (const [key, value] of Object.entries(pod.entries)) {
-    // Handle the special owner field that's already partially formatted
-    if (key === 'owner' && typeof value === 'object' && value.eddsa_pubkey) {
-      converted[key] = { 
-        type: 'eddsa_pubkey', 
-        value: value.eddsa_pubkey 
-      };
-      continue;
-    }
     
-    // Handle primitives
-    if (typeof value === 'string') {
-      converted[key] = { type: 'string', value };
-    } else if (typeof value === 'number') {
-      converted[key] = { type: 'int', value: BigInt(value) };
-    } else if (typeof value === 'bigint') {
-      converted[key] = { type: 'int', value };
-    } else if (typeof value === 'boolean') {
-      converted[key] = { type: 'boolean', value };
-    } else if (value === null) {
-      converted[key] = { type: 'null', value: null };
-    }
-  }
-  
-  return {
-    entries: converted,
-    signature: pod.signature,
-    signerPublicKey: pod.signerPublicKey
-  };
-}
+    // Normalized VAR scores are already computed in +page.js and available in event.extendedProps.normalizedVarScore
+    console.log('Using pre-calculated normalized VAR scores');
+    
+    function toPODEntriesWithSpec(pod) {
+      const converted = {};
 
+      for (const [key, value] of Object.entries(pod.entries)) {
+        // Handle the special owner field that's already partially formatted
+        if (key === 'owner' && typeof value === 'object' && value.eddsa_pubkey) {
+          converted[key] = { 
+type: 'eddsa_pubkey', 
+      value: value.eddsa_pubkey 
+          };
+          continue;
+        }
+
+        // Handle primitives
+        if (typeof value === 'string') {
+          converted[key] = { type: 'string', value };
+        } else if (typeof value === 'number') {
+          converted[key] = { type: 'int', value: BigInt(value) };
+        } else if (typeof value === 'bigint') {
+          converted[key] = { type: 'int', value };
+        } else if (typeof value === 'boolean') {
+          converted[key] = { type: 'boolean', value };
+        } else if (value === null) {
+          converted[key] = { type: 'null', value: null };
+        }
+      }
+
+      return {
+        entries: converted,
+         signature: pod.signature,
+         signerPublicKey: pod.signerPublicKey
+      };
+    }
 
     onMount(async () => {
-        await connectToZupass(zupassElement);
-        });
+      await connectToZupass(zupassElement);
+    });
 
     function handleEventClick({ event }) {
         selectedEvent = event;
@@ -204,22 +201,35 @@ function toPODEntriesWithSpec(pod) {
         },
         eventDidMount: function(arg) {
             const quartile = arg.event.extendedProps.varQuartile;
-            const normalizedScore = arg.event.extendedProps.normalizedVarScore || 0;
-            console.log('arg', arg);
+            const normalizedVarScore = arg.event.extendedProps?.normalizedVarScore;
             
-            if (quartile === 3) {
-                // Thicker border for quartile 3
-                arg.el.style.borderWidth = '5px';
-                arg.el.style.borderStyle = 'solid';
-            } else if (quartile === 4) {
-                // Even thicker border for quartile 4 with greener color based on score
-                arg.el.style.borderWidth = '10px';
-                arg.el.style.borderStyle = 'solid';
-                // Calculate green value from normalized score (0-1)
-                // Base green is 100, additional up to 155
-                const greenValue = Math.floor(100 + (155 * normalizedScore));
-                // Keep red and blue at 50 for a nice greenish tint
-                arg.el.style.backgroundColor = `rgb(50, ${greenValue}, 50)`;
+            // Always set border to 1px with same color
+            arg.el.style.borderWidth = '1px';
+            arg.el.style.borderStyle = 'solid';
+            arg.el.style.borderColor = '#aaaaaa';
+            
+            // Set background color based on quartile
+            if (quartile === 1 || quartile === 2) {
+                // Quartiles 1 and 2: fixed color
+                arg.el.style.backgroundColor = '#6B6ACD';
+            } else if ((quartile === 3 || quartile === 4) && typeof normalizedVarScore === 'number') {
+                // Quartiles 3 and 4: interpolate between #6B6ACD and #8ECB62
+                // using the pre-calculated normalizedVarScore (0 to 1)
+                const t = Math.max(0, Math.min(1, normalizedVarScore));
+                
+                // Interpolate between #6B6ACD and #8ECB62
+                // Using the actual colors you intended
+                const color1 = { r: 0, g: 106, b: 205 };    // #6B6ACD
+                const color2 = { r: 255, g: 203, b: 0 };    // #8ECB62
+                
+                const r = Math.round(color1.r + (color2.r - color1.r) * t);
+                const g = Math.round(color1.g + (color2.g - color1.g) * t);
+                const b = Math.round(color1.b + (color2.b - color1.b) * t);
+                
+                arg.el.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            } else {
+                // Fallback for events without normalizedVarScore or invalid quartile
+                arg.el.style.backgroundColor = '#6B6ACD';
             }
         }
     };
