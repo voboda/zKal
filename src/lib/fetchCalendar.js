@@ -114,7 +114,6 @@ export async function fetchCalendar() {
         }
 
         // Check for ZKAL link patterns
-        console.log('PUBLIC_ZKAL_LINK_PATTERNS', PUBLIC_ZKAL_LINK_PATTERNS);
         let zkalLinks = links.filter((link) =>
           JSON.parse(PUBLIC_ZKAL_LINK_PATTERNS).some((zkalPattern)=>
             link.startsWith(zkalPattern),
@@ -123,6 +122,31 @@ export async function fetchCalendar() {
         if (zkalLinks.length > 0) {
           zkalUri = zkalLinks[zkalLinks.length - 1];
           event.updatePropertyWithValue("X-ZKAL-URI", zkalUri);
+        }
+
+        // Extract X-VAR-SCORE and X-VAR-QUARTILE if present
+        const varScoreProp = vevent.getFirstProperty("x-var-score");
+        const varQuartileProp = vevent.getFirstProperty("x-var-quartile");
+        
+        let varScore = null;
+        let varQuartile = null;
+
+        console.log('PARSE ICAL', varScoreProp, varQuartileProp, vevent);
+        
+        if (varScoreProp) {
+          try {
+            varScore = parseFloat(varScoreProp.getFirstValue());
+          } catch (e) {
+            console.warn("Could not parse X-VAR-SCORE", varScoreProp.getFirstValue());
+          }
+        }
+        
+        if (varQuartileProp) {
+          try {
+            varQuartile = parseInt(varQuartileProp.getFirstValue());
+          } catch (e) {
+            console.warn("Could not parse X-VAR-QUARTILE", varQuartileProp.getFirstValue());
+          }
         }
 
         // Add the event to the JSON array
@@ -136,6 +160,8 @@ export async function fetchCalendar() {
           attendees: attendees.length + 1, // Add 1 to account for the proposer or host of the event
           signupLink: event.getFirstPropertyValue("X-SIGNUP-LINK"),
           zkalUri: event.getFirstPropertyValue("X-ZKAL-URI"),
+          varScore: varScore,
+          varQuartile: varQuartile,
         });
       });
     } catch (error) {

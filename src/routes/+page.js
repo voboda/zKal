@@ -2,6 +2,25 @@ export async function load({ fetch }) {
   const res = await fetch("/feed/json");
   const data = await res.json();
 
+  // Calculate min and max VAR scores
+  let minVarScore = Infinity;
+  let maxVarScore = -Infinity;
+  
+  // First, find valid varScores
+  data.forEach(event => {
+    if (event.varScore !== null && event.varScore !== undefined) {
+      const score = parseFloat(event.varScore);
+      if (!isNaN(score)) {
+        if (score < minVarScore) minVarScore = score;
+        if (score > maxVarScore) maxVarScore = score;
+      }
+    }
+  });
+
+  // If no valid scores found, set defaults
+  if (minVarScore === Infinity) minVarScore = 0;
+  if (maxVarScore === -Infinity) maxVarScore = 0;
+
   let events;
 
   if (data.length) {
@@ -28,6 +47,15 @@ export async function load({ fetch }) {
       );
       const attendees = parseInt(event.attendees, 10) || 0;
 
+      // Calculate normalized varScore
+      let normalizedVarScore = 0;
+      if (event.varScore !== null && event.varScore !== undefined) {
+        const score = parseFloat(event.varScore);
+        if (!isNaN(score)) {
+          normalizedVarScore = (score - minVarScore) / (maxVarScore - minVarScore || 1);
+        }
+      }
+
       return {
         title: event.summary,
         start: startDate,
@@ -37,6 +65,9 @@ export async function load({ fetch }) {
           signupLink: event.signupLink,
           calendarName: event.calendarName,
           attendees,
+          varScore: event.varScore,
+          varQuartile: event.varQuartile,
+          normalizedVarScore: normalizedVarScore,
         },
         backgroundColor: event.calendarColor,
       };
@@ -45,7 +76,11 @@ export async function load({ fetch }) {
 
   return {
     props: {
-      events,
+      events: events || [],
+      varScoreRange: {
+        min: minVarScore,
+        max: maxVarScore
+      }
     },
   };
 }

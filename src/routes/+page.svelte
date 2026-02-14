@@ -197,9 +197,30 @@ function toPODEntriesWithSpec(pod) {
                 <div class="fc-event-main">
                     <div class="fc-event-title">${arg.event.title}</div>
                     <div class="fc-event-time">${arg.timeText}</div>
+                    <div class="fc-event-time">${arg.event.extendedProps.varQuartile}</div>
                 </div>
             `;
             return { html };
+        },
+        eventDidMount: function(arg) {
+            const quartile = arg.event.extendedProps.varQuartile;
+            const normalizedScore = arg.event.extendedProps.normalizedVarScore || 0;
+            console.log('arg', arg);
+            
+            if (quartile === 3) {
+                // Thicker border for quartile 3
+                arg.el.style.borderWidth = '5px';
+                arg.el.style.borderStyle = 'solid';
+            } else if (quartile === 4) {
+                // Even thicker border for quartile 4 with greener color based on score
+                arg.el.style.borderWidth = '10px';
+                arg.el.style.borderStyle = 'solid';
+                // Calculate green value from normalized score (0-1)
+                // Base green is 100, additional up to 155
+                const greenValue = Math.floor(100 + (155 * normalizedScore));
+                // Keep red and blue at 50 for a nice greenish tint
+                arg.el.style.backgroundColor = `rgb(50, ${greenValue}, 50)`;
+            }
         }
     };
 </script>
