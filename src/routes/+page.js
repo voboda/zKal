@@ -56,20 +56,41 @@ export async function load({ fetch }) {
         }
       }
 
+      // Calculate background color based on quartile
+      let backgroundColor;
+      const quartile = event.varQuartile;
+      
+      if (quartile === 1 || quartile === 2 || quartile === 3 ) {
+        backgroundColor = '#6B6ACD';
+      } else if (( quartile === 4) && normalizedVarScore !== 0) {
+        const t = Math.max(0, Math.min(1, normalizedVarScore));
+        const color1 = { r: 107, g: 106, b: 205 };    // #6B6ACD
+        const color2 = { r: 107, g: 203, b: 0 };      // #FFCB00
+        
+        const r = Math.round(color1.r + (color2.r - color1.r) * t);
+        const g = Math.round(color1.g + (color2.g - color1.g) * t);
+        const b = Math.round(color1.b + (color2.b - color1.b) * t);
+        
+        backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      } else {
+        backgroundColor = '#6B6ACD';
+      }
+
       return {
         title: event.summary,
         start: startDate,
         end: endDate,
+        backgroundColor: backgroundColor,
         extendedProps: {
           description: event.description,
           signupLink: event.signupLink,
           calendarName: event.calendarName,
+          calendarColor: event.calendarColor,
           attendees,
           varScore: event.varScore,
           varQuartile: event.varQuartile,
           normalizedVarScore: normalizedVarScore,
         },
-        backgroundColor: event.calendarColor,
       };
     });
   }

@@ -193,44 +193,15 @@ type: 'eddsa_pubkey',
             let html = `
                 <div class="fc-event-main">
                     <div class="fc-event-title">${arg.event.title}</div>
-                    <div class="fc-event-time">${arg.timeText}</div>
-                    <div class="fc-event-time">${arg.event.extendedProps.varQuartile}</div>
                 </div>
             `;
             return { html };
         },
         eventDidMount: function(arg) {
-            const quartile = arg.event.extendedProps.varQuartile;
-            const normalizedVarScore = arg.event.extendedProps?.normalizedVarScore;
-            
-            // Always set border to 1px with same color
+            // Set border styling for all events
             arg.el.style.borderWidth = '1px';
             arg.el.style.borderStyle = 'solid';
             arg.el.style.borderColor = '#aaaaaa';
-            
-            // Set background color based on quartile
-            if (quartile === 1 || quartile === 2) {
-                // Quartiles 1 and 2: fixed color
-                arg.el.style.backgroundColor = '#6B6ACD';
-            } else if ((quartile === 3 || quartile === 4) && typeof normalizedVarScore === 'number') {
-                // Quartiles 3 and 4: interpolate between #6B6ACD and #8ECB62
-                // using the pre-calculated normalizedVarScore (0 to 1)
-                const t = Math.max(0, Math.min(1, normalizedVarScore));
-                
-                // Interpolate between #6B6ACD and #8ECB62
-                // Using the actual colors you intended
-                const color1 = { r: 0, g: 106, b: 205 };    // #6B6ACD
-                const color2 = { r: 255, g: 203, b: 0 };    // #8ECB62
-                
-                const r = Math.round(color1.r + (color2.r - color1.r) * t);
-                const g = Math.round(color1.g + (color2.g - color1.g) * t);
-                const b = Math.round(color1.b + (color2.b - color1.b) * t);
-                
-                arg.el.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-            } else {
-                // Fallback for events without normalizedVarScore or invalid quartile
-                arg.el.style.backgroundColor = '#6B6ACD';
-            }
         }
     };
 </script>
